@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/svg-05d7k6z6uy";
 import imgFrame1772 from "figma:asset/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674.png";
@@ -89,6 +89,11 @@ function HeroSection() {
         alt=""
         className="w-full h-auto block pointer-events-none"
         src={imgFrame1772}
+        width={2880}
+        height={2296}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -140,9 +145,9 @@ function ButtonsAndStats() {
       {/* Stats */}
       <div className="flex flex-col gap-6 md:gap-8 items-center w-full">
         {stats.map((stat) => (
-          <div key={stat} className="w-full max-w-[900px] flex items-center justify-center px-6 md:px-[60px] py-6 md:py-10 rounded-full border border-[rgba(255,255,255,0.2)]">
+          <div key={stat} className="w-full max-w-[1200px] flex items-center justify-center px-6 md:px-[60px] py-6 md:py-10 rounded-full border border-[rgba(255,255,255,0.2)]">
             <span
-              className="bg-clip-text bg-gradient-to-b from-white to-[#6cb4e0] text-[transparent] font-['SF_Pro:Regular',sans-serif] text-[32px] md:text-[56px] lg:text-[93px] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-4px] text-center leading-[1.1]"
+              className="bg-clip-text bg-gradient-to-b from-white to-[#6cb4e0] text-[transparent] font-['SF_Pro:Regular',sans-serif] text-[32px] md:text-[56px] lg:text-[72px] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-3px] text-center leading-[1.1] lg:whitespace-nowrap"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               {stat}
@@ -233,6 +238,8 @@ function ProductCard({
           alt=""
           className="w-[126px] h-[126px] md:w-[180px] md:h-[180px] object-cover"
           src={image}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       {/* Content */}
@@ -402,6 +409,8 @@ function StrategySection() {
             alt=""
             className="w-full h-full object-cover"
             src={imgRectangle14}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         {/* Partner logos */}
@@ -523,6 +532,8 @@ function CoreSystemCard({
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         src={image}
+        loading="lazy"
+        decoding="async"
       />
       <div
         aria-hidden="true"
@@ -572,6 +583,8 @@ function CTASection() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           src={imgNexusbuild1}
+          loading="lazy"
+          decoding="async"
         />
         {/* Top text */}
         <div className="flex flex-col items-center gap-4 md:gap-6 text-center relative z-10">
@@ -687,11 +700,6 @@ function Footer() {
 
 /* ─── Main App ─── */
 export default function App() {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-    return () => { document.documentElement.style.scrollBehavior = ""; };
-  }, []);
-
   return (
     <div className="w-full min-h-screen bg-black overflow-x-hidden">
       <NavBar />
