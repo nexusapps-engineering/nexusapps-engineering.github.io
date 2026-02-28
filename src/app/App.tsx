@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/svg-05d7k6z6uy";
 import imgFrame1772 from "figma:asset/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674.png";
@@ -13,20 +13,7 @@ import imgNexusbuild1 from "figma:asset/8c75122d35b55174fcc1582c90db9ed92b2ed7cb
 
 /* ─── Scroll Animation Wrapper ─── */
 function FadeInSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef(null);
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      style={{ willChange: "transform, opacity" }}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 /* ─── Navigation ─── */
@@ -36,9 +23,9 @@ function NavBar() {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-4 md:px-8 py-4 md:py-6">
       <div className="backdrop-blur-[12px] bg-[rgba(30,30,30,0.6)] flex items-center justify-between w-full max-w-[1344px] rounded-full px-6 md:px-10 py-3 md:py-4">
         {/* Logo */}
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="w-[100px] md:w-[133px] h-[15px] md:h-[20px] shrink-0 cursor-pointer"
         >
           <svg className="block size-full" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 132.95 19.5963">
@@ -48,7 +35,7 @@ function NavBar() {
             <path d={svgPaths.p336d400} fill="white" />
             <path d={svgPaths.p27eb8580} fill="white" />
           </svg>
-        </a>
+        </button>
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8 font-['Inter:Regular',sans-serif] text-[14px] lg:text-[16px] text-white tracking-[-0.36px]">
           <a href="#about" className="hover:opacity-80 transition-opacity">About us</a>

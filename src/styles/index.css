@@ -1,3 +1,12 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+html,
+body {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-anchor: none;
+}
