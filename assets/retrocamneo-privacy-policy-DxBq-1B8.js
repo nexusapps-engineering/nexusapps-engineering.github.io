@@ -1,0 +1,1 @@
+import{j as e,L as o}from"./index-DVm5gSfg.js";function a(){return e.jsx(o,{appName:"Retro Cam Neo",documentTitle:"Privacy Policy",lastUpdated:"TBD",introduction:e.jsx("p",{children:"TBD"}),sections:[]})}export{a as R};

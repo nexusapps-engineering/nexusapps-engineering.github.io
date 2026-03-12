@@ -1,0 +1,1 @@
+import{j as e,L as s}from"./index-DVm5gSfg.js";function t(){return e.jsx(s,{appName:"iScreen AI Wallpapers",documentTitle:"Terms of Use",lastUpdated:"TBD",introduction:e.jsx("p",{children:"TBD"}),sections:[]})}export{t as W};
