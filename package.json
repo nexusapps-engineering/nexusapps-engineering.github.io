@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "predev": "cp index.source.html index.html",
     "build": "cp index.source.html index.html && vite build",
     "dev": "vite",
-    "deploy:pages": "npm run build && cp -f dist/index.html ./index.html && mkdir -p assets && cp -f dist/assets/* ./assets && touch .nojekyll"
+    "deploy:pages": "npm run build && cp -f dist/index.html ./index.html && mkdir -p assets && cp -f dist/assets/* ./assets && mkdir -p visuallabx/privacy-policy visuallabx/terms-of-use photocamai/privacy-policy photocamai/terms-of-use wallpapers/privacy-policy wallpapers/terms-of-use retrocamneo/privacy-policy retrocamneo/terms-of-use && cp -f dist/visuallabx/privacy-policy/index.html ./visuallabx/privacy-policy/index.html && cp -f dist/visuallabx/terms-of-use/index.html ./visuallabx/terms-of-use/index.html && cp -f dist/photocamai/privacy-policy/index.html ./photocamai/privacy-policy/index.html && cp -f dist/photocamai/terms-of-use/index.html ./photocamai/terms-of-use/index.html && cp -f dist/wallpapers/privacy-policy/index.html ./wallpapers/privacy-policy/index.html && cp -f dist/wallpapers/terms-of-use/index.html ./wallpapers/terms-of-use/index.html && cp -f dist/retrocamneo/privacy-policy/index.html ./retrocamneo/privacy-policy/index.html && cp -f dist/retrocamneo/terms-of-use/index.html ./retrocamneo/terms-of-use/index.html && touch .nojekyll"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

@@ -18,6 +18,21 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        photoCamAIPrivacyPolicy: path.resolve(__dirname, 'photocamai/privacy-policy/index.html'),
+        photoCamAITermsOfUse: path.resolve(__dirname, 'photocamai/terms-of-use/index.html'),
+        retroCamNeoPrivacyPolicy: path.resolve(__dirname, 'retrocamneo/privacy-policy/index.html'),
+        retroCamNeoTermsOfUse: path.resolve(__dirname, 'retrocamneo/terms-of-use/index.html'),
+        visualLabXPrivacyPolicy: path.resolve(__dirname, 'visuallabx/privacy-policy/index.html'),
+        visualLabXTermsOfUse: path.resolve(__dirname, 'visuallabx/terms-of-use/index.html'),
+        wallpapersPrivacyPolicy: path.resolve(__dirname, 'wallpapers/privacy-policy/index.html'),
+        wallpapersTermsOfUse: path.resolve(__dirname, 'wallpapers/terms-of-use/index.html'),
+      },
+    },
+  },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
