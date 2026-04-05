@@ -14,6 +14,10 @@ type LegalDocumentPageProps = {
   sections: LegalSection[];
 };
 
+function decodeTitle(title: string) {
+  return title.replaceAll("&apos;", "'");
+}
+
 export function LegalDocumentPage({
   appName,
   documentTitle,
@@ -57,7 +61,7 @@ export function LegalDocumentPage({
               {sections.map((section) => (
                 <section key={section.title}>
                   <h2 className="mb-4 font-['Inter:Semi_Bold',sans-serif] text-[22px] tracking-[-0.8px] text-white md:text-[28px]">
-                    {section.title}
+                    {decodeTitle(section.title)}
                   </h2>
                   <div className="[&_a]:text-[#c2b6ff] [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:hover:text-white [&_p]:font-['Inter:Regular',sans-serif] [&_p]:text-[16px] [&_p]:leading-[1.8] [&_p]:tracking-[-0.2px] [&_p]:text-white/82]">
                     {section.content}

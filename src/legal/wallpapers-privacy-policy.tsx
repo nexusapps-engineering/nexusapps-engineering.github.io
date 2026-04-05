@@ -142,7 +142,7 @@ const sections = [
     ),
   },
   {
-    title: "Children&apos;s Privacy",
+    title: "Children’s Privacy",
     content: (
       <>
         <p>
