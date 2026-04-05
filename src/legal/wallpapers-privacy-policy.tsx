@@ -142,12 +142,12 @@ const sections = [
     ),
   },
   {
-    title: "Children’s Privacy",
+    title: "Children's Privacy",
     content: (
       <>
         <p>
-          iScreen Wallpapers is intended for a general audience and is not directed toward children under 4 years of
-          age. We do not knowingly collect personal information from children under 4.
+          iScreen Wallpapers is intended for a general audience and is not directed toward children under 13 years of
+          age. We do not knowingly collect personal information from children under 13.
         </p>
         <p className="mt-5">
           If we become aware of any such collection, we will delete the relevant data as required by applicable law.
