@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{U as t,F as e,I as o}from"./index-CKHkapqT-DUtNRlkm.js";function r(){return t.jsx(e,{appName:"Retro Cam Neo",documentTitle:"Privacy Policy",lastUpdated:"TBD",introduction:t.jsx("p",{children:"TBD"}),sections:[]})}o.createRoot(document.getElementById("root")).render(t.jsx(r,{}));

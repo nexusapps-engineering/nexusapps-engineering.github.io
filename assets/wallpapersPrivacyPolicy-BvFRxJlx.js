@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{c as o,j as r}from"./index-DSCjHzg_.js";import{W as t}from"./wallpapers-privacy-policy-C9e_torH.js";o.createRoot(document.getElementById("root")).render(r.jsx(t,{}));

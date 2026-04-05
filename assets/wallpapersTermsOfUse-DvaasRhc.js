@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{U as e,F as t,I as o}from"./index-CKHkapqT-DUtNRlkm.js";function r(){return e.jsx(t,{appName:"iScreen AI Wallpapers",documentTitle:"Terms of Use",lastUpdated:"TBD",introduction:e.jsx("p",{children:"TBD"}),sections:[]})}o.createRoot(document.getElementById("root")).render(e.jsx(r,{}));
