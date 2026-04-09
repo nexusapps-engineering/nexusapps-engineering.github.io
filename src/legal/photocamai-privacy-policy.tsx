@@ -8,7 +8,7 @@ const introduction = (
     </p>
     <p className="mt-5">
       We are committed to transparency and data protection across every part of the app. If you have questions or
-      concerns about this Privacy Policy, contact us at <a href="mailto:info@nexusapps.co">info@nexusapps.co</a>.
+      concerns about this Privacy Policy, contact us at <a href="mailto:hello@nexusapps.co">hello@nexusapps.co</a>.
     </p>
   </>
 );
@@ -96,7 +96,7 @@ const sections = [
         <p className="mt-5">
           Because the information available to us is generally anonymized or not linked to a direct user account, we
           may not be able to identify or delete a specific record associated with you. If you have a privacy request,
-          contact us at <a href="mailto:info@nexusapps.co">info@nexusapps.co</a> and we will review it based on the
+          contact us at <a href="mailto:hello@nexusapps.co">hello@nexusapps.co</a> and we will review it based on the
           data available to us.
         </p>
       </>

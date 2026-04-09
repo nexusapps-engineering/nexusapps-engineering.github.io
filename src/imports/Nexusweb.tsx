@@ -963,7 +963,7 @@ function Frame21() {
         <p className="leading-[18.2px] whitespace-pre-wrap">Partnership inquiries</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0 text-[16px] tracking-[-0.34px] w-full">
-        <p className="leading-[22.1px] whitespace-pre-wrap">info@nexusapps.co</p>
+        <p className="leading-[22.1px] whitespace-pre-wrap">hello@nexusapps.co</p>
       </div>
     </div>
   );
