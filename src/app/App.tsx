@@ -123,7 +123,7 @@ function ButtonsAndStats() {
           See Products
         </a>
         <a
-          href="mailto:info@nexusapps.co"
+          href="mailto:hello@nexusapps.co"
           className="relative text-white font-['Inter:Medium',sans-serif] font-medium text-[16px] tracking-[-0.36px] px-8 py-4 rounded-full text-center w-full sm:w-auto border border-[#4d4d4d]"
         >
           Contact Us
@@ -593,7 +593,7 @@ function CTASection() {
             Start a Business Inquiry
           </p>
           <a
-            href="mailto:info@nexusapps.co"
+            href="mailto:hello@nexusapps.co"
             className="bg-gradient-to-r from-white via-[#c2b6ff] via-[52%] to-[#84bdff] text-black font-['Inter:Medium',sans-serif] font-medium text-[16px] tracking-[-0.36px] px-12 md:px-[92px] py-4 rounded-full text-center w-full sm:w-auto"
           >
             Build With Nexus
@@ -629,7 +629,7 @@ function Footer() {
           {/* Partnership */}
           <div className="flex flex-col gap-2">
             <p className="text-[14px] tracking-[-0.28px] uppercase opacity-40 leading-[18px]">Partnership inquiries</p>
-            <a href="mailto:info@nexusapps.co" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">info@nexusapps.co</a>
+            <a href="mailto:hello@nexusapps.co" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">hello@nexusapps.co</a>
           </div>
           {/* Info */}
           <div className="flex flex-col gap-4">

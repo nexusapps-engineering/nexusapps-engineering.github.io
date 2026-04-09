@@ -164,7 +164,7 @@ const sections = [
     content: (
       <>
         <p>
-          For questions about these terms, contact <a href="mailto:info@nexusapps.co">info@nexusapps.co</a>.
+          For questions about these terms, contact <a href="mailto:hello@nexusapps.co">hello@nexusapps.co</a>.
         </p>
       </>
     ),
