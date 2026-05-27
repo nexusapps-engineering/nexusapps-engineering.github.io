@@ -22,6 +22,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+        clearWavePrivacyPolicy: path.resolve(__dirname, 'clearwave/privacy-policy/index.html'),
+        clearWaveTermsOfUse: path.resolve(__dirname, 'clearwave/terms-of-use/index.html'),
         photoCamAIPrivacyPolicy: path.resolve(__dirname, 'photocamai/privacy-policy/index.html'),
         photoCamAITermsOfUse: path.resolve(__dirname, 'photocamai/terms-of-use/index.html'),
         retroCamNeoPrivacyPolicy: path.resolve(__dirname, 'retrocamneo/privacy-policy/index.html'),
