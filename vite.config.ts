@@ -22,6 +22,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+        asoRocketPrivacyPolicy: path.resolve(__dirname, 'asorocket/privacy-policy/index.html'),
+        asoRocketTermsOfUse: path.resolve(__dirname, 'asorocket/terms-of-use/index.html'),
         clearWavePrivacyPolicy: path.resolve(__dirname, 'clearwave/privacy-policy/index.html'),
         clearWaveTermsOfUse: path.resolve(__dirname, 'clearwave/terms-of-use/index.html'),
         photoCamAIPrivacyPolicy: path.resolve(__dirname, 'photocamai/privacy-policy/index.html'),
