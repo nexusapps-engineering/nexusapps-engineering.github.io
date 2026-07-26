@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
 
+cp asorocket/privacy-policy/index.source.html asorocket/privacy-policy/index.html
+cp asorocket/terms-of-use/index.source.html asorocket/terms-of-use/index.html
 cp clearwave/privacy-policy/index.source.html clearwave/privacy-policy/index.html
 cp clearwave/terms-of-use/index.source.html clearwave/terms-of-use/index.html
 cp photocamai/privacy-policy/index.source.html photocamai/privacy-policy/index.html
