@@ -1,10 +1,33 @@
 import { defineConfig } from 'vite'
+import fs from 'node:fs'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+const sourceHtmlInDev = {
+  name: 'source-html-in-dev',
+  apply: 'serve' as const,
+  transformIndexHtml: {
+    order: 'pre' as const,
+    handler(_html: string, ctx: { path: string }) {
+      const pathname = new URL(ctx.path, 'http://localhost').pathname
+      const relativeDirectory = pathname
+        .replace(/^\//, '')
+        .replace(/\/?index\.html$/, '')
+        .replace(/\/$/, '')
+      const candidate = path.resolve(__dirname, relativeDirectory, 'index.source.html')
+      const sourcePath = fs.existsSync(candidate)
+        ? candidate
+        : path.resolve(__dirname, 'index.source.html')
+
+      return fs.readFileSync(sourcePath, 'utf8')
+    },
+  },
+}
+
 export default defineConfig({
   plugins: [
+    sourceHtmlInDev,
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
     react(),

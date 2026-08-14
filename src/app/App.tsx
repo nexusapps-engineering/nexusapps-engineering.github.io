@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/svg-05d7k6z6uy";
-import imgFrame1772 from "figma:asset/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674.png";
+import imgFrame1772Mobile from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-768.jpg";
+import imgFrame1772Desktop from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-1440.jpg";
 import imgVisuallabx1 from "figma:asset/1a51d0ae0e0531688c3cfead5371c78d7cabf21a.png";
 import imgPhotocamai1 from "figma:asset/d78103c718870916612e38486b733e3c524f777f.png";
 import imgIscreenaiwallpaper1 from "figma:asset/c5b01728cf44ee502362c693ca0ce6048b87d89d.png";
@@ -76,9 +77,11 @@ function HeroSection() {
       <img
         alt=""
         className="w-full h-auto block pointer-events-none"
-        src={imgFrame1772}
-        width={2880}
-        height={2296}
+        src={imgFrame1772Desktop}
+        srcSet={`${imgFrame1772Mobile} 768w, ${imgFrame1772Desktop} 1440w`}
+        sizes="100vw"
+        width={1440}
+        height={1148}
         loading="eager"
         fetchpriority="high"
         decoding="async"
