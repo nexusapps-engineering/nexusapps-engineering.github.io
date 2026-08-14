@@ -194,15 +194,19 @@ function ArrowIcon() {
 
 function ProductCard({
   image,
+  logo,
+  title,
   titleSvg,
   titleViewBox,
   description,
   gradientTo,
   href,
 }: {
-  image: string;
-  titleSvg: React.ReactNode;
-  titleViewBox: string;
+  image?: string;
+  logo?: React.ReactNode;
+  title?: string;
+  titleSvg?: React.ReactNode;
+  titleViewBox?: string;
   description: React.ReactNode;
   gradientTo: string;
   href: string;
@@ -221,23 +225,31 @@ function ProductCard({
       />
       {/* Icon */}
       <div className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] overflow-hidden shrink-0 flex items-center justify-center">
-        <img
-          alt=""
-          className="w-[126px] h-[126px] md:w-[180px] md:h-[180px] object-cover"
-          src={image}
-          loading="lazy"
-          decoding="async"
-        />
+        {logo ?? (
+          <img
+            alt=""
+            className="w-[126px] h-[126px] md:w-[180px] md:h-[180px] object-cover"
+            src={image}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
       </div>
       {/* Content */}
       <div className="flex flex-col gap-8 items-end w-full">
         <div className="flex flex-col gap-8 items-start w-full">
-          {/* Title SVG */}
-          <div className="h-[22px] md:h-[26px] shrink-0">
-            <svg className="block h-full w-auto" fill="none" preserveAspectRatio="xMinYMid meet" viewBox={titleViewBox}>
-              {titleSvg}
-            </svg>
-          </div>
+          {/* Title */}
+          {title ? (
+            <h3 className="h-[22px] md:h-[26px] shrink-0 flex items-center font-['Inter:Medium',sans-serif] font-medium text-[21px] md:text-[25px] leading-none tracking-[-1px] text-white">
+              {title}
+            </h3>
+          ) : (
+            <div className="h-[22px] md:h-[26px] shrink-0">
+              <svg className="block h-full w-auto" fill="none" preserveAspectRatio="xMinYMid meet" viewBox={titleViewBox}>
+                {titleSvg}
+              </svg>
+            </div>
+          )}
           {/* Description */}
           <div className="font-['Inter:Regular',sans-serif] text-[14px] md:text-[16px] text-[rgba(255,255,255,0.4)] tracking-[-0.5px] md:tracking-[-1px] leading-normal w-full">
             {description}
@@ -246,6 +258,17 @@ function ProductCard({
         <ArrowIcon />
       </div>
     </a>
+  );
+}
+
+function ProductLogoPlaceholder() {
+  return (
+    <div
+      aria-hidden="true"
+      className="w-[126px] h-[126px] md:w-[180px] md:h-[180px] rounded-[28%] border border-dashed border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.035)] flex items-center justify-center"
+    >
+      <span className="text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[rgba(255,255,255,0.25)]">Logo</span>
+    </div>
   );
 }
 
@@ -259,7 +282,7 @@ function ProductsSection() {
           Products
         </h2>
         {/* Cards grid */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <ProductCard
             image={imgVisuallabx1}
             titleViewBox="0 0 354 26"
@@ -352,6 +375,48 @@ function ProductsSection() {
             }
             gradientTo="#161f00"
             href="https://apps.apple.com/app/6758549154"
+          />
+          <ProductCard
+            logo={<ProductLogoPlaceholder />}
+            title="Retro Cam Neo"
+            description={
+              <>
+                <p className="mb-2">Retro Cam Neo is an analog-inspired camera platform built around real-time vintage film looks, natural grain, light leaks and carefully crafted camera presets.</p>
+                <p className="mb-2 mt-4">Shoot with character.</p>
+                <p className="mb-2">Analog aesthetics in real time.</p>
+                <p>Built for everyday moments.</p>
+              </>
+            }
+            gradientTo="#2b2806"
+            href="https://apps.apple.com/de/app/retro-cam-neo-vintage-camera/id6760256815?l=en-GB"
+          />
+          <ProductCard
+            logo={<ProductLogoPlaceholder />}
+            title="Clear Wave Pro"
+            description={
+              <>
+                <p className="mb-2">Clear Wave Pro is a speaker utility combining water ejection, targeted cleaning modes, speaker testing and real-time sound measurement in one focused experience.</p>
+                <p className="mb-2 mt-4">Clean speakers in seconds.</p>
+                <p className="mb-2">Test audio with precision.</p>
+                <p>Measure sound in real time.</p>
+              </>
+            }
+            gradientTo="#08243a"
+            href="https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?l=en-GB"
+          />
+          <ProductCard
+            logo={<ProductLogoPlaceholder />}
+            title="ASO Rocket"
+            description={
+              <>
+                <p className="mb-2">ASO Rocket is an App Store keyword research platform helping developers discover, organize and prepare high-intent keywords for faster metadata workflows.</p>
+                <p className="mb-2 mt-4">30,000+ keyword ideas.</p>
+                <p className="mb-2">Built for App Store metadata.</p>
+                <p>Research without spreadsheets.</p>
+              </>
+            }
+            gradientTo="#1a1030"
+            href="https://apps.apple.com/de/app/aso-rocket-keyword-tool/id6777735509?l=en-GB"
           />
         </div>
         {/* Bottom text */}
@@ -625,6 +690,9 @@ function Footer() {
             <a href="https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Visual LabX</a>
             <a href="https://apps.apple.com/us/app/photo-camai-ai-photo-editor/id6755936591" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Photo CamAI</a>
             <a href="https://apps.apple.com/app/6758549154" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">iScreen AI Wallpapers</a>
+            <a href="https://apps.apple.com/de/app/retro-cam-neo-vintage-camera/id6760256815?l=en-GB" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Retro Cam Neo</a>
+            <a href="https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?l=en-GB" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Clear Wave Pro</a>
+            <a href="https://apps.apple.com/de/app/aso-rocket-keyword-tool/id6777735509?l=en-GB" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">ASO Rocket</a>
           </div>
           {/* Partnership */}
           <div className="flex flex-col gap-2">
