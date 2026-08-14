@@ -27,6 +27,7 @@ function NavBar() {
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="w-[100px] md:w-[133px] h-[15px] md:h-[20px] shrink-0 cursor-pointer"
+          aria-label="Back to top"
         >
           <svg className="block size-full" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 132.95 19.5963">
             <path d={svgPaths.p365fc180} fill="white" />
@@ -72,18 +73,15 @@ function HeroSection() {
   return (
     <section className="bg-black relative w-full overflow-hidden pt-[200px] md:pt-0">
       {/* Hero image - starts from very top, determines section height */}
-      <motion.img
+      <img
         alt=""
         className="w-full h-auto block pointer-events-none"
         src={imgFrame1772}
         width={2880}
         height={2296}
         loading="eager"
-        fetchPriority="high"
+        fetchpriority="high"
         decoding="async"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
       />
       {/* Hero text - overlaid on top of image */}
       <motion.div
@@ -126,7 +124,7 @@ function ButtonsAndStats() {
           href="mailto:hello@nexusapps.co"
           className="relative text-white font-['Inter:Medium',sans-serif] font-medium text-[16px] tracking-[-0.36px] px-8 py-4 rounded-full text-center w-full sm:w-auto border border-[#4d4d4d]"
         >
-          Contact Us
+          Email us
         </a>
       </div>
       {/* Stats */}
@@ -162,8 +160,8 @@ function AboutSection() {
             <p className="mb-2">optimize performance, and compound growth.</p>
             <p className="mb-2 mt-6 md:mt-10">Lean teams. Disciplined execution.</p>
             <p className="mb-2">Capital-efficient operations.</p>
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#6cb4e0] mt-6 md:mt-10 mb-2">We don't chase trends.</p>
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#6cb4e0]">We build durable businesses.</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#2f6f94] mt-6 md:mt-10 mb-2">We don't chase trends.</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#2f6f94]">We build durable businesses.</p>
           </div>
         </div>
         {/* NEXUS small logo */}
@@ -678,7 +676,7 @@ function Footer() {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 font-['Inter:Regular',sans-serif] text-white">
           {/* Company */}
           <div className="flex flex-col gap-2">
-            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-40 leading-[18px]">Company</p>
+            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-50 leading-[18px]">Company</p>
             <a href="#about" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">About us</a>
             <a href="#products" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Products</a>
             <a href="#tech" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Technologies</a>
@@ -686,7 +684,7 @@ function Footer() {
           </div>
           {/* Products */}
           <div className="flex flex-col gap-2">
-            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-40 leading-[18px]">Products</p>
+            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-50 leading-[18px]">Products</p>
             <a href="https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Visual LabX</a>
             <a href="https://apps.apple.com/us/app/photo-camai-ai-photo-editor/id6755936591" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">Photo CamAI</a>
             <a href="https://apps.apple.com/app/6758549154" target="_blank" rel="noopener noreferrer" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">iScreen AI Wallpapers</a>
@@ -696,14 +694,14 @@ function Footer() {
           </div>
           {/* Partnership */}
           <div className="flex flex-col gap-2">
-            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-40 leading-[18px]">Partnership inquiries</p>
+            <p className="text-[14px] tracking-[-0.28px] uppercase opacity-50 leading-[18px]">Partnership inquiries</p>
             <a href="mailto:hello@nexusapps.co" className="text-[16px] tracking-[-0.34px] leading-[22px] hover:opacity-80 transition-opacity">hello@nexusapps.co</a>
           </div>
           {/* Info */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <p className="text-[16px] tracking-[-0.34px] leading-[22px]">Nexus Apps</p>
-              <p className="text-[14px] tracking-[-0.28px] opacity-40 leading-[18px]">Berlin, Germany</p>
+              <p className="text-[14px] tracking-[-0.28px] opacity-50 leading-[18px]">Berlin, Germany</p>
             </div>
             <p className="text-[16px] tracking-[-0.34px] leading-[22px]">Privacy and cookie policy</p>
           </div>

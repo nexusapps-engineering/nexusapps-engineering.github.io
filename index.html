@@ -26,27 +26,44 @@
       name="twitter:description"
       content="Nexus Apps builds and scales AI-powered digital products with disciplined execution, long-term value focus, and subscription-first growth."
     />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S83E57TFR8"></script>
+    <!-- Google tag (gtag.js), loaded after the initial page render -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-S83E57TFR8', { anonymize_ip: true });
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-S83E57TFR8', { anonymize_ip: true });
+
+      (function loadGoogleAnalytics() {
+        let loaded = false;
+
+        function load() {
+          if (loaded) return;
+          loaded = true;
+
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S83E57TFR8';
+          document.head.appendChild(script);
+        }
+
+        function schedule() {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(load, { timeout: 2000 });
+          } else {
+            window.setTimeout(load, 2000);
+          }
+        }
+
+        if (document.readyState === 'complete') {
+          schedule();
+        } else {
+          window.addEventListener('load', schedule, { once: true });
+        }
+      })();
     </script>
-    <script type="module" crossorigin src="/assets/main-YffV7Vl3.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/index-DGkUnjb8.js">
-    <link rel="modulepreload" crossorigin href="/assets/photocamai-privacy-policy-DfJTeO4w.js">
-    <link rel="modulepreload" crossorigin href="/assets/photocamai-terms-of-use-BpqP_zMA.js">
-    <link rel="modulepreload" crossorigin href="/assets/retrocamneo-privacy-policy-CO1RqN5z.js">
-    <link rel="modulepreload" crossorigin href="/assets/retrocamneo-terms-of-use-CV6HizW8.js">
-    <link rel="modulepreload" crossorigin href="/assets/visuallabx-privacy-policy-Dz3RpMdv.js">
-    <link rel="modulepreload" crossorigin href="/assets/visuallabx-terms-of-use-Bj_eRPgI.js">
-    <link rel="modulepreload" crossorigin href="/assets/wallpapers-privacy-policy-w6hqnyaF.js">
-    <link rel="modulepreload" crossorigin href="/assets/wallpapers-terms-of-use-DAZoka5j.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-Bz4LPNKP.css">
+    <script type="module" src="/src/main.tsx"></script>
   </head>
 
   <body>
