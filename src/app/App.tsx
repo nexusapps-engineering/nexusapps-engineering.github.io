@@ -3,6 +3,9 @@ import { motion } from "motion/react";
 import svgPaths from "../imports/svg-05d7k6z6uy";
 import imgFrame1772Mobile from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-768.jpg";
 import imgFrame1772Desktop from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-1440.jpg";
+import imgRetroCamNeo from "../assets/retrocamneo.png";
+import imgClearWavePro from "../assets/clearwavepro.png";
+import imgAsoRocket from "../assets/asorocket.png";
 import imgVisuallabx1 from "figma:asset/1a51d0ae0e0531688c3cfead5371c78d7cabf21a.png";
 import imgPhotocamai1 from "figma:asset/d78103c718870916612e38486b733e3c524f777f.png";
 import imgIscreenaiwallpaper1 from "figma:asset/c5b01728cf44ee502362c693ca0ce6048b87d89d.png";
@@ -262,17 +265,6 @@ function ProductCard({
   );
 }
 
-function ProductLogoPlaceholder() {
-  return (
-    <div
-      aria-hidden="true"
-      className="w-[126px] h-[126px] md:w-[180px] md:h-[180px] rounded-[28%] border border-dashed border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.035)] flex items-center justify-center"
-    >
-      <span className="text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[rgba(255,255,255,0.25)]">Logo</span>
-    </div>
-  );
-}
-
 /* ─── Products Section ─── */
 function ProductsSection() {
   return (
@@ -378,7 +370,7 @@ function ProductsSection() {
             href="https://apps.apple.com/app/6758549154"
           />
           <ProductCard
-            logo={<ProductLogoPlaceholder />}
+            image={imgRetroCamNeo}
             title="Retro Cam Neo"
             description={
               <>
@@ -392,7 +384,7 @@ function ProductsSection() {
             href="https://apps.apple.com/de/app/retro-cam-neo-vintage-camera/id6760256815?l=en-GB"
           />
           <ProductCard
-            logo={<ProductLogoPlaceholder />}
+            image={imgClearWavePro}
             title="Clear Wave Pro"
             description={
               <>
@@ -406,7 +398,7 @@ function ProductsSection() {
             href="https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?l=en-GB"
           />
           <ProductCard
-            logo={<ProductLogoPlaceholder />}
+            image={imgAsoRocket}
             title="ASO Rocket"
             description={
               <>
