@@ -1,66 +1,44 @@
-import { defineConfig } from 'vite'
-import fs from 'node:fs'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import fs from 'node:fs';
+import path from 'node:path';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
 
-const sourceHtmlInDev = {
-  name: 'source-html-in-dev',
-  apply: 'serve' as const,
-  transformIndexHtml: {
-    order: 'pre' as const,
-    handler(_html: string, ctx: { path: string }) {
-      const pathname = new URL(ctx.path, 'http://localhost').pathname
-      const relativeDirectory = pathname
-        .replace(/^\//, '')
-        .replace(/\/?index\.html$/, '')
-        .replace(/\/$/, '')
-      const candidate = path.resolve(__dirname, relativeDirectory, 'index.source.html')
-      const sourcePath = fs.existsSync(candidate)
-        ? candidate
-        : path.resolve(__dirname, 'index.source.html')
-
-      return fs.readFileSync(sourcePath, 'utf8')
-    },
-  },
-}
+const sourcePath = path.resolve(__dirname, 'index.source.html');
 
 export default defineConfig({
+  // Generate real static routes; never turn an unknown address into the homepage.
+  appType: 'custom',
   plugins: [
-    sourceHtmlInDev,
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
+    {
+      name: 'source-html-for-build',
+      apply: 'build',
+      transformIndexHtml: { order: 'pre', handler: () => fs.readFileSync(sourcePath, 'utf8') },
+    },
+    {
+      name: 'static-pages-in-dev',
+      configureServer(server) {
+        server.middlewares.use(async (req, res, next) => {
+          if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+          const pathname = new URL(req.url || '/', 'http://localhost').pathname;
+          if (pathname.startsWith('/@') || pathname.startsWith('/__') || pathname.startsWith('/node_modules/') || pathname.startsWith('/src/')) return next();
+          if (path.extname(pathname) && !pathname.endsWith('.html')) return next();
+          try {
+            const module = await server.ssrLoadModule('/src/entry-server.tsx');
+            const { page, html } = await module.render(pathname);
+            const document = module.documentHtml(fs.readFileSync(sourcePath, 'utf8'), page, html, { google: process.env.GOOGLE_SITE_VERIFICATION, bing: process.env.BING_SITE_VERIFICATION });
+            res.statusCode = page.type === 'not-found' ? 404 : 200;
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            res.end(req.method === 'HEAD' ? '' : await server.transformIndexHtml(pathname, document));
+          } catch (error) { next(error as Error); }
+        });
+      },
+    },
+    // Required by the existing Figma Make project.
     react(),
     tailwindcss(),
   ],
-  resolve: {
-    alias: {
-      // Resolve Figma-exported asset imports like "figma:asset/<hash>.png"
-      'figma:asset': path.resolve(__dirname, './src/assets'),
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        asoRocketPrivacyPolicy: path.resolve(__dirname, 'asorocket/privacy-policy/index.html'),
-        asoRocketTermsOfUse: path.resolve(__dirname, 'asorocket/terms-of-use/index.html'),
-        clearWavePrivacyPolicy: path.resolve(__dirname, 'clearwave/privacy-policy/index.html'),
-        clearWaveTermsOfUse: path.resolve(__dirname, 'clearwave/terms-of-use/index.html'),
-        photoCamAIPrivacyPolicy: path.resolve(__dirname, 'photocamai/privacy-policy/index.html'),
-        photoCamAITermsOfUse: path.resolve(__dirname, 'photocamai/terms-of-use/index.html'),
-        retroCamNeoPrivacyPolicy: path.resolve(__dirname, 'retrocamneo/privacy-policy/index.html'),
-        retroCamNeoTermsOfUse: path.resolve(__dirname, 'retrocamneo/terms-of-use/index.html'),
-        visualLabXPrivacyPolicy: path.resolve(__dirname, 'visuallabx/privacy-policy/index.html'),
-        visualLabXTermsOfUse: path.resolve(__dirname, 'visuallabx/terms-of-use/index.html'),
-        wallpapersPrivacyPolicy: path.resolve(__dirname, 'wallpapers/privacy-policy/index.html'),
-        wallpapersTermsOfUse: path.resolve(__dirname, 'wallpapers/terms-of-use/index.html'),
-      },
-    },
-  },
-
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+  resolve: { alias: { 'figma:asset': path.resolve(__dirname, 'src/assets'), '@': path.resolve(__dirname, 'src') } },
+  build: { manifest: true, rollupOptions: { input: path.resolve(__dirname, 'index.html') } },
   assetsInclude: ['**/*.svg', '**/*.csv'],
-})
+});

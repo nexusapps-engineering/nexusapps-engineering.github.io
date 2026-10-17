@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "visuallabx",
+    "appStoreId": 6449296377,
+    "name": "Visual LabX: AI Photo Editor",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6449296377&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/visuallabx/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/9d/6f/709d6f53-7ea7-3b14-4419-13cdace05f4a/my_icon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/visuallabx/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/de/7f/7dde7fe5-8d8d-dd18-72fd-501e9b0b7012/05.png/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/visuallabx/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ad/8a/0f/ad8a0fdb-ec4a-8055-0daa-208d97f78194/10.png/600x1300bb.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "photocamai",
+    "appStoreId": 6755936591,
+    "name": "Photo CamAI: AI Photo Editor",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6755936591&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/photocamai/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/ba/96/adba96ef-1397-2c1c-3a83-fd47414289cc/my_icon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/photocamai/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/06/a2/c7/06a2c7f6-fdc1-538b-80b5-7e912abc70f7/01.jpg/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/photocamai/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/61/ac/32/61ac325b-4f54-cfd5-ce63-b90634492f72/02.jpg/600x1300bb.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "wallpapers",
+    "appStoreId": 6758549154,
+    "name": "Wallpapers Neo: Live Wallpaper",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6758549154&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/wallpapers/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/21/f6/6f/21f66fee-2e46-76a8-2d02-2acdf6a68fe8/my_icon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/wallpapers/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/be/f7/1bbef757-beb0-8a3c-40d3-359cf0ad0dbd/ENGLISH.jpg/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/wallpapers/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/73/5e/58735eba-2fcb-23be-e136-3a4a479f9835/02.jpg/600x1300bb.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "retrocamneo",
+    "appStoreId": 6760256815,
+    "name": "Retro Cam Neo - Vintage Camera",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6760256815&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/retrocamneo/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/28/c9/1b28c9be-6828-be7a-18ec-1276b4af75cc/my_icon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/retrocamneo/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/37/94/62379452-d46c-a85c-968e-c7019fa1dc85/ENGLISH01.jpg/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/retrocamneo/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a5/f2/5f/a5f25fd8-0c5a-f8da-32fc-a0671b0e0ae2/ENGLISH02.jpg/600x1300bb.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "clearwave",
+    "appStoreId": 6769302852,
+    "name": "Clear Wave Pro - Water Eject",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6769302852&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/clearwave/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/f9/48/64f9486e-f273-ee4a-7c9c-b3c55a74c2da/my_icon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/clearwave/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/1e/c8/531ec880-55f7-2f63-10ac-b9bf8afc19dc/1.jpg/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/clearwave/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/84/0d/4b840d25-c168-903c-abba-1a547440371f/ENGLISH1.jpg/600x1300bb.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "asorocket",
+    "appStoreId": 6777735509,
+    "name": "ASO Rocket - Keyword Tool",
+    "verifiedOn": "2026-10-18",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=6777735509&country=us",
+    "assets": [
+      {
+        "file": "/images/apps/asorocket/icon.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5a/3a/0e/5a3a0eae-faa1-4e94-1eaf-a552a76832d4/my_icon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg"
+      },
+      {
+        "file": "/images/apps/asorocket/screen-1.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/bd/58/87bd5897-99b7-390c-4b3f-8795ca93c95a/ENGLISH1.jpg/600x1300bb.jpg"
+      },
+      {
+        "file": "/images/apps/asorocket/screen-2.jpg",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ee/ef/19/eeef1941-d6ac-3d6c-179d-34857364df48/ENGLISH2.jpg/600x1300bb.jpg"
+      }
+    ]
+  }
+]

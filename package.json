@@ -6,8 +6,11 @@
   "scripts": {
     "build": "sh ./scripts/build-pages.sh",
     "dev": "vite",
+    "preview": "node scripts/preview-pages.mjs",
     "deploy:pages": "npm run build && sh ./scripts/publish-pages.sh",
-    "verify:production": "sh ./scripts/verify-production-output.sh"
+    "verify:production": "sh ./scripts/verify-production-output.sh",
+    "verify:build": "node scripts/verify-production-output.mjs dist",
+    "test:browser": "node scripts/test-browser.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

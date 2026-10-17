@@ -3,70 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Apps | Scalable AI & Digital Products</title>
-    <meta
-      name="description"
-      content="Nexus Apps builds and scales AI-powered digital products with disciplined execution, long-term value focus, and subscription-first growth."
-    />
-    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#000000" />
-    <link rel="canonical" href="https://nexusapps.co/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nexus Apps | Scalable AI & Digital Products" />
-    <meta
-      property="og:description"
-      content="Nexus Apps builds and scales AI-powered digital products with disciplined execution, long-term value focus, and subscription-first growth."
-    />
-    <meta property="og:url" content="https://nexusapps.co/" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Nexus Apps | Scalable AI & Digital Products" />
-    <meta
-      name="twitter:description"
-      content="Nexus Apps builds and scales AI-powered digital products with disciplined execution, long-term value focus, and subscription-first growth."
-    />
-    <!-- Google tag (gtag.js), loaded after the initial page render -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-S83E57TFR8', { anonymize_ip: true });
-
-      (function loadGoogleAnalytics() {
-        let loaded = false;
-
-        function load() {
-          if (loaded) return;
-          loaded = true;
-
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S83E57TFR8';
-          document.head.appendChild(script);
-        }
-
-        function schedule() {
-          if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(load, { timeout: 2000 });
-          } else {
-            window.setTimeout(load, 2000);
-          }
-        }
-
-        if (document.readyState === 'complete') {
-          schedule();
-        } else {
-          window.addEventListener('load', schedule, { once: true });
-        }
-      })();
-    </script>
+    <link rel="icon" type="image/png" href="/nexus-mark.png" />
+    <!--page-head-->
     <script type="module" src="/src/main.tsx"></script>
   </head>
-
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
   </body>
 </html>

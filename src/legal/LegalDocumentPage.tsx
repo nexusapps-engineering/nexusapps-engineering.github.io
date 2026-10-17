@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { LegalNav } from "./components/LegalNav";
+import { Footer } from "../site/Layout";
 
 type LegalSection = {
   title: string;
@@ -38,9 +39,10 @@ export function LegalDocumentPage({
 
       <LegalNav />
 
-      <main className="relative px-6 pt-[132px] pb-20 md:px-10 md:pt-[164px] md:pb-28">
+      <main id="main-content" className="relative px-6 pt-[132px] pb-20 md:px-10 md:pt-[164px] md:pb-28">
         <div className="mx-auto max-w-[880px]">
           <header className="mb-10 md:mb-14">
+            <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/app-policies/">App policies</a><span aria-hidden="true">/</span><span aria-current="page">{appName} {documentTitle}</span></nav>
             <p className="mb-4 font-['Inter:Medium',sans-serif] text-[12px] uppercase tracking-[0.28em] text-white/45 md:text-[13px]">
               {appName}
             </p>
@@ -72,6 +74,7 @@ export function LegalDocumentPage({
           </article>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

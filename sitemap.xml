@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nexusapps.co/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nexusapps.co/</loc></url>
+  <url><loc>https://nexusapps.co/services/</loc></url>
+  <url><loc>https://nexusapps.co/services/mobile-app-development/</loc></url>
+  <url><loc>https://nexusapps.co/services/web-app-development/</loc></url>
+  <url><loc>https://nexusapps.co/services/mvp-development/</loc></url>
+  <url><loc>https://nexusapps.co/apps/</loc></url>
+  <url><loc>https://nexusapps.co/apps/visuallabx/</loc></url>
+  <url><loc>https://nexusapps.co/apps/photocamai/</loc></url>
+  <url><loc>https://nexusapps.co/apps/wallpapers/</loc></url>
+  <url><loc>https://nexusapps.co/apps/retrocamneo/</loc></url>
+  <url><loc>https://nexusapps.co/apps/clearwave/</loc></url>
+  <url><loc>https://nexusapps.co/apps/asorocket/</loc></url>
+  <url><loc>https://nexusapps.co/process/</loc></url>
+  <url><loc>https://nexusapps.co/about/</loc></url>
+  <url><loc>https://nexusapps.co/contact/</loc></url>
+  <url><loc>https://nexusapps.co/app-policies/</loc></url>
+  <url><loc>https://nexusapps.co/visuallabx/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/visuallabx/terms-of-use</loc></url>
+  <url><loc>https://nexusapps.co/photocamai/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/photocamai/terms-of-use</loc></url>
+  <url><loc>https://nexusapps.co/wallpapers/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/wallpapers/terms-of-use</loc></url>
+  <url><loc>https://nexusapps.co/retrocamneo/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/retrocamneo/terms-of-use</loc></url>
+  <url><loc>https://nexusapps.co/clearwave/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/clearwave/terms-of-use</loc></url>
+  <url><loc>https://nexusapps.co/asorocket/privacy-policy</loc></url>
+  <url><loc>https://nexusapps.co/asorocket/terms-of-use</loc></url>
 </urlset>
