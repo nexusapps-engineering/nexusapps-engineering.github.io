@@ -1,5 +1,6 @@
 import { NavBar, Footer, EmailLink, ProjectCTA } from "../site/Layout";
 import { ProductGrid, ServiceList } from "../site/Sections";
+import { SiteMotion } from "../site/SiteMotion";
 import svgPaths from "../imports/svg-05d7k6z6uy";
 import imgFrame1772Mobile from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-768.jpg";
 import imgFrame1772Desktop from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-1440.jpg";
@@ -8,17 +9,12 @@ import imgRectangle10 from "figma:asset/046a4d0c1f5a6a4333bb999c1e1e140ae80455a1
 import imgRectangle11 from "figma:asset/21460b7bbd131b9ccf178a2be17130610c4cc6d7.png";
 import imgRectangle12 from "figma:asset/ca514f7d38c7b0b15576b739a8ff3276239581f5.png";
 
-/* ─── Scroll Animation Wrapper ─── */
-function FadeInSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={className}>{children}</div>;
-}
-
 /* ─── Hero Section ─── */
 function HeroSection() {
   return (
     <section className="home-hero">
-      <div className="home-hero-content">
-        <h1 className="home-headline">We build our own apps.<br />Let’s build yours.</h1>
+      <div className="home-hero-content" data-motion-group>
+        <h1 className="home-headline"><span data-motion-line>We build our own apps.</span><span data-motion-line>Let’s build yours.</span></h1>
         <p className="home-intro">Mobile apps, web products and MVPs.</p>
         <div className="home-actions"><EmailLink position="home-hero" /><a href="/apps/" className="hero-work-link">Explore our apps</a></div>
       </div>
@@ -41,9 +37,9 @@ function HeroSection() {
 
 function ServicesSection() {
   return <section id="services" className="nexus-container section-pad home-services">
-    <p className="eyebrow">Build with Nexus</p>
+    <div data-motion-group><p className="eyebrow">Build with Nexus</p>
     <h2 className="section-title">Your next product,<br />built with a clear purpose.</h2>
-    <p className="section-copy">For founders launching an idea, businesses creating a customer app, and teams that need a better way to work.</p>
+    <p className="section-copy">For founders launching an idea, businesses creating a customer app, and teams that need a better way to work.</p></div>
     <ServiceList />
   </section>;
 }
@@ -53,7 +49,7 @@ function AboutSection() {
   return (
     <section id="about" className="bg-white text-black w-full rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[120px]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-[62px] py-16 md:py-24 lg:py-[140px] flex flex-col gap-10 md:gap-[55px]">
-        <div className="home-about-copy">
+        <div className="home-about-copy" data-motion-group>
           <p className="eyebrow">An independent app studio</p>
           <h2>We know what it means<br />to build something of your own.</h2>
           <p>Our own apps take us from the first product decision to launch and the work that follows. We bring that perspective to products we build with you.</p>
@@ -76,9 +72,9 @@ function AboutSection() {
 
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
-    <p className="eyebrow">Built and operated by Nexus</p>
+    <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
     <div className="section-heading-row"><h2 className="section-title">Our own products.<br />Real product experience.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Six published iOS apps, from creative tools to developer utilities. Products we build, release and continue to improve ourselves.</p>
+    <p className="section-copy">Six published iOS apps, from creative tools to developer utilities. Products we build, release and continue to improve ourselves.</p></div>
     <ProductGrid />
   </div></section>;
 }
@@ -88,13 +84,13 @@ function StrategySection() {
   return (
     <section id="tech" className="bg-white text-black w-full">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-16 md:gap-20 lg:gap-[120px] px-6 md:px-10 lg:px-[62px] py-16 md:py-24 lg:py-[120px]">
-        <div className="home-strategy-copy">
+        <div className="home-strategy-copy" data-motion-group>
           <p className="eyebrow">Design, engineering and product thinking</p>
           <h2>From the first decision<br />to the next release.</h2>
           <p>We define the scope, design the experience and develop the product together. AI features and integrations enter the plan when they solve a real user need.</p>
         </div>
         {/* Hero image */}
-        <div className="w-full aspect-[2/1] md:aspect-[2.2/1] rounded-[24px] md:rounded-[40px] lg:rounded-[70px] overflow-hidden">
+        <div data-motion-parallax className="w-full aspect-[2/1] md:aspect-[2.2/1] rounded-[24px] md:rounded-[40px] lg:rounded-[70px] overflow-hidden">
           <img
             alt=""
             className="w-full h-full object-cover"
@@ -118,7 +114,7 @@ function CoreSystemCard({
   label: string;
 }) {
   return (
-    <div className="relative w-full aspect-[418/720] md:aspect-[418/720] rounded-[24px] md:rounded-[40px] overflow-hidden">
+    <div data-motion-item className="relative w-full aspect-[418/720] md:aspect-[418/720] rounded-[24px] md:rounded-[40px] overflow-hidden">
       <img
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
@@ -168,31 +164,18 @@ function CoreSystemsSection() {
 export default function App() {
   return (
     <div className="studio-site w-full min-h-screen bg-black overflow-x-hidden">
+      <SiteMotion />
       <NavBar />
-      <main id="main-content" className="flex flex-col w-full">
+      <main id="main-content" tabIndex={-1} className="flex flex-col w-full">
         <HeroSection />
-        <FadeInSection>
-          <ServicesSection />
-        </FadeInSection>
-        <FadeInSection>
-          <AboutSection />
-        </FadeInSection>
-        <FadeInSection>
-          <ProductsSection />
-        </FadeInSection>
-        <FadeInSection>
-          <StrategySection />
-        </FadeInSection>
-        <FadeInSection>
-          <CoreSystemsSection />
-        </FadeInSection>
-        <FadeInSection>
-          <ProjectCTA />
-        </FadeInSection>
+        <ServicesSection />
+        <AboutSection />
+        <ProductsSection />
+        <StrategySection />
+        <CoreSystemsSection />
+        <ProjectCTA />
       </main>
-      <FadeInSection>
-        <Footer />
-      </FadeInSection>
+      <Footer />
     </div>
   );
 }

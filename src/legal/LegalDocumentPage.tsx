@@ -39,7 +39,7 @@ export function LegalDocumentPage({
 
       <LegalNav />
 
-      <main id="main-content" className="relative px-6 pt-[132px] pb-20 md:px-10 md:pt-[164px] md:pb-28">
+      <main id="main-content" tabIndex={-1} className="relative px-6 pt-[132px] pb-20 md:px-10 md:pt-[164px] md:pb-28">
         <div className="mx-auto max-w-[880px]">
           <header className="mb-10 md:mb-14">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/app-policies/">App policies</a><span aria-hidden="true">/</span><span aria-current="page">{appName} {documentTitle}</span></nav>

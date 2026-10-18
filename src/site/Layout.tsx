@@ -63,5 +63,5 @@ export function CopyEmail() {
 }
 
 export function ProjectCTA({ service = 'App development', product = '' }: { service?: string; product?: string }) {
-  return <section className="project-cta" id="contact"><div className="nexus-container"><p className="eyebrow">Build with Nexus</p><h2>What would you<br />like to build?</h2><p>A new idea, an existing product or a workflow that needs a better tool. Tell us where you are starting.</p><EmailLink service={service} product={product} position="bottom-cta" /><a className="text-link" href="/contact/">What to include in your brief <span aria-hidden="true">↗</span></a></div></section>;
+  return <section className="project-cta" id="contact"><div className="nexus-container" data-motion-group><p className="eyebrow">Build with Nexus</p><h2>What would you<br />like to build?</h2><p>A new idea, an existing product or a workflow that needs a better tool. Tell us where you are starting.</p><EmailLink service={service} product={product} position="bottom-cta" /><a className="text-link" href="/contact/">What to include in your brief <span aria-hidden="true">↗</span></a></div></section>;
 }

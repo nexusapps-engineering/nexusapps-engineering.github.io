@@ -90,6 +90,16 @@ try {
       await Promise.all([...document.images].map(image => { image.loading = 'eager'; return image.decode().catch(() => {}); }));
     });
     assert.equal(await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length), 0, `${route}: broken image`);
+    // Visit scroll-triggered content before capturing the complete document.
+    await page.evaluate(async () => {
+      for (let y = 0; y < document.documentElement.scrollHeight; y += innerHeight * 0.75) {
+        window.scrollTo(0, y);
+        await new Promise(resolve => requestAnimationFrame(resolve));
+      }
+    });
+    await page.waitForTimeout(1100);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(1000);
     await page.screenshot({ path: `${artifacts}/${name}.png`, fullPage: true });
     await page.screenshot({ path: `${artifacts}/${name}-viewport.png` });
   }

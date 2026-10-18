@@ -29,3 +29,11 @@ npm run preview
 `deploy:pages` prepares the repository-root output locally. A commit and push to the existing publication branch triggers GitHub Pages.
 
 See [SEO-OPERATIONS.md](SEO-OPERATIONS.md) for route registration, analytics, verification and release checks. Existing app privacy-policy and terms-of-use URLs must remain available.
+
+## Motion
+
+Studio pages progressively load GSAP/ScrollTrigger after hydration. `data-motion-group` staggers direct children; `data-motion-item` reveals an individual block once. Keep these attributes on separate, non-nested scenes. `data-motion-parallax` adds a small image drift inside an existing clipped frame.
+
+Lenis and parallax run at 1060px and above with a fine pointer. Touch devices keep native scrolling. Reduced-motion preferences disable the enhancement, including when changed during a visit; legal documents stay static. Content remains readable if JavaScript or the optional motion download fails.
+
+Tune distances and timing in `src/site/motion.ts`. Run `npm run test:browser` and `npm run test:motion` against `npm run preview` with an installed Playwright runtime. Set `TEST_BROWSER=webkit` for the motion checks in Safari's engine; `PLAYWRIGHT_MODULE` and `CHROME_PATH` can point to an existing runtime and Chromium executable.
