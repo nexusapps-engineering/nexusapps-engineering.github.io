@@ -5,7 +5,7 @@ const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '
 
 export function structuredData(page) {
   if (!page.index) return null;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', sameAs: ['https://github.com/nexusapps-engineering'], address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
   const graph = [organization, { '@type': 'WebSite', '@id': `${origin}/#website`, name: 'Nexus Apps', url: origin + '/', publisher: { '@id': organization['@id'] } }];
   if (page.path !== '/') {
     const parent = pages.find(item => item.path === page.parent);
