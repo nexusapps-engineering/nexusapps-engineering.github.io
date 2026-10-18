@@ -1,7 +1,7 @@
 import { products, services, processSteps } from './catalog.mjs';
 
 export function ServiceList() {
-  return <div className="service-list">{services.map(service => <a className="service-row" data-motion-item href={`/services/${service.slug}/`} key={service.slug}><span className="row-number">{service.number}</span><div><h3>{service.shortName}</h3><p>{service.summary}</p></div><span aria-hidden="true" className="row-arrow">↗</span></a>)}</div>;
+  return <div className="service-list">{services.map(service => <a className="service-row" data-motion-item href={`/services/${service.slug}/`} key={service.slug}><div><h3>{service.shortName}</h3><p>{service.summary}</p></div><span aria-hidden="true" className="row-arrow">↗</span></a>)}</div>;
 }
 
 export function ProductGrid({ slugs }: { slugs?: string[] }) {

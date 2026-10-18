@@ -10,7 +10,7 @@ export function BrandMark({ large = false }: { large?: boolean }) {
   return <svg aria-hidden="true" viewBox={large ? '0 0 1344 200.431' : '0 0 132.95 19.5963'} fill="currentColor">{paths.map((d, i) => <path key={i} d={d} />)}</svg>;
 }
 
-export function EmailLink({ children = 'Build with Nexus', service = 'App development', product = '', position = 'content', className = 'nexus-button' }: {
+export function EmailLink({ children = 'Discuss your project', service = 'App development', product = '', position = 'content', className = 'nexus-button' }: {
   children?: ReactNode; service?: string; product?: string; position?: string; className?: string;
 }) {
   return <a href={projectEmail(service, product)} className={className} data-project-email="true" data-service={service} data-position={position}>{children}</a>;
@@ -34,7 +34,7 @@ export function NavBar({ path = '/' }: { path?: string }) {
             event.currentTarget.querySelector('summary')?.focus();
           }
         }}>
-          <summary aria-label="Open navigation"><span /><span /></summary>
+          <summary aria-label="Navigation menu"><span aria-hidden="true" /><span aria-hidden="true" /></summary>
           <div className="mobile-nav-panel">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}<EmailLink position="mobile-menu" className="mobile-email">{email}</EmailLink></div>
         </details>
       </nav>
@@ -48,7 +48,7 @@ export function Footer() {
       <div><p className="eyebrow">An independent app studio</p><p className="footer-statement">Our own products.<br />Your next idea.</p><p className="muted">Berlin, Germany · Working globally</p></div>
       <div><h2>Explore Nexus</h2><a href="/services/">Development services</a><a href="/apps/">Our apps</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
       <div><h2>Our apps</h2>{products.map(product => <a key={product.slug} href={`/apps/${product.slug}/`}>{product.name}</a>)}</div>
-      <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a><p className="footer-note">Tell us what you want to build.<br />We’ll discuss the next step together.</p></div>
+      <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a><p className="footer-note">Share your idea and where you are starting.</p></div>
     </div>
     <div className="nexus-container footer-wordmark"><BrandMark large /><span>Think further.</span></div>
   </footer>;
@@ -63,5 +63,5 @@ export function CopyEmail() {
 }
 
 export function ProjectCTA({ service = 'App development', product = '' }: { service?: string; product?: string }) {
-  return <section className="project-cta" id="contact"><div className="nexus-container" data-motion-group><p className="eyebrow">Build with Nexus</p><h2>What would you<br />like to build?</h2><p>A new idea, an existing product or a workflow that needs a better tool. Tell us where you are starting.</p><EmailLink service={service} product={product} position="bottom-cta" /><a className="text-link" href="/contact/">What to include in your brief <span aria-hidden="true">↗</span></a></div></section>;
+  return <section className="project-cta" id="contact"><div className="nexus-container" data-motion-group><p className="eyebrow">Build with Nexus</p><h2>What would you<br />like to build?</h2><p>Tell us about your idea, who it is for and what you have so far. We’ll discuss the scope and next steps with you.</p><EmailLink service={service} product={product} position="bottom-cta" /><a className="text-link" href="/contact/">What to include in your email <span aria-hidden="true">↗</span></a></div></section>;
 }

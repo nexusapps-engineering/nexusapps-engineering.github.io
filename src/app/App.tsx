@@ -15,7 +15,7 @@ function HeroSection() {
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
         <h1 className="home-headline"><span data-motion-line>We build our own apps.</span><span data-motion-line>Let’s build yours.</span></h1>
-        <p className="home-intro">Mobile apps, web products and MVPs.</p>
+        <p className="home-intro">An independent studio in Berlin, building mobile apps, web products and MVPs for founders and businesses.</p>
         <div className="home-actions"><EmailLink position="home-hero" /><a href="/apps/" className="hero-work-link">Explore our apps</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
@@ -38,8 +38,8 @@ function HeroSection() {
 function ServicesSection() {
   return <section id="services" className="nexus-container section-pad home-services">
     <div data-motion-group><p className="eyebrow">Build with Nexus</p>
-    <h2 className="section-title">Your next product,<br />built with a clear purpose.</h2>
-    <p className="section-copy">For founders launching an idea, businesses creating a customer app, and teams that need a better way to work.</p></div>
+    <h2 className="section-title">Mobile apps, web products<br />and your first release.</h2>
+    <p className="section-copy">Launch a new product, build a tool for your team or improve an existing app. We help you define the scope and develop it.</p></div>
     <ServiceList />
   </section>;
 }
@@ -47,16 +47,16 @@ function ServicesSection() {
 /* ─── About Section ─── */
 function AboutSection() {
   return (
-    <section id="about" className="bg-white text-black w-full rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[120px]">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-[62px] py-16 md:py-24 lg:py-[140px] flex flex-col gap-10 md:gap-[55px]">
+    <section id="about" className="home-about light-section">
+      <div className="nexus-container section-pad">
         <div className="home-about-copy" data-motion-group>
           <p className="eyebrow">An independent app studio</p>
-          <h2>We know what it means<br />to build something of your own.</h2>
-          <p>Our own apps take us from the first product decision to launch and the work that follows. We bring that perspective to products we build with you.</p>
+          <h2>We build, release<br />and keep improving.</h2>
+          <p>Running our own apps means working on the details long after launch. We bring that experience to your product, from its first screens to its next release.</p>
           <a href="/about/" className="text-link">Get to know Nexus <span aria-hidden="true">↗</span></a>
         </div>
         {/* NEXUS small logo */}
-        <div className="w-[96px] h-[14px]">
+        <div className="home-about-mark" aria-hidden="true">
           <svg className="block size-full" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 96.4111 14">
             <path d={svgPaths.p197e4900} fill="black" />
             <path d={svgPaths.p251bb000} fill="black" />
@@ -73,8 +73,8 @@ function AboutSection() {
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
-    <div className="section-heading-row"><h2 className="section-title">Our own products.<br />Real product experience.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Six published iOS apps, from creative tools to developer utilities. Products we build, release and continue to improve ourselves.</p></div>
+    <div className="section-heading-row"><h2 className="section-title">Apps we build and operate.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
+    <p className="section-copy">Photo editors, a vintage camera, wallpapers, audio tools and App Store keyword research. Explore the iOS apps we build and operate.</p></div>
     <ProductGrid />
   </div></section>;
 }
@@ -82,19 +82,21 @@ function ProductsSection() {
 /* ─── Strategy Section (white) ─── */
 function StrategySection() {
   return (
-    <section id="tech" className="bg-white text-black w-full">
-      <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-16 md:gap-20 lg:gap-[120px] px-6 md:px-10 lg:px-[62px] py-16 md:py-24 lg:py-[120px]">
+    <section id="tech" className="light-section">
+      <div className="nexus-container section-pad home-strategy">
         <div className="home-strategy-copy" data-motion-group>
-          <p className="eyebrow">Design, engineering and product thinking</p>
+          <p className="eyebrow">Design and development</p>
           <h2>From the first decision<br />to the next release.</h2>
-          <p>We define the scope, design the experience and develop the product together. AI features and integrations enter the plan when they solve a real user need.</p>
+          <p>We agree on what to build, work through the screens and develop the product with you. Integrations and AI features follow the needs of the people using it.</p>
         </div>
         {/* Hero image */}
-        <div data-motion-parallax className="w-full aspect-[2/1] md:aspect-[2.2/1] rounded-[24px] md:rounded-[40px] lg:rounded-[70px] overflow-hidden">
+        <div data-motion-parallax className="strategy-art">
           <img
             alt=""
             className="w-full h-full object-cover"
             src={imgRectangle14}
+            width={2632}
+            height={1298}
             loading="lazy"
             decoding="async"
           />
@@ -109,16 +111,20 @@ function StrategySection() {
 function CoreSystemCard({
   image,
   label,
+  description,
 }: {
   image: string;
   label: string;
+  description: string;
 }) {
   return (
-    <div data-motion-item className="relative w-full aspect-[418/720] md:aspect-[418/720] rounded-[24px] md:rounded-[40px] overflow-hidden">
+    <div data-motion-item className="principle-card">
       <img
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         src={image}
+        width={418}
+        height={720}
         loading="lazy"
         decoding="async"
       />
@@ -126,10 +132,9 @@ function CoreSystemCard({
         aria-hidden="true"
         className="absolute border border-[rgba(167,224,255,0.05)] inset-0 pointer-events-none rounded-[24px] md:rounded-[40px]"
       />
-      <div className="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8">
-        <p className="font-['Inter:Regular',sans-serif] text-[22px] md:text-[32px] text-white tracking-[-1px] leading-normal">
-          {label}
-        </p>
+      <div className="principle-caption">
+        <h3>{label}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
@@ -139,21 +144,21 @@ function CoreSystemCard({
 function CoreSystemsSection() {
   return (
     <section
-      className="w-full"
+      className="home-principles"
       style={{
         backgroundImage:
           "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 1440 1211\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"none\"><rect x=\"0\" y=\"0\" height=\"100%\" width=\"100%\" fill=\"url(%23grad)\" opacity=\"1\"/><defs><radialGradient id=\"grad\" gradientUnits=\"userSpaceOnUse\" cx=\"0\" cy=\"0\" r=\"10\" gradientTransform=\"matrix(-1.8167e-14 79.852 -94.952 4.8895e-15 720 412.48)\"><stop stop-color=\"rgba(1,15,42,1)\" offset=\"0\"/><stop stop-color=\"rgba(0,8,21,1)\" offset=\"0.5\"/><stop stop-color=\"rgba(0,4,10,1)\" offset=\"0.75\"/><stop stop-color=\"rgba(0,0,0,1)\" offset=\"1\"/></radialGradient></defs></svg>')",
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-16 md:gap-24 lg:gap-[148px] px-6 md:px-10 lg:px-[52px] py-16 md:py-24 lg:py-[140px]">
-        <h2 className="font-['Inter:Regular',sans-serif] text-[36px] md:text-[48px] lg:text-[62px] text-white text-center tracking-[-1.5px] md:tracking-[-2.68px]">
-          Made with purpose
+      <div className="nexus-container section-pad">
+        <h2 className="section-title">
+          The work behind each release.
         </h2>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-          <CoreSystemCard image={imgRectangle10} label="Built to scale." />
-          <CoreSystemCard image={imgRectangle11} label="Designed to think." />
-          <CoreSystemCard image={imgRectangle12} label="Made for humans." />
+        <div className="principle-grid">
+          <CoreSystemCard image={imgRectangle10} label="Product planning" description="Agree on the problem, the users and what belongs in the first release." />
+          <CoreSystemCard image={imgRectangle11} label="Design and development" description="Work through the screens and build the features around how people use them." />
+          <CoreSystemCard image={imgRectangle12} label="Testing and iteration" description="Test the key tasks, prepare for launch and plan the next improvements." />
         </div>
       </div>
     </section>
@@ -163,7 +168,7 @@ function CoreSystemsSection() {
 /* ─── Main App ─── */
 export default function App() {
   return (
-    <div className="studio-site w-full min-h-screen bg-black overflow-x-hidden">
+    <div className="studio-site w-full min-h-screen bg-black">
       <SiteMotion />
       <NavBar />
       <main id="main-content" tabIndex={-1} className="flex flex-col w-full">

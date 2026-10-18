@@ -21,12 +21,14 @@ npm run dev
 To build and check the static site:
 
 ```sh
-npm run deploy:pages
-npm run verify:production
+npm run build
+npm run verify:build
 npm run preview
 ```
 
-`deploy:pages` prepares the repository-root output locally. A commit and push to the existing publication branch triggers GitHub Pages.
+These commands build into `dist/` and serve a local preview without changing the repository-root publication files. For the content and visual review, see [REFINEMENT-REVIEW.md](REFINEMENT-REVIEW.md).
+
+`deploy:pages` prepares the repository-root output for publication. A commit and push to the existing publication branch triggers GitHub Pages. Keep that separate from local review and run it only when publication is approved.
 
 See [SEO-OPERATIONS.md](SEO-OPERATIONS.md) for route registration, analytics, verification and release checks. Existing app privacy-policy and terms-of-use URLs must remain available.
 
