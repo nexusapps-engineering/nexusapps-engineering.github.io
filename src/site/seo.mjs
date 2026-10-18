@@ -35,7 +35,8 @@ export function renderHead(page, verification = {}) {
     meta('og:type', 'website', true), meta('og:site_name', 'Nexus Apps', true), meta('og:locale', 'en_US', true),
     meta('og:title', page.title, true), meta('og:description', page.description, true), meta('og:url', page.canonical, true), meta('og:image', page.image, true), meta('og:image:alt', page.type === 'product' ? `${page.name} App Store preview` : 'Nexus Apps — Mobile and web apps, built from idea to launch.', true),
     meta('twitter:card', 'summary_large_image'), meta('twitter:title', page.title), meta('twitter:description', page.description), meta('twitter:image', page.image),
-    verification.google ? meta('google-site-verification', verification.google) : '', verification.bing ? meta('msvalidate.01', verification.bing) : '',
+    verification.google ? meta('google-site-verification', verification.google) : '',
+    meta('msvalidate.01', verification.bing || '09FDDD15EB5BBF24FECD5923F666DF8E'),
     schema ? `<script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script>` : '',
   ].filter(Boolean).join('\n    ');
 }
