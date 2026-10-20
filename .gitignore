@@ -2,3 +2,9 @@ node_modules/
 dist/
 .DS_Store
 npm-debug.log*
+
+# Local documentation; never publish or commit.
+/.document/
+/SEO-OPERATIONS.md
+/REFINEMENT-REVIEW.md
+/SEO-GEO-MUSTERI-KAZANIM-PLANI.md

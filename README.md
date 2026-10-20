@@ -26,11 +26,11 @@ npm run verify:build
 npm run preview
 ```
 
-These commands build into `dist/` and serve a local preview without changing the repository-root publication files. For the content and visual review, see [REFINEMENT-REVIEW.md](REFINEMENT-REVIEW.md).
+These commands build into `dist/` and serve a local preview without changing the repository-root publication files.
 
 `deploy:pages` prepares the repository-root output for publication. A commit and push to the existing publication branch triggers GitHub Pages. Keep that separate from local review and run it only when publication is approved.
 
-See [SEO-OPERATIONS.md](SEO-OPERATIONS.md) for route registration, analytics, verification and release checks. Existing app privacy-policy and terms-of-use URLs must remain available.
+Existing app privacy-policy and terms-of-use URLs must remain available.
 
 ## Motion
 
