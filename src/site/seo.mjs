@@ -7,6 +7,10 @@ export function structuredData(page) {
   if (!page.index) return null;
   const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', sameAs: ['https://github.com/nexusapps-engineering'], address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
   const graph = [organization, { '@type': 'WebSite', '@id': `${origin}/#website`, name: 'Nexus Apps', url: origin + '/', publisher: { '@id': organization['@id'] } }];
+  const webPage = { '@type': 'WebPage', '@id': `${page.canonical}#webpage`, url: page.canonical, name: page.type === 'home' ? 'Nexus Apps' : page.name, description: page.description, isPartOf: { '@id': `${origin}/#website` }, author: { '@id': organization['@id'] }, inLanguage: 'en' };
+  if (page.type === 'about') webPage['@type'] = 'AboutPage';
+  if (page.type === 'contact') webPage['@type'] = 'ContactPage';
+  graph.push(webPage);
   if (page.path !== '/') {
     const parent = pages.find(item => item.path === page.parent);
     const crumbs = [{ name: 'Home', item: origin + '/' }];
@@ -17,11 +21,17 @@ export function structuredData(page) {
   if (page.type === 'service') {
     const service = services.find(item => item.slug === page.slug);
     graph.push({ '@type': 'Service', '@id': `${page.canonical}#service`, name: service.name, serviceType: service.name, description: service.summary, url: page.canonical, provider: { '@id': organization['@id'] }, areaServed: 'Worldwide' });
+    // These exact questions and answers are also rendered in the page's <dl>.
+    // FAQPage describes the content; it does not promise a Google rich result.
+    webPage['@type'] = 'FAQPage';
+    webPage.about = { '@id': `${page.canonical}#service` };
+    webPage.mainEntity = service.questions.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } }));
   }
   if (page.type === 'product') {
     const product = products.find(item => item.slug === page.slug);
     const categories = { visuallabx: 'MultimediaApplication', photocamai: 'MultimediaApplication', wallpapers: 'LifestyleApplication', retrocamneo: 'MultimediaApplication', clearwave: 'UtilitiesApplication', asorocket: 'DeveloperApplication' };
     graph.push({ '@type': 'SoftwareApplication', '@id': `${page.canonical}#app`, name: product.name, description: product.summary, operatingSystem: 'iOS', applicationCategory: categories[product.slug], url: page.canonical, downloadUrl: product.appStoreUrl, image: `${origin}/images/apps/${product.slug}/icon.jpg`, screenshot: [1, 2].map(number => `${origin}/images/apps/${product.slug}/screen-${number}.jpg`), publisher: { '@id': organization['@id'] } });
+    webPage.mainEntity = { '@id': `${page.canonical}#app` };
   }
   return { '@context': 'https://schema.org', '@graph': graph };
 }

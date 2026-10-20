@@ -1,0 +1,32 @@
+# Nexus Apps
+
+> Independent app studio in Berlin, Germany. Mobile app, web application and MVP development for startups and businesses worldwide.
+
+Nexus Apps builds and operates six in-house iOS apps. These products demonstrate its product and interface work. Its published portfolio is not commissioned Android or web client work.
+
+## Development services
+
+- [Mobile app development](https://nexusapps.co/services/mobile-app-development/): Build an iOS or Android app for your customers or team. We work with you on the scope, interface and development through testing and store submission.
+- [Web app development](https://nexusapps.co/services/web-app-development/): Build a web application for your customers or team. We plan the workflows, design a responsive interface and develop the backend and integrations your product needs.
+- [MVP development](https://nexusapps.co/services/mvp-development/): A minimum viable product (MVP) is a first release focused on testing a product idea with real users. We agree on what you need to learn, choose the essential features and build a mobile or web release.
+
+## Work with the studio
+
+- [Our process](https://nexusapps.co/process/): Product discovery, scope, design, development, testing, launch and ongoing maintenance.
+- [About us](https://nexusapps.co/about/): The independent studio and its in-house product background.
+- [Contact](https://nexusapps.co/contact/): Discuss a mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, existing materials and timing.
+
+## In-house iOS portfolio
+
+- [Our apps](https://nexusapps.co/apps/): Six products built, published and maintained by Nexus Apps.
+- [Visual LabX](https://nexusapps.co/apps/visuallabx/): Photo editing with creative presets, film-inspired filters and retouching tools.
+- [Photo CamAI](https://nexusapps.co/apps/photocamai/): An iPhone photo editor with one-tap enhancements powered by on-device AI.
+- [Wallpapers Neo](https://nexusapps.co/apps/wallpapers/): A curated wallpaper collection with categories, favorites and text customization.
+- [Retro Cam Neo](https://nexusapps.co/apps/retrocamneo/): A vintage camera with real-time film looks, adjustable grain and light leaks.
+- [Clear Wave Pro](https://nexusapps.co/apps/clearwave/): Speaker cleaning modes, stereo testing and a real-time sound meter in one utility.
+- [ASO Rocket](https://nexusapps.co/apps/asorocket/): An App Store keyword tool for discovering ideas, organizing lists and preparing metadata.
+
+## Optional
+
+- [App policies](https://nexusapps.co/app-policies/): Original app privacy policies and terms, including documents using the former iScreen AI Wallpapers name.
+- [Sitemap](https://nexusapps.co/sitemap.xml): Canonical public page URLs.

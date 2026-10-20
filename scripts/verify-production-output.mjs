@@ -3,7 +3,8 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { pages, outputFile, findPage } from '../src/site/registry.mjs';
-import { origin } from '../src/site/catalog.mjs';
+import { origin, services } from '../src/site/catalog.mjs';
+import { llmsText } from '../src/site/discovery.mjs';
 import { sitemap, sitemapIndex, robots } from '../src/site/seo.mjs';
 
 const project = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
@@ -17,6 +18,7 @@ const descriptions = new Set();
 assert.equal(await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8'), sitemap(), 'Sitemap must match the page registry');
 assert.equal(await fs.readFile(path.join(root, 'sitemap_index.xml'), 'utf8'), sitemapIndex(), 'Legacy sitemap index must reference the current sitemap');
 assert.equal(await fs.readFile(path.join(root, 'robots.txt'), 'utf8'), robots, 'Robots must match the configured public sitemap');
+assert.equal(await fs.readFile(path.join(root, 'llms.txt'), 'utf8'), llmsText(), 'Agent guide must match registered pages and visible studio facts');
 assert.equal((await fs.readFile(path.join(root, 'CNAME'), 'utf8')).trim(), 'nexusapps.co');
 await exists(path.join(root, '.nojekyll'));
 const manifest = JSON.parse(await fs.readFile(path.join(root, 'pages-manifest.json'), 'utf8'));
@@ -50,7 +52,19 @@ for (const page of pages) {
     const types = schema['@graph'].map(item => item['@type']);
     assert(types.includes('Organization') && types.includes('WebSite'));
     if (page.path !== '/') assert(types.includes('BreadcrumbList'));
-    if (page.type === 'service') assert(types.includes('Service'));
+    if (page.type === 'service') {
+      assert(types.includes('Service'));
+      const service = services.find(item => item.slug === page.slug);
+      const faq = schema['@graph'].find(item => item['@type'] === 'FAQPage');
+      assert.equal(faq?.mainEntity.length, service.questions.length, `${page.path}: missing service answers`);
+      // Read only visible body text, so an answer in JSON-LD alone cannot pass.
+      const bodyText = decode(html.split('<body>')[1].replace(/<[^>]*>/g, ''));
+      for (const question of faq.mainEntity) {
+        assert(bodyText.includes(question.name), `${page.path}: structured question is not visible`);
+        assert(bodyText.includes(question.acceptedAnswer.text), `${page.path}: structured answer is not visible`);
+      }
+      for (const slug of service.examples) assert(html.includes(`href="/apps/${slug}/"`), `${page.path}: missing portfolio evidence ${slug}`);
+    }
     if (page.type === 'product') assert(types.includes('SoftwareApplication'));
     const breadcrumb = schema['@graph'].find(item => item['@type'] === 'BreadcrumbList');
     if (breadcrumb) {

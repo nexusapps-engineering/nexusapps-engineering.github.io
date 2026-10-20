@@ -26,9 +26,10 @@ function PageContent({ page }: { page: Page }) {
 
   if (page.type === 'service') {
     const service = services.find(item => item.slug === page.slug)!;
-    const related = products.filter(product => product.services.includes(service.slug)).slice(0, 3);
+    const related = products.filter(product => service.examples.includes(product.slug));
     return <>
       <PageIntro page={page} eyebrow="Nexus development services" title={service.name}><p>{service.introduction}</p><EmailLink service={service.name} position="service-hero" /></PageIntro>
+      <section className="nexus-container section-pad scope-section"><div><p className="eyebrow">Plan your first release</p><h2 className="section-title" data-motion-item>Decisions that<br />shape the scope</h2></div><div className="deliverable-list">{service.planning.map(([name, description]) => <div key={name} data-motion-item><h3>{name}</h3><p>{description}</p></div>)}</div></section>
       <section className="nexus-container section-pad scope-section"><div><p className="eyebrow">Who it is for</p><h2 className="section-title" data-motion-item>Is this right<br />for your project?</h2><p className="section-copy">{service.audience}</p></div><div className="deliverable-list">{service.deliverables.map(([name, description]) => <div key={name} data-motion-item><h3>{name}</h3><p>{description}</p></div>)}</div></section>
       <section className="light-section"><div className="nexus-container split-section" data-motion-group><h2>Agree on the scope<br />before development.</h2><div><p>We start with your users and the problem to solve. Together we agree on the deliverables, release plan and review points.</p><p>Features, integrations and platform requirements shape the estimate. We discuss cost and timing before the build begins.</p><a href="/process/" className="text-link">See our development process <span aria-hidden="true">↗</span></a></div></div></section>
       {related.length > 0 && <section className="nexus-container section-pad"><p className="eyebrow">Built and operated by Nexus</p><h2 className="section-title" data-motion-item>Apps we build and operate</h2><p className="section-copy">{service.evidence}</p><ProductGrid slugs={related.map(product => product.slug)} /></section>}

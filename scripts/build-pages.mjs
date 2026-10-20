@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build, createServer } from 'vite';
+import { llmsText } from '../src/site/discovery.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 process.chdir(root);
@@ -29,6 +30,7 @@ try {
   await fs.writeFile('dist/sitemap.xml', sitemap());
   await fs.writeFile('dist/sitemap_index.xml', sitemapIndex());
   await fs.writeFile('dist/robots.txt', robots);
+  await fs.writeFile('dist/llms.txt', llmsText());
   await fs.writeFile('dist/.nojekyll', '');
   await fs.copyFile('CNAME', 'dist/CNAME');
   await fs.writeFile('dist/pages-manifest.json', JSON.stringify({ pages: pages.map((page, i) => ({ ...page, file: outputs[i] })) }, null, 2) + '\n');

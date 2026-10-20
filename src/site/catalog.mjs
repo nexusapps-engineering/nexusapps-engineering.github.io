@@ -4,6 +4,7 @@ export const email = 'hello@nexusapps.co';
 export const products = [
   {
     slug: 'visuallabx', name: 'Visual LabX', category: 'Photo editing',
+    searchTitle: 'Visual LabX | Photo Editor, Filters & Retouching',
     summary: 'Photo editing with creative presets, film-inspired filters and retouching tools.',
     description: 'Edit photos with creative presets, film-inspired effects and retouching tools. Try different looks and fine-tune the details before saving.',
     features: ['Creative presets and photo filters', 'Film-inspired effects and color adjustments', 'Face and body retouching tools'],
@@ -13,6 +14,7 @@ export const products = [
   },
   {
     slug: 'photocamai', name: 'Photo CamAI', category: 'AI photo editing',
+    searchTitle: 'Photo CamAI | On-Device AI Photo Editor for iPhone',
     summary: 'An iPhone photo editor with one-tap enhancements powered by on-device AI.',
     description: 'Improve a photo in one tap. Photo CamAI analyzes lighting, colors and subjects on your iPhone to apply adjustments on the device.',
     features: ['One-tap photo enhancement', 'On-device scene and subject analysis', 'Presets and saving edits to the photo library'],
@@ -22,6 +24,7 @@ export const products = [
   },
   {
     slug: 'wallpapers', name: 'Wallpapers Neo', category: 'Personalization',
+    searchTitle: 'Wallpapers Neo | iOS Wallpapers & Custom Text',
     summary: 'A curated wallpaper collection with categories, favorites and text customization.',
     description: 'Find a background that suits your screen. Browse wallpaper collections, save your favorites and add your own text before downloading.',
     features: ['Wallpaper collections organized by style', 'Favorites and quick saving', 'Custom text before downloading'],
@@ -32,6 +35,7 @@ export const products = [
   },
   {
     slug: 'retrocamneo', name: 'Retro Cam Neo', category: 'Camera',
+    searchTitle: 'Retro Cam Neo | Vintage Camera App for iOS',
     summary: 'A vintage camera with real-time film looks, adjustable grain and light leaks.',
     description: 'Shoot with film-inspired presets and see the look as you frame your photo. Adjust exposure, warmth and grain to make it your own.',
     features: ['Real-time vintage camera presets', 'Film grain and light leak effects', 'Exposure, warmth and aspect ratio controls'],
@@ -41,6 +45,7 @@ export const products = [
   },
   {
     slug: 'clearwave', name: 'Clear Wave Pro', category: 'Audio utility',
+    searchTitle: 'Clear Wave Pro | Speaker Cleaner & Sound Meter for iOS',
     summary: 'Speaker cleaning modes, stereo testing and a real-time sound meter in one utility.',
     description: 'Run sound-based speaker cleaning modes, test the left and right audio channels, or measure surrounding sound with a real-time decibel meter.',
     features: ['Sound-based speaker cleaning modes', 'Left, right and stereo speaker tests', 'A real-time decibel meter'],
@@ -50,6 +55,7 @@ export const products = [
   },
   {
     slug: 'asorocket', name: 'ASO Rocket', category: 'Developer tool',
+    searchTitle: 'ASO Rocket | App Store Keyword Research Tool',
     summary: 'An App Store keyword tool for discovering ideas, organizing lists and preparing metadata.',
     description: 'Research App Store keywords and keep your ideas organized. Discover keywords, save them in lists and copy a keyword string for App Store Connect.',
     features: ['Keyword discovery across App Store categories', 'Saved keyword lists with search and filtering', 'Copying keywords for metadata workflows'],
@@ -62,9 +68,15 @@ export const products = [
 export const services = [
   {
     slug: 'mobile-app-development', name: 'Mobile app development', shortName: 'Mobile apps', number: '01',
+    searchTitle: 'Mobile App Development Services | Nexus Apps',
+    examples: ['visuallabx', 'photocamai', 'wallpapers'],
     headline: 'Your product. In their hands.',
     summary: 'iOS and Android app development, from the first product decisions to release and ongoing improvements.',
     introduction: 'Build an iOS or Android app for your customers or team. We work with you on the scope, interface and development through testing and store submission.',
+    planning: [
+      ['Choose the platform around your users', 'Start with the devices your audience uses and the phone features the app needs. Camera access, on-device processing and existing code help determine whether a native or shared approach fits the release.'],
+      ['Plan the work around the app', 'An app may also need accounts, a backend and connections to other systems. Include those dependencies in the brief so the estimate covers the complete user journey through testing and store submission.'],
+    ],
     audience: 'For businesses launching a customer app, founders building a mobile product, and teams improving an existing experience.',
     deliverables: [
       ['Product scope', 'User journeys, essential features and a clear first release.'],
@@ -72,7 +84,7 @@ export const services = [
       ['App development', 'Implementation for the agreed platforms, including the backend and integrations your scope needs.'],
       ['Testing and release', 'Device testing, release preparation and help with store submission.'],
     ],
-    evidence: 'Explore iOS apps we have designed, published and continue to operate, from photo editors to an App Store keyword tool.',
+    evidence: 'Photo CamAI runs photo enhancement on the iPhone, Visual LabX combines presets with retouching, and Wallpapers Neo organizes collections and favorites. These are our own published iOS products, showing the interfaces and focused workflows we design and maintain.',
     questions: [
       ['Can you build for both iOS and Android?', 'Yes. We discuss your audience, platform requirements and budget before agreeing on a native or shared implementation approach. Our current public app examples are on the Apple App Store.'],
       ['What determines the cost and timeline?', 'The platforms, screens, integrations and backend requirements determine the scope. We discuss the estimate and release plan with you before development begins.'],
@@ -82,9 +94,15 @@ export const services = [
   },
   {
     slug: 'web-app-development', name: 'Web app development', shortName: 'Web products', number: '02',
+    searchTitle: 'Web App Development Services | Nexus Apps',
+    examples: [],
     headline: 'Software that works where you do.',
     summary: 'Web applications, SaaS products, customer portals and internal tools built around your workflows.',
     introduction: 'Build a web application for your customers or team. We plan the workflows, design a responsive interface and develop the backend and integrations your product needs.',
+    planning: [
+      ['Define the workflow and permissions', 'For a portal or internal tool, describe who uses it, what each person can see and which tasks they need to complete. Those decisions shape the screens, data model and permissions in the first release.'],
+      ['Check integrations before committing to scope', 'List the systems the product needs to connect to, the data it will read or update and the access available to your team. We assess the APIs and dependencies before agreeing on those integrations.'],
+    ],
     audience: 'For companies replacing manual work, teams creating customer-facing software, and founders launching a browser-based product.',
     deliverables: [
       ['Workflow definition', 'Roles, permissions and the tasks the product needs to support.'],
@@ -102,9 +120,15 @@ export const services = [
   },
   {
     slug: 'mvp-development', name: 'MVP development', shortName: 'MVP development', number: '03',
+    searchTitle: 'MVP Development Services for Startups | Nexus Apps',
+    examples: ['asorocket', 'photocamai', 'clearwave'],
     headline: 'Start with the part that matters.',
     summary: 'Turn an idea into a focused first release, then develop the product as you learn from real use.',
-    introduction: 'Test your idea with a first version people can use. We agree on what you need to learn, choose the essential features and build a mobile or web release.',
+    introduction: 'A minimum viable product (MVP) is a first release focused on testing a product idea with real users. We agree on what you need to learn, choose the essential features and build a mobile or web release.',
+    planning: [
+      ['Choose the question the release must answer', 'Describe the user, the problem and the task they should complete with the first version. We use that brief to separate essential features from ideas that can wait for a later release.'],
+      ['Choose mobile or web around the task', 'A browser-based workflow may fit a portal or business tool. A mobile app may fit a task that depends on a camera or other phone capabilities. We discuss that choice before agreeing on the platform and scope.'],
+    ],
     audience: 'For founders testing an idea, small businesses launching a new offering, and established companies exploring a new digital product.',
     deliverables: [
       ['A focused brief', 'The problem, target users and the question the first release should answer.'],
@@ -112,7 +136,7 @@ export const services = [
       ['A usable first product', 'Design, development and testing for the agreed mobile or web release.'],
       ['A next-step plan', 'A handover and a discussion of what to measure, improve or build next.'],
     ],
-    evidence: 'Each of our published apps serves a specific task. Explore how we organize features around photo editing, audio tools and App Store keyword research.',
+    evidence: 'ASO Rocket keeps keyword discovery, saved lists and metadata preparation in one workflow. Photo CamAI focuses on one-tap enhancement, while Clear Wave Pro groups audio tests and cleaning modes. These in-house iOS products show how we organize features around a specific task.',
     questions: [
       ['Do I need a detailed specification before contacting you?', 'No. Start with the problem, intended users and what you already have. We can discuss the work needed to turn those inputs into an agreed scope.'],
       ['Does an MVP have to be a mobile app?', 'No. The right first release could be a web product or a mobile app. The choice depends on the user journey and what the project needs to validate.'],
