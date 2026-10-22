@@ -4,6 +4,9 @@ function page(path, type, name, title, description, extra = {}) {
   return { path, type, name, title, description, canonical: origin + path, image: origin + '/social-card.png', index: true, ...extra };
 }
 
+// Policy documents may be needed before an app is available on the App Store.
+export const policyApps = [...products, { slug: 'clearx', name: 'ClearX' }];
+
 export const pages = [
   page('/', 'home', 'Home', 'Nexus Apps | Mobile, Web & MVP Development Studio', 'Independent app studio in Berlin. We build and operate our own iOS apps and develop mobile apps, web products and MVPs for founders and businesses.'),
   page('/services/', 'services', 'Services', 'App Development Services | Nexus Apps', 'Explore mobile app development, web application development and MVP services for startups and businesses. Discuss your project with Nexus Apps.'),
@@ -13,8 +16,8 @@ export const pages = [
   page('/process/', 'process', 'Our process', 'How We Build Apps | Nexus Apps', 'See how Nexus Apps approaches product discovery, scope, design, development, testing, launch and ongoing maintenance for mobile and web products.'),
   page('/about/', 'about', 'About us', 'About Nexus Apps | An Independent App Studio', 'Meet Nexus Apps, an independent studio in Berlin. We build and operate six iOS apps and offer mobile, web and MVP development for startups and businesses.'),
   page('/contact/', 'contact', 'Contact', 'Discuss Your App Project | Nexus Apps', 'Tell Nexus Apps about your mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, scope and timing.'),
-  page('/app-policies/', 'policies', 'App policies', 'App Privacy Policies & Terms | Nexus Apps', 'Privacy policies and terms of use for all six Nexus Apps products, including Visual LabX, Photo CamAI, Wallpapers Neo and ASO Rocket.'),
-  ...products.flatMap(product => ['privacy-policy', 'terms-of-use'].map(document => {
+  page('/app-policies/', 'policies', 'App policies', 'App Privacy Policies & Terms | Nexus Apps', 'Privacy policies and terms of use for Nexus Apps products, including Visual LabX, Photo CamAI, ClearX and ASO Rocket.'),
+  ...policyApps.flatMap(product => ['privacy-policy', 'terms-of-use'].map(document => {
     const name = document === 'privacy-policy' ? 'Privacy Policy' : 'Terms of Use';
     // Preserve the exact canonical paths already used by the App Store and legal documents.
     return page(`/${product.slug}/${document}`, 'legal', `${product.legalName || product.name} ${name}`, `${product.legalName || product.name} ${name} | Nexus Apps`, `Read the ${name.toLowerCase()} for ${product.legalName || product.name}, a Nexus Apps product.`, { slug: product.slug, document, parent: '/app-policies/' });

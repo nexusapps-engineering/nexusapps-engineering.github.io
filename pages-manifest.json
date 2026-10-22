@@ -188,7 +188,7 @@
       "type": "policies",
       "name": "App policies",
       "title": "App Privacy Policies & Terms | Nexus Apps",
-      "description": "Privacy policies and terms of use for all six Nexus Apps products, including Visual LabX, Photo CamAI, Wallpapers Neo and ASO Rocket.",
+      "description": "Privacy policies and terms of use for Nexus Apps products, including Visual LabX, Photo CamAI, ClearX and ASO Rocket.",
       "canonical": "https://nexusapps.co/app-policies/",
       "image": "https://nexusapps.co/social-card.png",
       "index": true,
@@ -361,6 +361,34 @@
       "document": "terms-of-use",
       "parent": "/app-policies/",
       "file": "asorocket/terms-of-use/index.html"
+    },
+    {
+      "path": "/clearx/privacy-policy",
+      "type": "legal",
+      "name": "ClearX Privacy Policy",
+      "title": "ClearX Privacy Policy | Nexus Apps",
+      "description": "Read the privacy policy for ClearX, a Nexus Apps product.",
+      "canonical": "https://nexusapps.co/clearx/privacy-policy",
+      "image": "https://nexusapps.co/social-card.png",
+      "index": true,
+      "slug": "clearx",
+      "document": "privacy-policy",
+      "parent": "/app-policies/",
+      "file": "clearx/privacy-policy/index.html"
+    },
+    {
+      "path": "/clearx/terms-of-use",
+      "type": "legal",
+      "name": "ClearX Terms of Use",
+      "title": "ClearX Terms of Use | Nexus Apps",
+      "description": "Read the terms of use for ClearX, a Nexus Apps product.",
+      "canonical": "https://nexusapps.co/clearx/terms-of-use",
+      "image": "https://nexusapps.co/social-card.png",
+      "index": true,
+      "slug": "clearx",
+      "document": "terms-of-use",
+      "parent": "/app-policies/",
+      "file": "clearx/terms-of-use/index.html"
     },
     {
       "path": "/404.html",

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { products, services } from './catalog.mjs';
-import { pages } from './registry.mjs';
+import { pages, policyApps } from './registry.mjs';
 import { CopyEmail, EmailLink, Footer, NavBar, ProjectCTA } from './Layout';
 import { ProcessList, ProductGrid, ServiceList } from './Sections';
 import { SiteMotion } from './SiteMotion';
@@ -76,7 +76,7 @@ function PageContent({ page }: { page: Page }) {
 
   if (page.type === 'policies') return <>
     <PageIntro page={page} eyebrow="Product information" title="App privacy policies and terms."><p>Find the privacy policy and terms of use for each Nexus Apps product.</p></PageIntro>
-    <section className="nexus-container section-pad policy-list"><h2 className="visually-hidden">Documents by app</h2>{products.map(product => <article key={product.slug}><h2>{product.name}</h2>{product.legalName && <p className="muted">Listed in the documents as {product.legalName}.</p>}<a href={`/${product.slug}/privacy-policy`}>Privacy policy</a><a href={`/${product.slug}/terms-of-use`}>Terms of use</a></article>)}</section>
+    <section className="nexus-container section-pad policy-list"><h2 className="visually-hidden">Documents by app</h2>{policyApps.map(product => <article key={product.slug}><h2>{product.name}</h2>{product.legalName && <p className="muted">Listed in the documents as {product.legalName}.</p>}<a href={`/${product.slug}/privacy-policy`}>Privacy policy</a><a href={`/${product.slug}/terms-of-use`}>Terms of use</a></article>)}</section>
   </>;
 
   return <PageIntro page={page} eyebrow="404 · Page not found" title="Let’s find your next step."><p>This address does not point to a page on Nexus Apps.</p><div className="inline-links"><a className="nexus-button" href="/">Back to home</a><a className="text-link" href="/services/">Explore our services <span aria-hidden="true">↗</span></a></div></PageIntro>;
