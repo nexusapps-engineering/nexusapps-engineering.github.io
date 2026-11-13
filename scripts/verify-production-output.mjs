@@ -65,7 +65,10 @@ for (const page of pages) {
       }
       for (const slug of service.examples) assert(html.includes(`href="/apps/${slug}/"`), `${page.path}: missing portfolio evidence ${slug}`);
     }
-    if (page.type === 'product') assert(types.includes('SoftwareApplication'));
+    if (page.type === 'product') {
+      assert(types.includes('SoftwareApplication'));
+      assert(html.includes('href="/services/ios-app-development/"'), `${page.path}: missing iOS service link`);
+    }
     const breadcrumb = schema['@graph'].find(item => item['@type'] === 'BreadcrumbList');
     if (breadcrumb) {
       assert.equal(breadcrumb.itemListElement.at(-1).item, page.canonical);

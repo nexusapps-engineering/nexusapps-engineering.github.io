@@ -18,7 +18,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377',
-    color: '#251425', services: ['mobile-app-development', 'mvp-development'],
+    color: '#251425', services: ['ios-app-development', 'mobile-app-development', 'mvp-development'],
   },
   {
     slug: 'photocamai', name: 'Photo CamAI', category: 'AI photo editing',
@@ -35,7 +35,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/us/app/photo-camai-ai-photo-editor/id6755936591',
-    color: '#10232c', services: ['mobile-app-development', 'mvp-development'],
+    color: '#10232c', services: ['ios-app-development', 'mobile-app-development', 'mvp-development'],
   },
   {
     slug: 'wallpapers', name: 'Wallpapers Neo', category: 'Personalization',
@@ -52,7 +52,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/app/6758549154',
-    color: '#222713', services: ['mobile-app-development'],
+    color: '#222713', services: ['ios-app-development', 'mobile-app-development'],
     legalName: 'iScreen AI Wallpapers',
   },
   {
@@ -70,7 +70,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/de/app/retro-cam-neo-vintage-camera/id6760256815?l=en-GB',
-    color: '#2c2510', services: ['mobile-app-development'],
+    color: '#2c2510', services: ['ios-app-development', 'mobile-app-development'],
   },
   {
     slug: 'clearwave', name: 'Clear Wave Pro', category: 'Audio utility',
@@ -87,7 +87,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?l=en-GB',
-    color: '#102b3e', services: ['mobile-app-development', 'mvp-development'],
+    color: '#102b3e', services: ['ios-app-development', 'mobile-app-development', 'mvp-development'],
   },
   {
     slug: 'asorocket', name: 'ASO Rocket', category: 'Developer tool',
@@ -104,7 +104,7 @@ export const products = [
       ],
     },
     appStoreUrl: 'https://apps.apple.com/de/app/aso-rocket-keyword-tool/id6777735509?l=en-GB',
-    color: '#21172f', services: ['mobile-app-development', 'mvp-development'],
+    color: '#21172f', services: ['ios-app-development', 'mobile-app-development', 'mvp-development'],
   },
 ];
 
