@@ -275,3 +275,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
   .nexus-button:hover, .service-row:hover .row-arrow { transform: none; }
 }
+
+.proof-strip { display: flex; flex-wrap: wrap; gap: 12px 48px; padding-top: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); color: #bcbcbc; }
+.proof-strip p { margin: 0; }
+.proof-strip strong { color: #fff; font-size: 1.25rem; }
+.proof-strip a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }

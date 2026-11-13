@@ -111,7 +111,7 @@ export const products = [
 export const services = [
   {
     slug: 'mobile-app-development', name: 'Mobile app development', shortName: 'Mobile apps', number: '01',
-    searchTitle: 'Mobile App Development in Berlin | Nexus Apps',
+    searchTitle: 'Mobile App Development Services | Nexus Apps',
     examples: ['visuallabx', 'photocamai', 'wallpapers'],
     headline: 'Your product. In their hands.',
     summary: 'iOS and Android app development, from the first product decisions to release and ongoing improvements.',
@@ -137,7 +137,7 @@ export const services = [
   },
   {
     slug: 'web-app-development', name: 'Web app development', shortName: 'Web products', number: '02',
-    searchTitle: 'Web App Development Services | Nexus Apps',
+    searchTitle: 'Web App Development for Companies | Nexus Apps',
     examples: [],
     headline: 'Software that works where you do.',
     summary: 'Web applications, SaaS products, customer portals and internal tools built around your workflows.',
@@ -163,7 +163,7 @@ export const services = [
   },
   {
     slug: 'mvp-development', name: 'MVP development', shortName: 'MVP development', number: '03',
-    searchTitle: 'MVP Development Services for Startups | Nexus Apps',
+    searchTitle: 'MVP Development for Startups & Companies | Nexus Apps',
     examples: ['asorocket', 'photocamai', 'clearwave'],
     headline: 'Start with the part that matters.',
     summary: 'Turn an idea into a focused first release, then develop the product as you learn from real use.',

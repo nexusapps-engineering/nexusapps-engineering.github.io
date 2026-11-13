@@ -1,6 +1,6 @@
 # Nexus Apps
 
-> Independent app studio in Berlin, Germany. Mobile app, web application and MVP development for startups and businesses worldwide.
+> Berlin-based digital product company. Mobile app, web application and MVP development for companies and founders across Europe and worldwide.
 
 Nexus Apps builds and operates six in-house iOS apps. These products demonstrate its product and interface work. Its published portfolio is not commissioned Android or web client work.
 
@@ -15,7 +15,7 @@ Nexus Apps builds and operates six in-house iOS apps. These products demonstrate
 ## Work with the studio
 
 - [Our process](https://nexusapps.co/process/): Product discovery, scope, design, development, testing, launch and ongoing maintenance.
-- [About us](https://nexusapps.co/about/): The independent studio and its in-house product background.
+- [About us](https://nexusapps.co/about/): The company, its development approach and in-house product background.
 - [Contact](https://nexusapps.co/contact/): Discuss a mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, existing materials and timing.
 
 ## In-house iOS portfolio

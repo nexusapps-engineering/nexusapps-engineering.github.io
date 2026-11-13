@@ -8,15 +8,15 @@ function page(path, type, name, title, description, extra = {}) {
 export const policyApps = [...products, { slug: 'clearx', name: 'ClearX' }];
 
 export const pages = [
-  page('/', 'home', 'Home', 'Nexus Apps | Mobile, Web & MVP Development Studio', 'Independent app studio in Berlin. We build and operate our own iOS apps and develop mobile apps, web products and MVPs for founders and businesses.'),
-  page('/services/', 'services', 'Services', 'App Development Services | Nexus Apps', 'Explore mobile app development, web application development and MVP services for startups and businesses. Discuss your project with Nexus Apps.'),
+  page('/', 'home', 'Home', 'Mobile App Development Company in Berlin | Nexus Apps', 'Nexus Apps designs, develops and maintains mobile apps and web products for companies and founders in Berlin, across Europe and worldwide.'),
+  page('/services/', 'services', 'Services', 'Mobile, Web & MVP Development Services | Nexus Apps', 'Explore mobile app, web application and MVP development for companies and founders, from product discovery through launch and ongoing support.'),
   ...services.map(service => page(`/services/${service.slug}/`, 'service', service.name, service.searchTitle, service.summary, { slug: service.slug, parent: '/services/' })),
   page('/de/app-entwicklung-berlin/', 'berlin', 'App-Entwicklung Berlin', 'App-Entwicklung in Berlin | Nexus Apps', 'Nexus Apps entwickelt mobile Apps und digitale Produkte in Berlin. Lernen Sie unser Studio, unsere Arbeitsweise und eigene iOS-Apps kennen.', { language: 'de', parent: '/services/' }),
   page('/nl/app-laten-maken/', 'netherlands', 'App laten maken', 'App laten maken voor uw bedrijf | Nexus Apps', 'Een app laten ontwikkelen voor uw bedrijf? Nexus Apps is een studio in Berlijn en werkt samen met organisaties in Nederland. Communicatie in het Engels.', { language: 'nl', parent: '/services/' }),
   page('/apps/', 'apps', 'Our apps', 'Our Apps | Products Built by Nexus Apps', 'Explore six in-house Nexus Apps products, from photo editors and a vintage camera to wallpaper, audio and App Store keyword tools.'),
   ...products.map(product => page(`/apps/${product.slug}/`, 'product', product.name, product.searchTitle, product.summary, { slug: product.slug, parent: '/apps/', image: `${origin}/images/apps/${product.slug}/screen-1.jpg` })),
   page('/process/', 'process', 'Our process', 'How We Build Apps | Nexus Apps', 'See how Nexus Apps approaches product discovery, scope, design, development, testing, launch and ongoing maintenance for mobile and web products.'),
-  page('/about/', 'about', 'About us', 'About Nexus Apps | An Independent App Studio', 'Meet Nexus Apps, an independent studio in Berlin. We build and operate six iOS apps and offer mobile, web and MVP development for startups and businesses.'),
+  page('/about/', 'about', 'About us', 'About Nexus Apps | Digital Product Development', 'Meet Nexus Apps, a Berlin-based digital product company developing mobile apps, web products and MVPs for companies and founders worldwide.'),
   page('/contact/', 'contact', 'Contact', 'Discuss Your App Project | Nexus Apps', 'Tell Nexus Apps about your mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, scope and timing.'),
   page('/app-policies/', 'policies', 'App policies', 'App Privacy Policies & Terms | Nexus Apps', 'Privacy policies and terms of use for Nexus Apps products, including Visual LabX, Photo CamAI, ClearX and ASO Rocket.'),
   ...policyApps.flatMap(product => ['privacy-policy', 'terms-of-use'].map(document => {

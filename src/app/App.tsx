@@ -14,9 +14,9 @@ function HeroSection() {
   return (
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
-        <h1 className="home-headline"><span data-motion-line>We build our own apps.</span><span data-motion-line>Let’s build yours.</span></h1>
-        <p className="home-intro">An independent studio in Berlin, building mobile apps, web products and MVPs for founders and businesses.</p>
-        <div className="home-actions"><EmailLink position="home-hero" /><a href="/apps/" className="hero-work-link">Explore our apps</a></div>
+        <h1 className="home-headline"><span data-motion-line>We design, build and maintain</span><span data-motion-line>digital products for companies.</span></h1>
+        <p className="home-intro">Based in Berlin, we develop mobile apps and web products for companies and founders across Europe and worldwide.</p>
+        <div className="home-actions"><a href="/contact/" className="nexus-button">Discuss your project</a><a href="#products" className="hero-work-link">See our work</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
         <img
@@ -51,7 +51,7 @@ function AboutSection() {
     <section id="about" className="home-about light-section">
       <div className="nexus-container section-pad">
         <div className="home-about-copy" data-motion-group>
-          <p className="eyebrow">An independent app studio</p>
+          <p className="eyebrow">A product company in Berlin</p>
           <h2>We build, release<br />and keep improving.</h2>
           <p>Running our own apps means working on the details long after launch. We bring that experience to your product, from its first screens to its next release.</p>
           <a href="/about/" className="text-link">Get to know Nexus <span aria-hidden="true">↗</span></a>
@@ -74,9 +74,9 @@ function AboutSection() {
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
-    <div className="section-heading-row"><h2 className="section-title">Apps we build and operate.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Photo editors, a vintage camera, wallpapers, audio tools and App Store keyword research. Explore the iOS apps we build and operate.</p></div>
-    <ProductGrid />
+    <div className="section-heading-row"><h2 className="section-title">Selected work: products we shipped.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
+    <p className="section-copy">These in-house iOS products show how we design, release and maintain software. They are our own products, not commissioned client projects.</p></div>
+    <ProductGrid slugs={["visuallabx", "photocamai", "retrocamneo"]} />
   </div></section>;
 }
 
@@ -174,6 +174,10 @@ export default function App() {
       <NavBar />
       <main id="main-content" tabIndex={-1} className="flex flex-col w-full">
         <HeroSection />
+        <section className="nexus-container proof-strip" aria-label="Our product experience">
+          <p><strong>6</strong> in-house iOS apps</p>
+          <p><strong>4.8 / 5</strong> · 600+ ratings for Visual LabX on the <a href="https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377" target="_blank" rel="noopener noreferrer">U.S. App Store</a>, as of November 13, 2026</p>
+        </section>
         <ServicesSection />
         <AboutSection />
         <ProductsSection />

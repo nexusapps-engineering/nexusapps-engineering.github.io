@@ -17,7 +17,7 @@ export function EmailLink({ children = 'Discuss your project', service = 'App de
 }
 
 const navLinks = [
-  ['/services/', 'Services'], ['/apps/', 'Our apps'], ['/about/', 'The studio'], ['/contact/', 'Contact'],
+  ['/services/', 'Services'], ['/apps/', 'Our apps'], ['/about/', 'About'], ['/contact/', 'Contact'],
 ];
 
 export function NavBar({ path = '/' }: { path?: string }) {
@@ -45,7 +45,7 @@ export function NavBar({ path = '/' }: { path?: string }) {
 export function Footer() {
   return <footer className="nexus-footer">
     <div className="nexus-container footer-top">
-      <div><p className="eyebrow">An independent app studio</p><p className="footer-statement">Our own products.<br />Your next idea.</p><p className="muted">Berlin, Germany · Working globally</p></div>
+      <div><p className="eyebrow">Digital product development</p><p className="footer-statement">Shipped products.<br />Your next release.</p><p className="muted">Berlin, Germany · Working globally</p></div>
       <div><h2>Explore Nexus</h2><a href="/services/">Development services</a><a href="/apps/">Our apps</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
       <div><h2>Our apps</h2>{products.map(product => <a key={product.slug} href={`/apps/${product.slug}/`}>{product.name}</a>)}</div>
       <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a><p className="footer-note">Share your idea and where you are starting.</p></div>

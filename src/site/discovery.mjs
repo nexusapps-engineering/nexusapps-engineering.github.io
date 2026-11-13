@@ -12,7 +12,7 @@ export function llmsText() {
   return [
     '# Nexus Apps',
     '',
-    '> Independent app studio in Berlin, Germany. Mobile app, web application and MVP development for startups and businesses worldwide.',
+    '> Berlin-based digital product company. Mobile app, web application and MVP development for companies and founders across Europe and worldwide.',
     '',
     'Nexus Apps builds and operates six in-house iOS apps. These products demonstrate its product and interface work. Its published portfolio is not commissioned Android or web client work.',
     '',
@@ -25,7 +25,7 @@ export function llmsText() {
     '## Work with the studio',
     '',
     link('/process/', 'Product discovery, scope, design, development, testing, launch and ongoing maintenance.'),
-    link('/about/', 'The independent studio and its in-house product background.'),
+    link('/about/', 'The company, its development approach and in-house product background.'),
     link('/contact/', 'Discuss a mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, existing materials and timing.'),
     '',
     '## In-house iOS portfolio',
