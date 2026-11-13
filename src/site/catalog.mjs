@@ -9,6 +9,13 @@ export const products = [
     description: 'Edit photos with creative presets, film-inspired effects and retouching tools. Try different looks and fine-tune the details before saving.',
     features: ['Creative presets and photo filters', 'Film-inspired effects and color adjustments', 'Face and body retouching tools'],
     focus: 'Apply a preset for a starting point, then adjust color and retouch the details in the same editor.',
+    productStory: {
+      heading: 'A considered approach to photo editing.',
+      paragraphs: [
+        'Visual LabX brings film-inspired color, portrait retouching and creative effects into one iPhone editing experience. Presets give each image a starting point, while individual tools let the user refine the result.',
+        'The FX tool allows multiple effects on the same image. Face and body retouching sit alongside filters organized around subjects and styles, from portraits and nature to black-and-white photography.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377',
     color: '#251425', services: ['mobile-app-development', 'mvp-development'],
   },
@@ -19,6 +26,13 @@ export const products = [
     description: 'Improve a photo in one tap. Photo CamAI analyzes lighting, colors and subjects on your iPhone to apply adjustments on the device.',
     features: ['One-tap photo enhancement', 'On-device scene and subject analysis', 'Presets and saving edits to the photo library'],
     focus: 'Choose a photo, apply an enhancement and save the edit to your library. AI processing runs on your iPhone.',
+    productStory: {
+      heading: 'A private, one-tap editing workflow.',
+      paragraphs: [
+        'Photo CamAI is designed around a direct interaction: select a photo, apply an enhancement and save the result. The app analyzes lighting, color, scene and subject to choose adjustments for the image.',
+        'AI processing takes place on the iPhone. The product combines that on-device approach with presets and a straightforward path back to the photo library.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/us/app/photo-camai-ai-photo-editor/id6755936591',
     color: '#10232c', services: ['mobile-app-development', 'mvp-development'],
   },
@@ -29,6 +43,13 @@ export const products = [
     description: 'Find a background that suits your screen. Browse wallpaper collections, save your favorites and add your own text before downloading.',
     features: ['Wallpaper collections organized by style', 'Favorites and quick saving', 'Custom text before downloading'],
     focus: 'Keep favorite wallpapers together and personalize your next background with text.',
+    productStory: {
+      heading: 'A collection made personal.',
+      paragraphs: [
+        'Wallpapers Neo organizes a curated collection by visual style and mood, giving people a way to explore backgrounds without losing track of the ones they like.',
+        'Favorites make selected images easy to revisit. Before saving, users can add their own text and create a background that feels personal to their device.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/app/6758549154',
     color: '#222713', services: ['mobile-app-development'],
     legalName: 'iScreen AI Wallpapers',
@@ -40,6 +61,13 @@ export const products = [
     description: 'Shoot with film-inspired presets and see the look as you frame your photo. Adjust exposure, warmth and grain to make it your own.',
     features: ['Real-time vintage camera presets', 'Film grain and light leak effects', 'Exposure, warmth and aspect ratio controls'],
     focus: 'Preview the effect before you shoot, then use the camera controls to adjust the look.',
+    productStory: {
+      heading: 'The look is part of the shot.',
+      paragraphs: [
+        'Retro Cam Neo puts film-inspired camera styles into the capture experience. Users can see a look in real time as they frame a photograph, then adjust exposure, warmth, grain and aspect ratio.',
+        'Light leaks and film textures add character to each image. The camera workflow brings creative choices into the moment of capture, with photographs saved to the library afterwards.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/de/app/retro-cam-neo-vintage-camera/id6760256815?l=en-GB',
     color: '#2c2510', services: ['mobile-app-development'],
   },
@@ -50,6 +78,13 @@ export const products = [
     description: 'Run sound-based speaker cleaning modes, test the left and right audio channels, or measure surrounding sound with a real-time decibel meter.',
     features: ['Sound-based speaker cleaning modes', 'Left, right and stereo speaker tests', 'A real-time decibel meter'],
     focus: 'Switch between cleaning modes, speaker tests and sound measurement from one app.',
+    productStory: {
+      heading: 'Audio tools in one place.',
+      paragraphs: [
+        'Clear Wave Pro brings sound-based speaker cleaning modes, channel checks and a sound meter into a focused utility for iPhone.',
+        'Users can select a cleaning mode, test the left and right channels or monitor surrounding sound levels. Each task has a distinct place in the same app, making the available tools easy to find.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?l=en-GB',
     color: '#102b3e', services: ['mobile-app-development', 'mvp-development'],
   },
@@ -60,6 +95,13 @@ export const products = [
     description: 'Research App Store keywords and keep your ideas organized. Discover keywords, save them in lists and copy a keyword string for App Store Connect.',
     features: ['Keyword discovery across App Store categories', 'Saved keyword lists with search and filtering', 'Copying keywords for metadata workflows'],
     focus: 'Keep keyword research and saved lists together while preparing your App Store metadata.',
+    productStory: {
+      heading: 'From discovery to metadata.',
+      paragraphs: [
+        'ASO Rocket brings App Store keyword discovery and organization into a single workflow. Developers and marketers can browse by category, search for ideas and save useful terms for later.',
+        'Saved keywords can be searched, filtered and copied as a comma-separated string for App Store Connect. The workflow keeps research connected to the next practical step: preparing a product listing.',
+      ],
+    },
     appStoreUrl: 'https://apps.apple.com/de/app/aso-rocket-keyword-tool/id6777735509?l=en-GB',
     color: '#21172f', services: ['mobile-app-development', 'mvp-development'],
   },
