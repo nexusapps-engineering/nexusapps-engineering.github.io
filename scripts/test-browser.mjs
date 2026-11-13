@@ -43,7 +43,7 @@ try {
 
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await context.newPage(); monitor(page);
-  const mobilePaths = ['/', '/services/', '/services/mobile-app-development/', '/services/web-app-development/', '/services/mvp-development/', '/apps/asorocket/', '/apps/wallpapers/', '/contact/', '/about/', '/process/', '/app-policies/', '/asorocket/privacy-policy'];
+  const mobilePaths = ['/', '/services/', '/services/mobile-app-development/', '/services/web-app-development/', '/services/mvp-development/', '/de/app-entwicklung-berlin/', '/apps/asorocket/', '/apps/wallpapers/', '/contact/', '/about/', '/process/', '/app-policies/', '/asorocket/privacy-policy'];
   for (const width of [390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     for (const route of mobilePaths) {
@@ -82,7 +82,7 @@ try {
   assert(!JSON.stringify(events).includes('hello@'));
   assert(!JSON.stringify(events).includes('generate_lead'));
 
-  for (const [name, route, width] of [['home-desktop', '/', 1440], ['home-mobile', '/', 390], ['service-desktop', '/services/mobile-app-development/', 1440], ['service-mobile', '/services/mobile-app-development/', 390], ['product-desktop', '/apps/asorocket/', 1440], ['product-mobile', '/apps/wallpapers/', 390], ['contact-mobile', '/contact/', 390]]) {
+  for (const [name, route, width] of [['home-desktop', '/', 1440], ['home-mobile', '/', 390], ['service-desktop', '/services/mobile-app-development/', 1440], ['service-mobile', '/services/mobile-app-development/', 390], ['berlin-desktop', '/de/app-entwicklung-berlin/', 1440], ['berlin-mobile', '/de/app-entwicklung-berlin/', 390], ['product-desktop', '/apps/asorocket/', 1440], ['product-mobile', '/apps/wallpapers/', 390], ['contact-mobile', '/contact/', 390]]) {
     await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
     await page.goto(base + route); await page.waitForLoadState('networkidle');
     // Load below-the-fold assets for full-page visual inspection without changing site behavior.

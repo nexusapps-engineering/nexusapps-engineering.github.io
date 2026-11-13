@@ -105,7 +105,7 @@ const sections = [
           your device. You must have the right to access and manage any photos you use with the app.
         </p>
         <p className="mt-5">
-          Our <a href="/clearx/privacy-policy">Privacy Policy</a> explains photo access, analytics, and the use of
+          Our <a href="/clearx/privacy-policy/">Privacy Policy</a> explains photo access, analytics, and the use of
           third-party services for subscriptions and purchases.
         </p>
       </>

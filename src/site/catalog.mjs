@@ -68,7 +68,7 @@ export const products = [
 export const services = [
   {
     slug: 'mobile-app-development', name: 'Mobile app development', shortName: 'Mobile apps', number: '01',
-    searchTitle: 'Mobile App Development Services | Nexus Apps',
+    searchTitle: 'Mobile App Development in Berlin | Nexus Apps',
     examples: ['visuallabx', 'photocamai', 'wallpapers'],
     headline: 'Your product. In their hands.',
     summary: 'iOS and Android app development, from the first product decisions to release and ongoing improvements.',

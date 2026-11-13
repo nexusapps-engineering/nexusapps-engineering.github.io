@@ -9,6 +9,7 @@ Nexus Apps builds and operates six in-house iOS apps. These products demonstrate
 - [Mobile app development](https://nexusapps.co/services/mobile-app-development/): Build an iOS or Android app for your customers or team. We work with you on the scope, interface and development through testing and store submission.
 - [Web app development](https://nexusapps.co/services/web-app-development/): Build a web application for your customers or team. We plan the workflows, design a responsive interface and develop the backend and integrations your product needs.
 - [MVP development](https://nexusapps.co/services/mvp-development/): A minimum viable product (MVP) is a first release focused on testing a product idea with real users. We agree on what you need to learn, choose the essential features and build a mobile or web release.
+- [App-Entwicklung Berlin](https://nexusapps.co/de/app-entwicklung-berlin/): German-language overview of app development in Berlin. Project communication is in English.
 
 ## Work with the studio
 

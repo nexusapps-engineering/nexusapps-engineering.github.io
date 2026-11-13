@@ -7,7 +7,7 @@ export function structuredData(page) {
   if (!page.index) return null;
   const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', sameAs: ['https://github.com/nexusapps-engineering'], address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
   const graph = [organization, { '@type': 'WebSite', '@id': `${origin}/#website`, name: 'Nexus Apps', url: origin + '/', publisher: { '@id': organization['@id'] } }];
-  const webPage = { '@type': 'WebPage', '@id': `${page.canonical}#webpage`, url: page.canonical, name: page.type === 'home' ? 'Nexus Apps' : page.name, description: page.description, isPartOf: { '@id': `${origin}/#website` }, author: { '@id': organization['@id'] }, inLanguage: 'en' };
+  const webPage = { '@type': 'WebPage', '@id': `${page.canonical}#webpage`, url: page.canonical, name: page.type === 'home' ? 'Nexus Apps' : page.name, description: page.description, isPartOf: { '@id': `${origin}/#website` }, author: { '@id': organization['@id'] }, inLanguage: page.language || 'en' };
   if (page.type === 'about') webPage['@type'] = 'AboutPage';
   if (page.type === 'contact') webPage['@type'] = 'ContactPage';
   graph.push(webPage);
@@ -42,7 +42,7 @@ export function renderHead(page, verification = {}) {
   return [
     `<title>${escape(page.title)}</title>`, meta('description', page.description), meta('robots', page.index ? 'index, follow' : 'noindex, follow'),
     `<link rel="canonical" href="${escape(page.canonical)}" />`,
-    meta('og:type', 'website', true), meta('og:site_name', 'Nexus Apps', true), meta('og:locale', 'en_US', true),
+    meta('og:type', 'website', true), meta('og:site_name', 'Nexus Apps', true), meta('og:locale', page.language === 'de' ? 'de_DE' : 'en_US', true),
     meta('og:title', page.title, true), meta('og:description', page.description, true), meta('og:url', page.canonical, true), meta('og:image', page.image, true), meta('og:image:alt', page.type === 'product' ? `${page.name} App Store preview` : 'Nexus Apps — Mobile and web apps, built from idea to launch.', true),
     meta('twitter:card', 'summary_large_image'), meta('twitter:title', page.title), meta('twitter:description', page.description), meta('twitter:image', page.image),
     meta('google-site-verification', verification.google || 'iaEQ9PIpWSg9tK2XuBEuFx7hboShbG0lpy7Ez3Km80w'),
@@ -52,7 +52,7 @@ export function renderHead(page, verification = {}) {
 }
 
 export function documentHtml(template, page, html, verification) {
-  return template.replace('<!--page-head-->', renderHead(page, verification)).replace('<!--app-html-->', html);
+  return template.replace('<html lang="en">', `<html lang="${page.language || 'en'}">`).replace('<!--page-head-->', renderHead(page, verification)).replace('<!--app-html-->', html);
 }
 
 export function sitemap() {

@@ -163,7 +163,7 @@ const sections = [
     content: (
       <>
         <p>By using ClearX, you acknowledge this Privacy Policy. Where consent is required for a particular data
-          practice or permission, we request it separately. See also our <a href="/clearx/terms-of-use">Terms of Use</a>.</p>
+          practice or permission, we request it separately. See also our <a href="/clearx/terms-of-use/">Terms of Use</a>.</p>
       </>
     ),
   },

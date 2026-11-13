@@ -30,7 +30,7 @@ for (const page of pages) {
   documents.set(page.path, html);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${page.path}: exactly one H1 is required`);
   assert(html.includes('id="main-content"'), `${page.path}: missing skip-link target`);
-  assert(html.includes('lang="en"'), `${page.path}: missing language`);
+  assert(html.includes(`<html lang="${page.language || 'en'}">`), `${page.path}: missing language`);
   assert(!/<!--(?:app-html|page-head)-->|\/src\/|figma:asset/.test(html), `${page.path}: unresolved build source`);
   assert(/src="\/assets\/[^"\s]+\.js"/.test(html), `${page.path}: missing built JavaScript`);
   assert(/href="\/assets\/[^"\s]+\.css"/.test(html), `${page.path}: missing built CSS`);

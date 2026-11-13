@@ -11,6 +11,7 @@ export const pages = [
   page('/', 'home', 'Home', 'Nexus Apps | Mobile, Web & MVP Development Studio', 'Independent app studio in Berlin. We build and operate our own iOS apps and develop mobile apps, web products and MVPs for founders and businesses.'),
   page('/services/', 'services', 'Services', 'App Development Services | Nexus Apps', 'Explore mobile app development, web application development and MVP services for startups and businesses. Discuss your project with Nexus Apps.'),
   ...services.map(service => page(`/services/${service.slug}/`, 'service', service.name, service.searchTitle, service.summary, { slug: service.slug, parent: '/services/' })),
+  page('/de/app-entwicklung-berlin/', 'berlin', 'App-Entwicklung Berlin', 'App-Entwicklung in Berlin | Nexus Apps', 'Nexus Apps entwickelt mobile Apps und digitale Produkte in Berlin. Lernen Sie unser Studio, unsere Arbeitsweise und eigene iOS-Apps kennen.', { language: 'de', parent: '/services/' }),
   page('/apps/', 'apps', 'Our apps', 'Our Apps | Products Built by Nexus Apps', 'Explore six in-house Nexus Apps products, from photo editors and a vintage camera to wallpaper, audio and App Store keyword tools.'),
   ...products.map(product => page(`/apps/${product.slug}/`, 'product', product.name, product.searchTitle, product.summary, { slug: product.slug, parent: '/apps/', image: `${origin}/images/apps/${product.slug}/screen-1.jpg` })),
   page('/process/', 'process', 'Our process', 'How We Build Apps | Nexus Apps', 'See how Nexus Apps approaches product discovery, scope, design, development, testing, launch and ongoing maintenance for mobile and web products.'),
@@ -19,8 +20,8 @@ export const pages = [
   page('/app-policies/', 'policies', 'App policies', 'App Privacy Policies & Terms | Nexus Apps', 'Privacy policies and terms of use for Nexus Apps products, including Visual LabX, Photo CamAI, ClearX and ASO Rocket.'),
   ...policyApps.flatMap(product => ['privacy-policy', 'terms-of-use'].map(document => {
     const name = document === 'privacy-policy' ? 'Privacy Policy' : 'Terms of Use';
-    // Preserve the exact canonical paths already used by the App Store and legal documents.
-    return page(`/${product.slug}/${document}`, 'legal', `${product.legalName || product.name} ${name}`, `${product.legalName || product.name} ${name} | Nexus Apps`, `Read the ${name.toLowerCase()} for ${product.legalName || product.name}, a Nexus Apps product.`, { slug: product.slug, document, parent: '/app-policies/' });
+    // GitHub Pages redirects the legacy slashless URL to this directory URL.
+    return page(`/${product.slug}/${document}`, 'legal', `${product.legalName || product.name} ${name}`, `${product.legalName || product.name} ${name} | Nexus Apps`, `Read the ${name.toLowerCase()} for ${product.legalName || product.name}, a Nexus Apps product.`, { slug: product.slug, document, parent: '/app-policies/', canonical: `${origin}/${product.slug}/${document}/` });
   })),
   page('/404.html', 'not-found', 'Page not found', 'Page Not Found | Nexus Apps', 'This page could not be found. Explore Nexus Apps services and products or contact us about your project.', { index: false }),
 ];
