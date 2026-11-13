@@ -110,6 +110,31 @@ export const products = [
 
 export const services = [
   {
+    slug: 'ios-app-development', name: 'iOS app development', shortName: 'iOS apps', number: '04',
+    examples: ['visuallabx', 'photocamai', 'retrocamneo'],
+    searchTitle: 'iOS App Development for Companies | Nexus Apps',
+    summary: 'iPhone app design and development, from product scope and interface design to App Store release and ongoing updates.',
+    introduction: 'Nexus Apps designs and develops iOS apps for companies and founders. Based in Berlin, we work in English with teams across Europe and worldwide, from an initial product idea to App Store release and further development.',
+    planning: [
+      ['Shape the iPhone experience', 'We start with the people who will use the app, the problem it solves and the tasks that matter in the first release. Camera features, on-device processing and existing systems help shape the technical scope.'],
+      ['Plan the complete product', 'An iOS app may also need accounts, a backend or connections to other services. We discuss those dependencies, access and release requirements before agreeing on the work.'],
+    ],
+    audience: 'For companies building a customer-facing iPhone app, founders validating a mobile product, and teams planning the next release of an existing iOS app.',
+    deliverables: [
+      ['Product definition', 'User journeys, priorities and a scope for the agreed release.'],
+      ['iOS interface design', 'Screens and interactions designed around the product and its users.'],
+      ['Development and integration', 'iOS app implementation and the agreed backend or service connections.'],
+      ['Testing and release', 'Testing key journeys, preparing the release and coordinating App Store submission.'],
+    ],
+    evidence: 'Our published iOS products are built and operated by Nexus Apps. Photo CamAI uses on-device photo analysis, while Retro Cam Neo previews camera looks in real time. Visual LabX combines editing and retouching in one app. These are in-house products, not commissioned client projects.',
+    questions: [
+      ['Can you work on an existing iOS app?', 'We can discuss an existing app after reviewing its source code, dependencies, design and release setup. The review helps determine what can be reused and what work is needed.'],
+      ['Can the app connect to our existing systems?', 'We assess the available APIs, access and data flows before agreeing on integrations and their scope.'],
+      ['Can you help with App Store submission?', 'Yes. For an agreed release, we can help prepare and coordinate App Store submission. Approval remains subject to Apple’s review.'],
+      ['What happens after the app launches?', 'We can agree on a separate engagement for maintenance, compatibility updates, fixes and further features, with responsibilities defined for the project.'],
+    ],
+  },
+  {
     slug: 'mobile-app-development', name: 'Mobile app development', shortName: 'Mobile apps', number: '01',
     searchTitle: 'Mobile App Development Services | Nexus Apps',
     examples: ['visuallabx', 'photocamai', 'wallpapers'],

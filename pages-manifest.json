@@ -23,6 +23,19 @@
       "file": "services/index.html"
     },
     {
+      "path": "/services/ios-app-development/",
+      "type": "service",
+      "name": "iOS app development",
+      "title": "iOS App Development for Companies | Nexus Apps",
+      "description": "iPhone app design and development, from product scope and interface design to App Store release and ongoing updates.",
+      "canonical": "https://nexusapps.co/services/ios-app-development/",
+      "image": "https://nexusapps.co/social-card.png",
+      "index": true,
+      "slug": "ios-app-development",
+      "parent": "/services/",
+      "file": "services/ios-app-development/index.html"
+    },
+    {
       "path": "/services/mobile-app-development/",
       "type": "service",
       "name": "Mobile app development",
