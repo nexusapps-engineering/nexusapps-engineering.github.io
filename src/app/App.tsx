@@ -14,8 +14,8 @@ function HeroSection() {
   return (
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
-        <h1 className="home-headline"><span data-motion-line>We design, build and maintain</span><span data-motion-line>digital products for companies.</span></h1>
-        <p className="home-intro">Based in Berlin, we develop mobile apps and web products for companies and founders across Europe and worldwide.</p>
+        <h1 className="home-headline"><span data-motion-line>We design, build and maintain </span><span data-motion-line>digital products for companies.</span></h1>
+        <p className="home-intro">Nexus Apps is a Berlin-based development studio building mobile apps, web products and MVPs for companies and founders across Europe and worldwide.</p>
         <div className="home-actions"><a href="/contact/" className="nexus-button">Discuss your project</a><a href="#products" className="hero-work-link">See our work</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
