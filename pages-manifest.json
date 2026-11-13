@@ -75,6 +75,19 @@
       "file": "de/app-entwicklung-berlin/index.html"
     },
     {
+      "path": "/nl/app-laten-maken/",
+      "type": "netherlands",
+      "name": "App laten maken",
+      "title": "App laten maken voor uw bedrijf | Nexus Apps",
+      "description": "Een app laten ontwikkelen voor uw bedrijf? Nexus Apps is een studio in Berlijn en werkt samen met organisaties in Nederland. Communicatie in het Engels.",
+      "canonical": "https://nexusapps.co/nl/app-laten-maken/",
+      "image": "https://nexusapps.co/social-card.png",
+      "index": true,
+      "language": "nl",
+      "parent": "/services/",
+      "file": "nl/app-laten-maken/index.html"
+    },
+    {
       "path": "/apps/",
       "type": "apps",
       "name": "Our apps",

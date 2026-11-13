@@ -20,6 +20,7 @@ export function llmsText() {
     '',
     ...services.map(service => link(`/services/${service.slug}/`, service.introduction)),
     link('/de/app-entwicklung-berlin/', 'German-language overview of app development in Berlin. Project communication is in English.'),
+    link('/nl/app-laten-maken/', 'Dutch-language overview for companies in the Netherlands. The studio is based in Berlin; project communication is in English.'),
     '',
     '## Work with the studio',
     '',

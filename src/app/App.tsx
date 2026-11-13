@@ -41,6 +41,7 @@ function ServicesSection() {
     <h2 className="section-title">Mobile apps, web products<br />and your first release.</h2>
     <p className="section-copy">Launch a new product, build a tool for your team or improve an existing app. We help you define the scope and develop it.</p></div>
     <ServiceList />
+    <div className="inline-links"><a className="text-link" href="/de/app-entwicklung-berlin/" lang="de">App-Entwicklung in Berlin ↗</a><a className="text-link" href="/nl/app-laten-maken/" lang="nl">App laten maken in Nederland ↗</a></div>
   </section>;
 }
 
