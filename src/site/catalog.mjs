@@ -9,6 +9,7 @@ export const products = [
     description: 'Edit photos with creative presets, film-inspired effects and retouching tools. Try different looks and fine-tune the details before saving.',
     features: ['Creative presets and photo filters', 'Film-inspired effects and color adjustments', 'Face and body retouching tools'],
     focus: 'Apply a preset for a starting point, then adjust color and retouch the details in the same editor.',
+    appStoreProof: 'Rated 4.8 out of 5 from more than 600 ratings on the U.S. App Store, as of November 13, 2026.',
     productStory: {
       heading: 'A considered approach to photo editing.',
       paragraphs: [
