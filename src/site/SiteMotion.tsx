@@ -10,9 +10,9 @@ export function SiteMotion() {
 
     async function syncPreference() {
       const current = ++revision;
-      cleanup?.();
-      cleanup = undefined;
-      if (preference.matches || disposed) return;
+      // Once loaded, GSAP's matchMedia owns preference and breakpoint changes.
+      // Recreating it here would accumulate native media-query listeners.
+      if (preference.matches || disposed || cleanup) return;
 
       try {
         const { initializeMotion } = await import('./motion');

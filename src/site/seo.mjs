@@ -40,6 +40,7 @@ export function renderHead(page, verification = {}) {
   const meta = (name, content, property = false) => `<meta ${property ? 'property' : 'name'}="${name}" content="${escape(content)}" />`;
   const schema = structuredData(page);
   return [
+    page.type !== 'legal' ? '<link rel="apple-touch-icon" href="/nexus-mark.png" />' : '',
     `<title>${escape(page.title)}</title>`, meta('description', page.description), meta('robots', page.index ? 'index, follow' : 'noindex, follow'),
     `<link rel="canonical" href="${escape(page.canonical)}" />`,
     meta('og:type', 'website', true), meta('og:site_name', 'Nexus Apps', true), meta('og:locale', ({ de: 'de_DE', nl: 'nl_NL' })[page.language] || 'en_US', true),

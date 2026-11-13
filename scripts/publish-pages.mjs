@@ -7,6 +7,9 @@ process.chdir(root);
 execFileSync(process.execPath, ['scripts/verify-production-output.mjs', 'dist'], { stdio: 'inherit' });
 const { pages } = JSON.parse(await fs.readFile('dist/pages-manifest.json', 'utf8'));
 for (const page of pages) {
+  // Existing legal documents are intentionally retained byte-for-byte.
+  // Their previously published hashed assets are retained by the merge below.
+  if (page.type === 'legal') continue;
   await fs.mkdir(path.dirname(page.file), { recursive: true });
   await fs.copyFile(`dist/${page.file}`, page.file);
 }

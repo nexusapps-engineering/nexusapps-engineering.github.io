@@ -31,6 +31,14 @@ These commands build into `dist/` and serve a local preview without changing the
 `deploy:pages` prepares the repository-root output for publication. A commit and push to the existing publication branch triggers GitHub Pages. Keep that separate from local review and run it only when publication is approved.
 
 Existing app privacy-policy and terms-of-use URLs must remain available.
+Publication retains existing legal HTML byte-for-byte and keeps its previously
+published assets. Verification still checks legal markup and all asset links.
+
+The homepage hero uses WebP derivatives of the original JPEGs in `src/assets/`.
+App cards use 260px and 512px WebP icons generated from each verified
+`public/images/apps/*/icon.jpg`; keep both sizes up to date when replacing an
+icon. The 512px variants preserve detail on high-density displays. Original
+JPEGs remain available for product metadata and asset provenance.
 
 ## Motion
 

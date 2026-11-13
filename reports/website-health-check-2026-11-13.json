@@ -1,0 +1,591 @@
+{
+  "date": "2026-11-13",
+  "lighthouse": {
+    "before": {
+      "version": "13.6.0",
+      "performance": 0.86,
+      "lcpMs": 3910.4745999999996,
+      "fcpMs": 2162.7373,
+      "tbtMs": 12,
+      "cls": 0,
+      "transferBytes": 490645
+    },
+    "before-2": {
+      "version": "13.6.0",
+      "performance": 0.89,
+      "lcpMs": 3777.5332,
+      "fcpMs": 1050.7666,
+      "tbtMs": 0,
+      "cls": 0,
+      "transferBytes": 490645
+    },
+    "after": {
+      "version": "13.6.0",
+      "performance": 0.91,
+      "lcpMs": 3552.929,
+      "fcpMs": 1050.9645,
+      "tbtMs": 0,
+      "cls": 0,
+      "transferBytes": 415037
+    },
+    "final": {
+      "version": "13.6.0",
+      "performance": 0.91,
+      "lcpMs": 3477.718,
+      "fcpMs": 1050.859,
+      "tbtMs": 0,
+      "cls": 0,
+      "transferBytes": 415018
+    }
+  },
+  "memoryBefore": [
+    {
+      "cycles": 0,
+      "heap": 2177952,
+      "listeners": 187
+    },
+    {
+      "cycles": 20,
+      "heap": 3117616,
+      "listeners": 240
+    },
+    {
+      "cycles": 40,
+      "heap": 3166484,
+      "listeners": 280
+    },
+    {
+      "cycles": 60,
+      "heap": 3189324,
+      "listeners": 320
+    },
+    {
+      "cycles": 80,
+      "heap": 3209712,
+      "listeners": 360
+    },
+    {
+      "cycles": 100,
+      "heap": 3216080,
+      "listeners": 400
+    }
+  ],
+  "memoryAfter": [
+    {
+      "cycles": 0,
+      "heap": 2182024,
+      "listeners": 187
+    },
+    {
+      "cycles": 20,
+      "heap": 3071656,
+      "listeners": 200
+    },
+    {
+      "cycles": 40,
+      "heap": 3114184,
+      "listeners": 200
+    },
+    {
+      "cycles": 60,
+      "heap": 3118796,
+      "listeners": 200
+    },
+    {
+      "cycles": 80,
+      "heap": 3174796,
+      "listeners": 200
+    },
+    {
+      "cycles": 100,
+      "heap": 3187632,
+      "listeners": 200
+    }
+  ],
+  "interactionAndScrollSample": {
+    "menuEventTimings": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "interactionId": 7385
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "interactionId": 7385
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "interactionId": 7385
+      }
+    ],
+    "clipboardFallback": true,
+    "contactEventTimings": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "interactionId": 2457
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "interactionId": 2457
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "interactionId": 2457
+      }
+    ],
+    "historyAndRefresh": true,
+    "reflow320": true,
+    "heapBefore": 2178352,
+    "heapAfter20PreferenceCycles": 3082552,
+    "scrollFrames": {
+      "frames": 241,
+      "p95Ms": 16.700000000000728,
+      "over50ms": 0
+    },
+    "heapAfter20Navigations": 2247816,
+    "errors": []
+  },
+  "dependencyAdvisoriesBefore": {
+    "info": 0,
+    "low": 1,
+    "moderate": 2,
+    "high": 8,
+    "critical": 1,
+    "total": 12
+  },
+  "dependencyAdvisoriesAfter": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "browserTests": {
+    "chromium": {
+      "engine": "chromium",
+      "results": [
+        {
+          "javaScriptEnabled": false,
+          "routesChecked": 34,
+          "unknownRoute": "404"
+        },
+        {
+          "javaScriptEnabled": true,
+          "routesChecked": 34,
+          "unknownRoute": "404"
+        }
+      ],
+      "mobileWidths": [
+        390,
+        320
+      ],
+      "mobileRoutes": 14,
+      "checks": [
+        "native navigation",
+        "menu focus dismissal",
+        "Escape key",
+        "clipboard",
+        "email brief",
+        "PII-free CTA event",
+        "images",
+        "keyboard skip link",
+        "hydration",
+        "failed resources"
+      ],
+      "errors": []
+    },
+    "webkit": {
+      "engine": "webkit",
+      "results": [
+        {
+          "javaScriptEnabled": false,
+          "routesChecked": 34,
+          "unknownRoute": "404"
+        },
+        {
+          "javaScriptEnabled": true,
+          "routesChecked": 34,
+          "unknownRoute": "404"
+        }
+      ],
+      "mobileWidths": [
+        390,
+        320
+      ],
+      "mobileRoutes": 14,
+      "checks": [
+        "native navigation",
+        "menu focus dismissal",
+        "Escape key",
+        "clipboard",
+        "email brief",
+        "PII-free CTA event",
+        "images",
+        "keyboard skip link",
+        "hydration",
+        "failed resources"
+      ],
+      "errors": []
+    }
+  },
+  "motionTests": {
+    "chromium": {
+      "engine": "chromium",
+      "checks": [
+        "delayed motion and breakpoint changes keep visible text stable",
+        "desktop wheel smoothing",
+        "keyboard focus reveals content immediately",
+        "reveals play once",
+        "native End and Home interrupt wheel inertia",
+        "live reduced-motion and breakpoint cleanup",
+        "repeated motion preference changes do not accumulate listeners",
+        "native skip-link focus and hash",
+        "native touch scrolling, tablet and orientation changes",
+        "reduced motion skips the animation bundle",
+        "failed animation download keeps content readable",
+        "legal documents keep native behavior"
+      ],
+      "errors": []
+    },
+    "webkit": {
+      "engine": "webkit",
+      "checks": [
+        "delayed motion and breakpoint changes keep visible text stable",
+        "desktop wheel smoothing",
+        "keyboard focus reveals content immediately",
+        "reveals play once",
+        "native End and Home interrupt wheel inertia",
+        "live reduced-motion and breakpoint cleanup",
+        "native skip-link focus and hash",
+        "native touch scrolling, tablet and orientation changes",
+        "reduced motion skips the animation bundle",
+        "failed animation download keeps content readable",
+        "legal documents keep native behavior"
+      ],
+      "errors": []
+    }
+  },
+  "responsiveAndAccessibility": {
+    "routeViewportCombinations": 140,
+    "viewports": [
+      320,
+      390,
+      430,
+      768,
+      1024,
+      1440,
+      2560
+    ],
+    "axeWidths": [
+      390,
+      1440
+    ],
+    "overflows": 0,
+    "violations": 0
+  },
+  "production": {
+    "routes": [
+      {
+        "path": "/services/mobile-app-development/",
+        "status": 200,
+        "url": "https://nexusapps.co/services/mobile-app-development/",
+        "canonical": "https://nexusapps.co/services/mobile-app-development/"
+      },
+      {
+        "path": "/",
+        "status": 200,
+        "url": "https://nexusapps.co/",
+        "canonical": "https://nexusapps.co/"
+      },
+      {
+        "path": "/services/",
+        "status": 200,
+        "url": "https://nexusapps.co/services/",
+        "canonical": "https://nexusapps.co/services/"
+      },
+      {
+        "path": "/services/ios-app-development/",
+        "status": 200,
+        "url": "https://nexusapps.co/services/ios-app-development/",
+        "canonical": "https://nexusapps.co/services/ios-app-development/"
+      },
+      {
+        "path": "/de/app-entwicklung-berlin/",
+        "status": 200,
+        "url": "https://nexusapps.co/de/app-entwicklung-berlin/",
+        "canonical": "https://nexusapps.co/de/app-entwicklung-berlin/"
+      },
+      {
+        "path": "/services/mvp-development/",
+        "status": 200,
+        "url": "https://nexusapps.co/services/mvp-development/",
+        "canonical": "https://nexusapps.co/services/mvp-development/"
+      },
+      {
+        "path": "/services/web-app-development/",
+        "status": 200,
+        "url": "https://nexusapps.co/services/web-app-development/",
+        "canonical": "https://nexusapps.co/services/web-app-development/"
+      },
+      {
+        "path": "/nl/app-laten-maken/",
+        "status": 200,
+        "url": "https://nexusapps.co/nl/app-laten-maken/",
+        "canonical": "https://nexusapps.co/nl/app-laten-maken/"
+      },
+      {
+        "path": "/apps/wallpapers/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/wallpapers/",
+        "canonical": "https://nexusapps.co/apps/wallpapers/"
+      },
+      {
+        "path": "/apps/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/",
+        "canonical": "https://nexusapps.co/apps/"
+      },
+      {
+        "path": "/apps/photocamai/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/photocamai/",
+        "canonical": "https://nexusapps.co/apps/photocamai/"
+      },
+      {
+        "path": "/apps/visuallabx/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/visuallabx/",
+        "canonical": "https://nexusapps.co/apps/visuallabx/"
+      },
+      {
+        "path": "/process/",
+        "status": 200,
+        "url": "https://nexusapps.co/process/",
+        "canonical": "https://nexusapps.co/process/"
+      },
+      {
+        "path": "/apps/asorocket/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/asorocket/",
+        "canonical": "https://nexusapps.co/apps/asorocket/"
+      },
+      {
+        "path": "/apps/clearwave/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/clearwave/",
+        "canonical": "https://nexusapps.co/apps/clearwave/"
+      },
+      {
+        "path": "/apps/retrocamneo/",
+        "status": 200,
+        "url": "https://nexusapps.co/apps/retrocamneo/",
+        "canonical": "https://nexusapps.co/apps/retrocamneo/"
+      },
+      {
+        "path": "/about/",
+        "status": 200,
+        "url": "https://nexusapps.co/about/",
+        "canonical": "https://nexusapps.co/about/"
+      },
+      {
+        "path": "/app-policies/",
+        "status": 200,
+        "url": "https://nexusapps.co/app-policies/",
+        "canonical": "https://nexusapps.co/app-policies/"
+      },
+      {
+        "path": "/contact/",
+        "status": 200,
+        "url": "https://nexusapps.co/contact/",
+        "canonical": "https://nexusapps.co/contact/"
+      },
+      {
+        "path": "/visuallabx/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/visuallabx/privacy-policy/",
+        "canonical": "https://nexusapps.co/visuallabx/privacy-policy/"
+      },
+      {
+        "path": "/photocamai/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/photocamai/privacy-policy/",
+        "canonical": "https://nexusapps.co/photocamai/privacy-policy/"
+      },
+      {
+        "path": "/photocamai/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/photocamai/terms-of-use/",
+        "canonical": "https://nexusapps.co/photocamai/terms-of-use/"
+      },
+      {
+        "path": "/wallpapers/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/wallpapers/privacy-policy/",
+        "canonical": "https://nexusapps.co/wallpapers/privacy-policy/"
+      },
+      {
+        "path": "/visuallabx/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/visuallabx/terms-of-use/",
+        "canonical": "https://nexusapps.co/visuallabx/terms-of-use/"
+      },
+      {
+        "path": "/retrocamneo/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/retrocamneo/privacy-policy/",
+        "canonical": "https://nexusapps.co/retrocamneo/privacy-policy/"
+      },
+      {
+        "path": "/wallpapers/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/wallpapers/terms-of-use/",
+        "canonical": "https://nexusapps.co/wallpapers/terms-of-use/"
+      },
+      {
+        "path": "/retrocamneo/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/retrocamneo/terms-of-use/",
+        "canonical": "https://nexusapps.co/retrocamneo/terms-of-use/"
+      },
+      {
+        "path": "/clearwave/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/clearwave/privacy-policy/",
+        "canonical": "https://nexusapps.co/clearwave/privacy-policy/"
+      },
+      {
+        "path": "/clearx/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/clearx/privacy-policy/",
+        "canonical": "https://nexusapps.co/clearx/privacy-policy/"
+      },
+      {
+        "path": "/asorocket/privacy-policy",
+        "status": 200,
+        "url": "https://nexusapps.co/asorocket/privacy-policy/",
+        "canonical": "https://nexusapps.co/asorocket/privacy-policy/"
+      },
+      {
+        "path": "/clearwave/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/clearwave/terms-of-use/",
+        "canonical": "https://nexusapps.co/clearwave/terms-of-use/"
+      },
+      {
+        "path": "/asorocket/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/asorocket/terms-of-use/",
+        "canonical": "https://nexusapps.co/asorocket/terms-of-use/"
+      },
+      {
+        "path": "/404.html",
+        "status": 200,
+        "url": "https://nexusapps.co/404.html",
+        "canonical": "https://nexusapps.co/404.html"
+      },
+      {
+        "path": "/clearx/terms-of-use",
+        "status": 200,
+        "url": "https://nexusapps.co/clearx/terms-of-use/",
+        "canonical": "https://nexusapps.co/clearx/terms-of-use/"
+      }
+    ],
+    "redirects": [
+      {
+        "url": "http://nexusapps.co/",
+        "status": 200,
+        "final": "https://nexusapps.co/"
+      },
+      {
+        "url": "https://www.nexusapps.co/",
+        "status": 200,
+        "final": "https://nexusapps.co/"
+      },
+      {
+        "url": "https://nexusapps.co/not-a-real-nexus-page/",
+        "status": 404,
+        "final": "https://nexusapps.co/not-a-real-nexus-page/"
+      }
+    ],
+    "appStoreLookup": [
+      {
+        "country": "us",
+        "status": 200,
+        "data": [
+          {
+            "id": 6449296377,
+            "name": "Visual LabX: AI Photo Editor",
+            "url": "https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377?uo=4"
+          },
+          {
+            "id": 6755936591,
+            "name": "Photo CamAI: AI Photo Editor",
+            "url": "https://apps.apple.com/us/app/photo-camai-ai-photo-editor/id6755936591?uo=4"
+          },
+          {
+            "id": 6758549154,
+            "name": "Wallpapers Neo: Live Wallpaper",
+            "url": "https://apps.apple.com/us/app/wallpapers-neo-live-wallpaper/id6758549154?uo=4"
+          },
+          {
+            "id": 6760256815,
+            "name": "Retro Cam Neo - Vintage Camera",
+            "url": "https://apps.apple.com/us/app/retro-cam-neo-vintage-camera/id6760256815?uo=4"
+          },
+          {
+            "id": 6769302852,
+            "name": "Clear Wave Pro - Water Eject",
+            "url": "https://apps.apple.com/us/app/clear-wave-pro-water-eject/id6769302852?uo=4"
+          },
+          {
+            "id": 6777735509,
+            "name": "ASO Rocket - Keyword Tool",
+            "url": "https://apps.apple.com/us/app/aso-rocket-keyword-tool/id6777735509?uo=4"
+          }
+        ]
+      },
+      {
+        "country": "de",
+        "status": 200,
+        "data": [
+          {
+            "id": 6449296377,
+            "name": "Visual LabX: Bilder Bearbeiten",
+            "url": "https://apps.apple.com/de/app/visual-labx-bilder-bearbeiten/id6449296377?uo=4"
+          },
+          {
+            "id": 6755936591,
+            "name": "Photo CamAI: KI-Fotoeditor",
+            "url": "https://apps.apple.com/de/app/photo-camai-ki-fotoeditor/id6755936591?uo=4"
+          },
+          {
+            "id": 6758549154,
+            "name": "Wallpapers Neo: Live-Wallpaper",
+            "url": "https://apps.apple.com/de/app/wallpapers-neo-live-wallpaper/id6758549154?uo=4"
+          },
+          {
+            "id": 6760256815,
+            "name": "Retro Cam Neo - Vintage Kamera",
+            "url": "https://apps.apple.com/de/app/retro-cam-neo-vintage-kamera/id6760256815?uo=4"
+          },
+          {
+            "id": 6769302852,
+            "name": "Clear Wave Pro - Water Eject",
+            "url": "https://apps.apple.com/de/app/clear-wave-pro-water-eject/id6769302852?uo=4"
+          },
+          {
+            "id": 6777735509,
+            "name": "ASO Rocket - Keyword Tool",
+            "url": "https://apps.apple.com/de/app/aso-rocket-keyword-tool/id6777735509?uo=4"
+          }
+        ]
+      }
+    ]
+  }
+}

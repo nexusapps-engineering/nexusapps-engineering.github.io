@@ -93,6 +93,24 @@ try {
   await page.waitForFunction(() => document.documentElement.classList.contains('lenis'));
   checks.push('live reduced-motion and breakpoint cleanup');
 
+  if (engine === 'chromium') {
+    // Detect retained native listeners, even when the visible cleanup succeeds.
+    const session = await context.newCDPSession(page);
+    await session.send('HeapProfiler.collectGarbage');
+    const before = (await session.send('Memory.getDOMCounters')).jsEventListeners;
+    for (let cycle = 0; cycle < 10; cycle++) {
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.waitForFunction(() => !document.documentElement.classList.contains('lenis'));
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+      await page.waitForFunction(() => document.documentElement.classList.contains('lenis'));
+    }
+    await session.send('HeapProfiler.collectGarbage');
+    const after = (await session.send('Memory.getDOMCounters')).jsEventListeners;
+    assert(after <= before + 2, `motion preference cycles retained listeners: ${before} → ${after}`);
+    await session.detach();
+    checks.push('repeated motion preference changes do not accumulate listeners');
+  }
+
   await page.goto(base + '/');
   await page.waitForLoadState('networkidle');
   // WebKit follows macOS's setting that can omit links from the default Tab order.

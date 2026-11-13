@@ -77,7 +77,15 @@ for (const page of pages) {
   } else assert(html.includes('noindex, follow'), `${page.path}: error page must not be indexed`);
   const imageUrl = new URL(page.image);
   await exists(path.join(root, imageUrl.pathname));
-  if (root === project) assert.equal(html, await fs.readFile(path.join(project, 'dist', file), 'utf8'), `${file}: published output differs from build`);
+  if (root === project) {
+    const built = await fs.readFile(path.join(project, 'dist', file), 'utf8');
+    // Retained legal HTML may reference the previous build's existing assets.
+    // All other markup must match, and asset existence is checked below.
+    const comparable = value => page.type === 'legal'
+      ? value.replace(/\b(src|href)="\/assets\/[^"\s]+"/g, '$1="/assets/[build]"')
+      : value;
+    assert.equal(comparable(html), comparable(built), `${file}: published output differs from build`);
+  }
 }
 
 // Resolve every local page, asset, srcset and fragment; catch links to missing or undeployed routes.

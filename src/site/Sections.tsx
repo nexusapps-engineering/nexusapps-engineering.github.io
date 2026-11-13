@@ -7,7 +7,7 @@ export function ServiceList() {
 export function ProductGrid({ slugs }: { slugs?: string[] }) {
   const selected = slugs ? products.filter(product => slugs.includes(product.slug)) : products;
   return <div className="app-grid">{selected.map(product => <article className="app-card" data-motion-item style={{ '--app-color': product.color } as React.CSSProperties} key={product.slug}>
-    <a href={`/apps/${product.slug}/`} className="app-card-link"><div className="app-card-visual"><img src={`/images/apps/${product.slug}/icon.jpg`} width="512" height="512" alt="" loading="lazy" decoding="async" /></div><div className="app-card-body"><p className="eyebrow">{product.category}</p><h3>{product.name}<span aria-hidden="true">↗</span></h3><p>{product.summary}</p><span className="app-card-label">Explore the app</span></div></a>
+    <a href={`/apps/${product.slug}/`} className="app-card-link"><div className="app-card-visual"><img src={`/images/apps/${product.slug}/icon-260.webp`} srcSet={`/images/apps/${product.slug}/icon-260.webp 260w, /images/apps/${product.slug}/icon-512.webp 512w`} sizes="130px" width="512" height="512" alt="" loading="lazy" decoding="async" /></div><div className="app-card-body"><p className="eyebrow">{product.category}</p><h3>{product.name}<span aria-hidden="true">↗</span></h3><p>{product.summary}</p><span className="app-card-label">Explore the app</span></div></a>
   </article>)}</div>;
 }
 
