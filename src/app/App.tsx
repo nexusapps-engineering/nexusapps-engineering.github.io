@@ -4,10 +4,10 @@ import { SiteMotion } from "../site/SiteMotion";
 import svgPaths from "../imports/svg-05d7k6z6uy";
 import imgFrame1772Mobile from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-768.jpg";
 import imgFrame1772Desktop from "../assets/e7b8fc2544e01dc38d6c7b04ee1e03a60d51e674-1440.jpg";
-import imgRectangle14 from "figma:asset/0eaf6b18afc8ea2089605ce1beccba41d827a2fa.png";
-import imgRectangle10 from "figma:asset/046a4d0c1f5a6a4333bb999c1e1e140ae80455a1.png";
-import imgRectangle11 from "figma:asset/21460b7bbd131b9ccf178a2be17130610c4cc6d7.png";
-import imgRectangle12 from "figma:asset/ca514f7d38c7b0b15576b739a8ff3276239581f5.png";
+import imgRectangle14 from "../assets/0eaf6b18afc8ea2089605ce1beccba41d827a2fa.webp";
+import imgRectangle10 from "../assets/046a4d0c1f5a6a4333bb999c1e1e140ae80455a1.webp";
+import imgRectangle11 from "../assets/21460b7bbd131b9ccf178a2be17130610c4cc6d7.webp";
+import imgRectangle12 from "../assets/ca514f7d38c7b0b15576b739a8ff3276239581f5.webp";
 
 /* ─── Hero Section ─── */
 function HeroSection() {

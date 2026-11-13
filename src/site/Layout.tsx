@@ -28,7 +28,13 @@ export function NavBar({ path = '/' }: { path?: string }) {
       <nav className="nexus-nav" aria-label="Main navigation">
         <a className="nexus-logo" href="/" aria-label="Nexus Apps home"><BrandMark /></a>
         <div className="desktop-nav">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}</div>
-        <details className="mobile-nav" onKeyDown={event => {
+        <details className="mobile-nav" onBlur={event => {
+          // Safari can blur the summary without focusing a clicked link. Keep
+          // the panel mounted until that link's native click has navigated.
+          if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) {
+            event.currentTarget.open = false;
+          }
+        }} onKeyDown={event => {
           if (event.key === 'Escape') {
             event.currentTarget.open = false;
             event.currentTarget.querySelector('summary')?.focus();

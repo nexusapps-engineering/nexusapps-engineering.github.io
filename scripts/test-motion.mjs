@@ -25,6 +25,27 @@ const allRevealed = page => page.evaluate(() => [...document.querySelectorAll('[
   .every(element => getComputedStyle(element).opacity === '1' && getComputedStyle(element).transform === 'none'));
 
 try {
+  const delayed = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  let releaseMotion;
+  const motionGate = new Promise(resolve => { releaseMotion = resolve; });
+  await delayed.route('**/assets/motion-*.js', async route => {
+    await motionGate;
+    await route.continue();
+  });
+  await delayed.goto(base + '/', { waitUntil: 'domcontentloaded' });
+  await delayed.waitForTimeout(700);
+  const heroStable = () => delayed.locator('.home-headline [data-motion-line]').evaluateAll(lines =>
+    lines.every(line => getComputedStyle(line).opacity === '1' && getComputedStyle(line).transform === 'none'));
+  assert(await heroStable(), 'static hero must be readable before motion downloads');
+  releaseMotion();
+  await delayed.waitForFunction(() => document.documentElement.classList.contains('lenis'));
+  assert(await heroStable(), 'late motion must not fade or move already-painted text');
+  await delayed.setViewportSize({ width: 1050, height: 1000 });
+  await delayed.waitForFunction(() => !document.documentElement.classList.contains('lenis'));
+  assert(await heroStable(), 'breakpoint changes must not replay visible text');
+  await delayed.close();
+  checks.push('delayed motion and breakpoint changes keep visible text stable');
+
   const { page, context } = await open();
   await page.waitForFunction(() => document.documentElement.classList.contains('lenis'));
   await page.mouse.wheel(0, 600);

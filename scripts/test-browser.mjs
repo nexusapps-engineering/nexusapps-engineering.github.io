@@ -3,17 +3,29 @@ import fs from 'node:fs/promises';
 import { pages } from '../src/site/registry.mjs';
 
 // Use an installed Playwright package or the desktop app's bundled runtime.
-const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const playwright = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const engine = process.env.TEST_BROWSER || 'chromium';
 const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:4173';
 const artifacts = process.env.TEST_ARTIFACTS || '/tmp/nexus-seo-qa';
 await fs.mkdir(artifacts, { recursive: true });
-const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
+const browser = await playwright[engine].launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
 const errors = [];
 const results = [];
 
 function monitor(page) {
   page.on('pageerror', error => errors.push(`${page.url()}: ${error.message}`));
   page.on('console', message => { if (message.type() === 'error' && !message.text().includes('404 (Not Found)')) errors.push(`${page.url()}: ${message.text()}`); });
+  page.on('requestfailed', request => {
+    const reason = request.failure()?.errorText || '';
+    // Navigation and srcset changes can cancel an obsolete image request.
+    if (/ERR_ABORTED|cancelled|canceled/i.test(reason)) return;
+    errors.push(`Failed request: ${request.url()}: ${reason}`);
+  });
+  page.on('response', response => {
+    if (response.status() >= 400 && response.request().resourceType() !== 'document') {
+      errors.push(`Failed resource: ${response.status()} ${response.url()}`);
+    }
+  });
 }
 
 try {
@@ -41,7 +53,7 @@ try {
     await context.close();
   }
 
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, ...(engine === 'chromium' ? { permissions: ['clipboard-read', 'clipboard-write'] } : {}) });
   const page = await context.newPage(); monitor(page);
   const mobilePaths = ['/', '/services/', '/services/mobile-app-development/', '/services/web-app-development/', '/services/mvp-development/', '/de/app-entwicklung-berlin/', '/nl/app-laten-maken/', '/apps/asorocket/', '/apps/wallpapers/', '/contact/', '/about/', '/process/', '/app-policies/', '/asorocket/privacy-policy'];
   for (const width of [390, 320]) {
@@ -56,6 +68,13 @@ try {
   const menu = page.locator('.mobile-nav');
   await menu.locator('summary').click(); assert.equal(await menu.getAttribute('open'), '');
   assert(await menu.locator('a[href="/services/"]').isVisible());
+  await menu.locator('.mobile-email').focus();
+  // WebKit follows macOS's setting that omits links from normal Tab traversal.
+  if (engine === 'webkit') await page.locator('.home-actions .nexus-button').focus();
+  else await page.keyboard.press('Tab');
+  assert.equal(await menu.getAttribute('open'), null, 'menu must close when keyboard focus leaves it');
+  assert.equal(await page.locator(':focus').getAttribute('href'), '/contact/');
+  await menu.locator('summary').click();
   await page.keyboard.press('Escape'); assert.equal(await menu.getAttribute('open'), null);
   await menu.locator('summary').click(); await menu.locator('a[href="/services/"]').click(); await page.waitForLoadState('networkidle');
   assert.equal(new URL(page.url()).pathname, '/services/');
@@ -64,7 +83,7 @@ try {
   await page.getByRole('button', { name: 'Copy address' }).click();
   await page.getByRole('status').filter({ hasText: 'Email address copied' }).waitFor();
   assert.equal(await page.getByRole('status').innerText(), 'Email address copied');
-  assert.equal(await page.evaluate(() => navigator.clipboard.readText()), 'hello@nexusapps.co');
+  if (engine === 'chromium') assert.equal(await page.evaluate(() => navigator.clipboard.readText()), 'hello@nexusapps.co');
   await page.evaluate(() => {
     window.__nexusEvents = [];
     window.gtag = (...args) => window.__nexusEvents.push(args);
@@ -104,11 +123,12 @@ try {
     await page.screenshot({ path: `${artifacts}/${name}-viewport.png` });
   }
   await page.goto(base + '/'); await page.waitForLoadState('networkidle');
-  await page.keyboard.press('Tab');
+  if (engine === 'webkit') await page.locator('.skip-link').focus();
+  else await page.keyboard.press('Tab');
   assert.equal(await page.locator(':focus').innerText(), 'Skip to content');
   await context.close();
   assert.deepEqual(errors, [], 'Browser errors or hydration mismatches');
-  const summary = { results, mobileWidths: [390, 320], mobileRoutes: mobilePaths.length, checks: ['native navigation', 'Escape key', 'clipboard', 'email brief', 'PII-free CTA event', 'images', 'keyboard skip link', 'hydration'], errors };
-  await fs.writeFile(`${artifacts}/browser-results.json`, JSON.stringify(summary, null, 2));
+  const summary = { engine, results, mobileWidths: [390, 320], mobileRoutes: mobilePaths.length, checks: ['native navigation', 'menu focus dismissal', 'Escape key', 'clipboard', 'email brief', 'PII-free CTA event', 'images', 'keyboard skip link', 'hydration', 'failed resources'], errors };
+  await fs.writeFile(`${artifacts}/${engine}-browser-results.json`, JSON.stringify(summary, null, 2));
   console.log(JSON.stringify(summary, null, 2));
 } finally { await browser.close(); }

@@ -41,23 +41,23 @@ export function initializeMotion(scope: HTMLElement) {
       });
 
     scenes.forEach(({ element, targets, top }) => {
-      if (!targets.length || top < 0) return;
-      const inView = top < window.innerHeight;
+      // SSR content is already painted when this optional chunk arrives. Do not
+      // move/fade it again on a slow download, preference change or breakpoint.
+      if (!targets.length || top < window.innerHeight) return;
       const tween = gsap.from(targets, {
         y: desktop ? 22 : 12,
-        // Avoid hiding already painted hero text while the optional chunk loads.
-        opacity: inView ? 0.72 : 0,
+        opacity: 0,
         duration: desktop ? 0.8 : 0.58,
         ease: 'power3.out',
         stagger: desktop ? 0.085 : 0.055,
         clearProps: 'transform,opacity',
-        ...(!inView && { scrollTrigger: {
+        scrollTrigger: {
           trigger: element,
           start: 'top 93%',
           once: true,
           // Also finish skipped scenes after a fast jump or End key.
           onLeave: self => self.animation?.progress(1),
-        } }),
+        },
       });
       entries.push({ targets, tween });
     });
