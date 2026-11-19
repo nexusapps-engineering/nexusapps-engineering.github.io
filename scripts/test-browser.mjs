@@ -73,7 +73,7 @@ try {
   if (engine === 'webkit') await page.locator('.home-actions .nexus-button').focus();
   else await page.keyboard.press('Tab');
   assert.equal(await menu.getAttribute('open'), null, 'menu must close when keyboard focus leaves it');
-  assert.equal(await page.locator(':focus').getAttribute('href'), '/contact/');
+  assert.equal(await page.locator(':focus').getAttribute('href'), '/apps/');
   await menu.locator('summary').click();
   await page.keyboard.press('Escape'); assert.equal(await menu.getAttribute('open'), null);
   await menu.locator('summary').click(); await menu.locator('a[href="/services/"]').click(); await page.waitForLoadState('networkidle');
@@ -89,7 +89,7 @@ try {
     window.gtag = (...args) => window.__nexusEvents.push(args);
     document.addEventListener('click', event => { if (event.target.closest('a[data-project-email]')) event.preventDefault(); });
   });
-  const cta = page.locator('[data-position="contact-hero"]');
+  const cta = page.locator('[data-position="contact-project"]');
   const href = new URL(await cta.getAttribute('href'));
   assert.equal(href.protocol, 'mailto:'); assert.equal(href.pathname, 'hello@nexusapps.co');
   assert(href.searchParams.get('body').includes('Problem we want to solve:'));

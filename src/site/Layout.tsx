@@ -17,7 +17,7 @@ export function EmailLink({ children = 'Discuss your project', service = 'App de
 }
 
 const navLinks = [
-  ['/services/', 'Services'], ['/apps/', 'Our apps'], ['/about/', 'About'], ['/contact/', 'Contact'],
+  ['/apps/', 'Products'], ['/services/', 'Services'], ['/about/', 'About'], ['/contact/', 'Contact'],
 ];
 
 export function NavBar({ path = '/' }: { path?: string }) {
@@ -41,7 +41,7 @@ export function NavBar({ path = '/' }: { path?: string }) {
           }
         }}>
           <summary aria-label="Navigation menu"><span aria-hidden="true" /><span aria-hidden="true" /></summary>
-          <div className="mobile-nav-panel">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={path === href ? 'page' : active(href) ? 'location' : undefined}>{label}</a>)}<EmailLink position="mobile-menu" className="mobile-email">{email}</EmailLink></div>
+          <div className="mobile-nav-panel">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={path === href ? 'page' : active(href) ? 'location' : undefined}>{label}</a>)}<a className="mobile-email" href={`mailto:${email}`}>{email}</a></div>
         </details>
       </nav>
     </header>
@@ -51,10 +51,10 @@ export function NavBar({ path = '/' }: { path?: string }) {
 export function Footer({ legalDocument = false }: { legalDocument?: boolean }) {
   return <footer className="nexus-footer">
     <div className="nexus-container footer-top">
-      <div><p className="eyebrow">{legalDocument ? 'Digital product development' : 'Nexus Apps'}</p><p className="footer-statement">{legalDocument ? <>Shipped products.<br />Your next release.</> : <>Mobile and web<br />app development.</>}</p><p className="muted">Berlin, Germany · Working globally</p></div>
-      <div><h2>Explore Nexus</h2><a href="/services/">Development services</a><a href="/apps/">Our apps</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
+      <div><p className="eyebrow">Nexus Apps</p><p className="footer-statement">Digital product studio.</p><p className="muted">Berlin, Germany</p></div>
+      <div><h2>Explore Nexus</h2><a href="/apps/">Product portfolio</a><a href="/services/">Development services</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
       <div><h2>Our apps</h2>{products.map(product => <a key={product.slug} href={`/apps/${product.slug}/`}>{product.name}</a>)}</div>
-      <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a>{legalDocument ? <p className="footer-note">Share your idea and where you are starting.</p> : <a href="/contact/">App support and project inquiries</a>}</div>
+      <div><h2>Start a conversation</h2><a href={`mailto:${email}`} className="footer-email">{email}</a><a href="/app-policies/">App privacy policies & terms</a><a href="/contact/">Product support and studio inquiries</a></div>
     </div>
     <div className="nexus-container footer-wordmark"><BrandMark large />{legalDocument && <span>Think further.</span>}</div>
   </footer>;
@@ -66,6 +66,10 @@ export function CopyEmail() {
     try { await navigator.clipboard.writeText(email); setStatus('Email address copied'); }
     catch { setStatus('Select and copy the address above'); }
   }}>Copy address</button><span role="status" className="copy-status">{status}</span></div>;
+}
+
+export function StudioCTA() {
+  return <section className="project-cta" id="contact"><div className="nexus-container" data-motion-group><p className="eyebrow">Nexus Apps</p><h2>Get in touch.</h2><p>Contact the studio for product support, feedback or business inquiries.</p><a className="nexus-button" href="/contact/">Contact the studio</a></div></section>;
 }
 
 export function ProjectCTA({ service = 'App development', product = '' }: { service?: string; product?: string }) {

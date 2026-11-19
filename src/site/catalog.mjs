@@ -54,9 +54,9 @@ export const products = [
     color: '#102b3e', services: ['ios-app-development', 'mobile-app-development', 'mvp-development'],
   },
   {
-    slug: 'asorocket', name: 'ASO Rocket', category: 'Developer tool',
+    slug: 'asorocket', name: 'ASO Rocket', category: 'Developer tool', devices: 'iPhone and iPad',
     searchTitle: 'ASO Rocket | App Store Keyword Research Tool',
-    summary: "Research App Store keywords on iPhone, organize saved terms and copy a keyword string for App Store Connect.",
+    summary: "Research App Store keywords on iPhone or iPad, organize saved terms and copy a keyword string for App Store Connect.",
     description: "Build a shortlist for your next App Store listing. Browse keyword ideas by category, save relevant terms and copy your selection into App Store Connect.",
     features: ["Search within a category such as Photo & Video or Productivity.", "Filter your saved keywords when preparing a particular listing.", "Copy individual terms or the visible list as a comma-separated string."],
     screenshotAlt: ["ASO Rocket overview showing keyword categories, saved terms and copy options.", "Keyword discovery screen listing photo and video editor search terms."],
@@ -111,7 +111,7 @@ export const services = [
     ],
     evidence: 'Photo CamAI runs photo enhancement on the iPhone, Visual LabX combines presets with retouching, and Wallpapers Neo organizes collections and favorites. These are our own published iOS products, showing the interfaces and focused workflows we design and maintain.',
     questions: [
-      ['Can you build for both iOS and Android?', 'Yes. We discuss your audience, platform requirements and budget before agreeing on a native or shared implementation approach. Our current public app examples are on the Apple App Store.'],
+      ['Can you build for both iOS and Android?', 'Yes. We discuss your audience, platform requirements and budget before agreeing on a native or shared implementation approach.'],
       ['What determines the cost and timeline?', 'The platforms, screens, integrations and backend requirements determine the scope. We discuss the estimate and release plan with you before development begins.'],
       ['Can you work on an existing app?', 'We can discuss an existing product after reviewing its code, design and current requirements. That review determines what can be reused and what needs to change.'],
       ['What happens after launch?', 'We can agree on an ongoing engagement for maintenance, release updates and new features, with the scope and responsibilities defined together.'],
@@ -135,7 +135,7 @@ export const services = [
       ['Application development', 'Frontend, backend, data storage and agreed integrations.'],
       ['Launch preparation', 'Testing, deployment planning and a handover matched to your team.'],
     ],
-    evidence: 'Our published portfolio features our own iOS apps. Explore them for a view of our product and interface work, then talk to us about your web requirements.',
+    evidence: 'Explore the interfaces in our portfolio to see how we approach tasks such as editing a photograph or organizing research.',
     questions: [
       ['What kinds of web products can we discuss?', 'SaaS applications, dashboards, customer portals and internal tools. We start with the workflow and users, then agree on the product scope.'],
       ['Can the product connect to our existing systems?', 'We assess the available APIs, access requirements and data flows during discovery. We confirm feasibility and scope before including an integration in the build.'],
@@ -172,12 +172,12 @@ export const services = [
 ];
 
 export const processSteps = [
-  ['Understand the problem', 'Tell us who the product is for, what it needs to do and what you have so far. We discuss your goals and constraints together.'],
-  ['Agree on the scope', 'We agree on the features, responsibilities and criteria for the first release. That scope guides the estimate and timing.'],
+  ['Understand the problem', 'We identify who will use the product, what they need to do and where the current experience gets in their way.'],
+  ['Define the first release', 'We choose the features needed to complete the core task and set the criteria for release.'],
   ['Design the experience', 'We map the key journeys and work through the screens and interactions before committing them to development.'],
-  ['Build and review', 'We build in agreed milestones and review progress with you against the product brief.'],
-  ['Test and launch', 'We test the agreed journeys, prepare the release and coordinate store submission or web deployment as appropriate.'],
-  ['Maintain and improve', 'After launch, ongoing support and further development can be agreed around product feedback and business priorities.'],
+  ['Build and review', 'We review working versions against the original task and refine the interactions as the product takes shape.'],
+  ['Test and launch', 'We test the main workflows on the intended devices and prepare the product for store submission or web deployment.'],
+  ['Maintain and improve', 'We use support questions, feedback and platform changes to guide fixes and future releases.'],
 ];
 
 export function projectEmail(service = 'App development', product = '') {

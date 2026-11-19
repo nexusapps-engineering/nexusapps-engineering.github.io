@@ -1,13 +1,13 @@
 # Nexus Apps
 
-[Nexus Apps](https://nexusapps.co/) is an independent app studio in Berlin, Germany. We build and operate our own iOS apps and offer mobile app, web product and MVP development for startups and businesses worldwide.
+[Nexus Apps](https://nexusapps.co/) is a digital product studio in Berlin, Germany. We develop for iOS, Android and the web, and design, publish and operate our own portfolio of creative tools and utilities.
 
-- [Development services](https://nexusapps.co/services/)
 - [Our apps](https://nexusapps.co/apps/): Visual LabX, Photo CamAI, Wallpapers Neo, Retro Cam Neo, Clear Wave Pro and ASO Rocket
+- [Development services](https://nexusapps.co/services/)
 - [How we work](https://nexusapps.co/process/)
-- [Discuss a project](https://nexusapps.co/contact/): hello@nexusapps.co
+- [Contact the studio](https://nexusapps.co/contact/): hello@nexusapps.co
 
-The published app portfolio contains our own iOS products. It is not presented as commissioned Android or web client work.
+The six apps currently featured in the portfolio are available on the App Store.
 
 ## Website development
 

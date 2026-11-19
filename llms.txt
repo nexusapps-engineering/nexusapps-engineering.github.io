@@ -1,8 +1,16 @@
 # Nexus Apps
 
-> App development company in Berlin. Nexus Apps builds and maintains iOS, Android and web applications for businesses and founders.
+> Nexus Apps is a Berlin digital product studio. We develop for iOS, Android and the web and publish and operate our own products.
 
-Nexus Apps builds and operates six in-house iOS apps.
+## Product portfolio
+
+- [Products](https://nexusapps.co/apps/): Photography, personalization, audio utilities and developer tools published by Nexus Apps.
+- [Visual LabX](https://nexusapps.co/apps/visuallabx/): Layer film filters and effects or retouch a portrait with Visual LabX, a photo editor for iPhone.
+- [Photo CamAI](https://nexusapps.co/apps/photocamai/): Enhance a photo in one tap with Photo CamAI. Its AI analyzes the image on your iPhone.
+- [Wallpapers Neo](https://nexusapps.co/apps/wallpapers/): Browse iPhone wallpapers by style, save favorites and add your own text before saving a background.
+- [Retro Cam Neo](https://nexusapps.co/apps/retrocamneo/): Preview vintage film looks as you shoot on iPhone, with adjustable grain, warmth and exposure.
+- [Clear Wave Pro](https://nexusapps.co/apps/clearwave/): Test left and right speaker channels, run sound-based cleaning modes and check ambient noise on iPhone.
+- [ASO Rocket](https://nexusapps.co/apps/asorocket/): Research App Store keywords on iPhone or iPad, organize saved terms and copy a keyword string for App Store Connect.
 
 ## Development services
 
@@ -13,21 +21,11 @@ Nexus Apps builds and operates six in-house iOS apps.
 - [App-Entwicklung Berlin](https://nexusapps.co/de/app-entwicklung-berlin/): German-language overview of app development in Berlin. Project communication is in English.
 - [App laten maken](https://nexusapps.co/nl/app-laten-maken/): Dutch-language overview for companies in the Netherlands. The studio is based in Berlin; project communication is in English.
 
-## Work with the studio
+## About the studio
 
 - [Our process](https://nexusapps.co/process/): Product discovery, scope, design, development, testing, launch and ongoing maintenance.
-- [About us](https://nexusapps.co/about/): The company, its development approach and in-house product background.
-- [Contact](https://nexusapps.co/contact/): Discuss a mobile app, web product or MVP. Email hello@nexusapps.co with your idea, intended users, existing materials and timing.
-
-## In-house iOS portfolio
-
-- [Our apps](https://nexusapps.co/apps/): Six products built, published and maintained by Nexus Apps.
-- [Visual LabX](https://nexusapps.co/apps/visuallabx/): Layer film filters and effects or retouch a portrait with Visual LabX, a photo editor for iPhone.
-- [Photo CamAI](https://nexusapps.co/apps/photocamai/): Enhance a photo in one tap with Photo CamAI. Its AI analyzes the image on your iPhone.
-- [Wallpapers Neo](https://nexusapps.co/apps/wallpapers/): Browse iPhone wallpapers by style, save favorites and add your own text before saving a background.
-- [Retro Cam Neo](https://nexusapps.co/apps/retrocamneo/): Preview vintage film looks as you shoot on iPhone, with adjustable grain, warmth and exposure.
-- [Clear Wave Pro](https://nexusapps.co/apps/clearwave/): Test left and right speaker channels, run sound-based cleaning modes and check ambient noise on iPhone.
-- [ASO Rocket](https://nexusapps.co/apps/asorocket/): Research App Store keywords on iPhone, organize saved terms and copy a keyword string for App Store Connect.
+- [About us](https://nexusapps.co/about/): The studio behind the portfolio and its approach to product ownership.
+- [Contact](https://nexusapps.co/contact/): Product support, feedback and business inquiries. Contact hello@nexusapps.co.
 
 ## Optional
 

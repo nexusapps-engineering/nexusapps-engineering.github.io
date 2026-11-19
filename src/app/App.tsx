@@ -1,4 +1,4 @@
-import { NavBar, Footer, ProjectCTA } from "../site/Layout";
+import { NavBar, Footer, StudioCTA } from "../site/Layout";
 import { ProductGrid, ServiceList } from "../site/Sections";
 import { SiteMotion } from "../site/SiteMotion";
 import svgPaths from "../imports/svg-05d7k6z6uy";
@@ -15,8 +15,8 @@ function HeroSection() {
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
         <h1 className="home-headline"><span data-motion-line>App development for iOS, </span><span data-motion-line>Android and the web.</span></h1>
-        <p className="home-intro">Nexus Apps is a Berlin-based software development company. We design, build and maintain mobile apps and web applications for businesses and founders.</p>
-        <div className="home-actions"><a href="/contact/" className="nexus-button">Discuss your project</a><a href="/services/" className="hero-work-link">Explore development services</a></div>
+        <p className="home-intro">Nexus Apps is a digital product studio based in Berlin. We design, publish and operate our own products, from creative tools for photographers to software for app developers.</p>
+        <div className="home-actions"><a href="/apps/" className="nexus-button">Explore our products</a><a href="/about/" className="hero-work-link">About the studio</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
         <img
@@ -37,9 +37,9 @@ function HeroSection() {
 
 function ServicesSection() {
   return <section id="services" className="nexus-container section-pad home-services">
-    <div data-motion-group><p className="eyebrow">Build with Nexus</p>
-    <h2 className="section-title">Mobile apps, web products<br />and your first release.</h2>
-    <p className="section-copy">Launch a new product, build a tool for your team or improve an existing app. We help you define the scope and develop it.</p></div>
+    <div data-motion-group><p className="eyebrow">Development services</p>
+    <h2 className="section-title">Work with the studio.</h2>
+    <p className="section-copy">Alongside our own portfolio, we develop mobile and web applications for companies and founders.</p></div>
     <ServiceList />
     <div className="inline-links"><a className="text-link" href="/de/app-entwicklung-berlin/" lang="de">App-Entwicklung in Berlin ↗</a><a className="text-link" href="/nl/app-laten-maken/" lang="nl">App laten maken in Nederland ↗</a></div>
   </section>;
@@ -51,9 +51,9 @@ function AboutSection() {
     <section id="about" className="home-about light-section">
       <div className="nexus-container section-pad">
         <div className="home-about-copy" data-motion-group>
-          <p className="eyebrow">An app development company in Berlin</p>
-          <h2>We build, release<br />and keep improving.</h2>
-          <p>Running our own apps means working on the details long after launch. We bring that experience to your product, from its first screens to its next release.</p>
+          <p className="eyebrow">The studio</p>
+          <h2>We stay with the product.</h2>
+          <p>Publishing is part of our work. We also maintain each product and decide what comes next, from refining a camera control to simplifying how a developer prepares a store listing.</p>
           <a href="/about/" className="text-link">Get to know Nexus <span aria-hidden="true">↗</span></a>
         </div>
         {/* NEXUS small logo */}
@@ -74,9 +74,9 @@ function AboutSection() {
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
-    <div className="section-heading-row"><h2 className="section-title">iPhone apps built by Nexus Apps.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Explore three of the photography apps we designed, published and maintain.</p></div>
-    <ProductGrid slugs={["visuallabx", "photocamai", "retrocamneo"]} />
+    <div className="section-heading-row"><h2 className="section-title">Selected products.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
+    <p className="section-copy">Preview a film look before taking a photo, check a speaker channel or research keywords for an App Store listing.</p></div>
+    <ProductGrid slugs={["retrocamneo", "clearwave", "asorocket"]} />
   </div></section>;
 }
 
@@ -88,7 +88,7 @@ function StrategySection() {
         <div className="home-strategy-copy" data-motion-group>
           <p className="eyebrow">Design and development</p>
           <h2>From the first decision<br />to the next release.</h2>
-          <p>We agree on what to build, work through the screens and develop the product with you. Integrations and AI features follow the needs of the people using it.</p>
+          <p>In Retro Cam Neo, the film preview belongs in the viewfinder. In Photo CamAI, image analysis happens on the device. The way someone uses a product guides the technology behind it.</p>
         </div>
         {/* Hero image */}
         <div data-motion-parallax className="strategy-art">
@@ -157,7 +157,7 @@ function CoreSystemsSection() {
           The work behind each release.
         </h2>
         <div className="principle-grid">
-          <CoreSystemCard image={imgRectangle10} label="Product planning" description="Agree on the problem, the users and what belongs in the first release." />
+          <CoreSystemCard image={imgRectangle10} label="Product planning" description="Identify who will use the product and the task its first release needs to handle." />
           <CoreSystemCard image={imgRectangle11} label="Design and development" description="Work through the screens and build the features around how people use them." />
           <CoreSystemCard image={imgRectangle12} label="Testing and iteration" description="Test the key tasks, prepare for launch and plan the next improvements." />
         </div>
@@ -174,12 +174,12 @@ export default function App() {
       <NavBar />
       <main id="main-content" tabIndex={-1} className="flex flex-col w-full">
         <HeroSection />
-        <ServicesSection />
-        <AboutSection />
         <ProductsSection />
+        <AboutSection />
+        <ServicesSection />
         <StrategySection />
         <CoreSystemsSection />
-        <ProjectCTA />
+        <StudioCTA />
       </main>
       <Footer />
     </div>

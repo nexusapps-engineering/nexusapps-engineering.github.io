@@ -5,7 +5,7 @@ const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '
 
 export function structuredData(page) {
   if (!page.index) return null;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', sameAs: ['https://github.com/nexusapps-engineering'], address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'Nexus Apps', description: 'Berlin digital product studio developing for iOS, Android and the web. Nexus Apps designs, publishes and operates its own products.', url: origin + '/', email: 'hello@nexusapps.co', logo: origin + '/nexus-mark.png', sameAs: ['https://github.com/nexusapps-engineering'], address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' } };
   const graph = [organization, { '@type': 'WebSite', '@id': `${origin}/#website`, name: 'Nexus Apps', url: origin + '/', publisher: { '@id': organization['@id'] } }];
   const webPage = { '@type': 'WebPage', '@id': `${page.canonical}#webpage`, url: page.canonical, name: page.type === 'home' ? 'Nexus Apps' : page.name, description: page.description, isPartOf: { '@id': `${origin}/#website` }, author: { '@id': organization['@id'] }, inLanguage: page.language || 'en' };
   if (page.type === 'about') webPage['@type'] = 'AboutPage';
@@ -36,7 +36,7 @@ export function structuredData(page) {
   if (page.type === 'product') {
     const product = products.find(item => item.slug === page.slug);
     const categories = { visuallabx: 'MultimediaApplication', photocamai: 'MultimediaApplication', wallpapers: 'LifestyleApplication', retrocamneo: 'MultimediaApplication', clearwave: 'UtilitiesApplication', asorocket: 'DeveloperApplication' };
-    graph.push({ '@type': 'SoftwareApplication', '@id': `${page.canonical}#app`, name: product.name, description: product.summary, operatingSystem: 'iOS', applicationCategory: categories[product.slug], url: page.canonical, downloadUrl: product.appStoreUrl, image: `${origin}/images/apps/${product.slug}/icon.jpg`, screenshot: [1, 2].map(number => `${origin}/images/apps/${product.slug}/screen-${number}.jpg`), publisher: { '@id': organization['@id'] } });
+    graph.push({ '@type': 'SoftwareApplication', '@id': `${page.canonical}#app`, name: product.name, description: product.summary, operatingSystem: 'iOS', availableOnDevice: product.devices || 'iPhone', applicationCategory: categories[product.slug], url: page.canonical, downloadUrl: product.appStoreUrl, image: `${origin}/images/apps/${product.slug}/icon.jpg`, screenshot: [1, 2].map(number => `${origin}/images/apps/${product.slug}/screen-${number}.jpg`), publisher: { '@id': organization['@id'] } });
     webPage.mainEntity = { '@id': `${page.canonical}#app` };
   }
   return { '@context': 'https://schema.org', '@graph': graph };

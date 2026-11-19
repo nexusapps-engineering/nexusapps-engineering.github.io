@@ -86,7 +86,7 @@ for (const page of pages) {
       const app = schema['@graph'].find(item => item['@type'] === 'SoftwareApplication');
       assert.equal(app?.downloadUrl, product.appStoreUrl, `${page.path}: incorrect structured download URL`);
       assert(html.includes(`href="${product.appStoreUrl}"`), `${page.path}: missing App Store link`);
-      assert(html.includes('href="/services/ios-app-development/"'), `${page.path}: missing iOS service link`);
+      assert(html.includes('href="/about/"'), `${page.path}: missing publisher link`);
     }
     const breadcrumb = schema['@graph'].find(item => item['@type'] === 'BreadcrumbList');
     if (breadcrumb) {
