@@ -8,7 +8,7 @@ Each retained route passed static metadata, structured data where applicable, as
 
 | Route | Primary and supporting terms | Visitor intent | Editorial result |
 |---|---|---|---|
-| `/` | Nexus Apps · independent iOS app studio in Berlin | Identify the studio and explore its apps | Led with iOS apps, moved the photography showcase up and made project inquiries secondary. Removed the dated rating strip. |
+| `/` | Nexus Apps · mobile and web app development in Berlin | Assess the company and discuss a development project | Leads with iOS, Android and web development. Shows client services before the company’s own iPhone apps. |
 | `/services/` | app development services · mobile and web development | Choose a development service | Added a platform and project-stage guide to the opening. |
 | `/services/ios-app-development/` | iOS app development services · iPhone app development | Hire an iPhone development team | Described the path from interface design to submission and removed the repeated rating and location pitch. |
 | `/services/mobile-app-development/` | mobile app development services · iOS and Android development | Plan a mobile build across platforms | Retained platform selection, integrations and handover questions. Cut repeated sales sections and rating copy. |
@@ -24,7 +24,7 @@ Each retained route passed static metadata, structured data where applicable, as
 | `/apps/clearwave/` | iPhone speaker test · stereo test and sound meter | Check channels or surrounding sound | Described Water Eject and Dust Sweep as tone modes. Avoided promises of repair. |
 | `/apps/asorocket/` | App Store keyword research · App Store Connect keywords | Prepare listing metadata | Explained category search, filtering saved terms and copying a comma-separated selection. |
 | `/process/` | app development process · app release planning | Understand the engagement | Opened with the user task, review milestones and distribution channel. |
-| `/about/` | about Nexus Apps · Berlin iOS app studio | Verify the studio and its work | Named published products and linked directly to two examples. |
+| `/about/` | about Nexus Apps · Berlin app development company | Verify the studio and its work | Explains client development across iOS, Android and web and links to two published iPhone apps. |
 | `/contact/` | Nexus Apps contact · Nexus app support | Request support or discuss a project | Added a support email alongside the existing project brief and clipboard action. |
 | `/app-policies/` | Nexus app privacy policies · app terms of use | Locate the correct document | Clarified document selection and the former Wallpapers Neo name. |
 | `/visuallabx/privacy-policy/` | Visual LabX privacy policy | Find the official document | Verified product identity, links and image and face data. Preserved published wording and URL. |

@@ -14,9 +14,9 @@ function HeroSection() {
   return (
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
-        <h1 className="home-headline"><span data-motion-line>Independent iOS apps </span><span data-motion-line>from Berlin.</span></h1>
-        <p className="home-intro">We’re Nexus Apps. We make iPhone apps for taking photos, editing portraits, testing speakers and researching App Store keywords. We also build mobile and web products for clients.</p>
-        <div className="home-actions"><a href="/apps/" className="nexus-button">Explore our iOS apps</a><a href="/contact/" className="hero-work-link">Discuss a project</a></div>
+        <h1 className="home-headline"><span data-motion-line>App development for iOS, </span><span data-motion-line>Android and the web.</span></h1>
+        <p className="home-intro">Nexus Apps is a Berlin-based software development company. We design, build and maintain mobile apps and web applications for businesses and founders.</p>
+        <div className="home-actions"><a href="/contact/" className="nexus-button">Discuss your project</a><a href="/services/" className="hero-work-link">Explore development services</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
         <img
@@ -51,7 +51,7 @@ function AboutSection() {
     <section id="about" className="home-about light-section">
       <div className="nexus-container section-pad">
         <div className="home-about-copy" data-motion-group>
-          <p className="eyebrow">A product company in Berlin</p>
+          <p className="eyebrow">An app development company in Berlin</p>
           <h2>We build, release<br />and keep improving.</h2>
           <p>Running our own apps means working on the details long after launch. We bring that experience to your product, from its first screens to its next release.</p>
           <a href="/about/" className="text-link">Get to know Nexus <span aria-hidden="true">↗</span></a>
@@ -74,8 +74,8 @@ function AboutSection() {
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
-    <div className="section-heading-row"><h2 className="section-title">Three ways to work with photos.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Choose a film look before you shoot, retouch a portrait by hand, or let your iPhone enhance a photo in one tap.</p></div>
+    <div className="section-heading-row"><h2 className="section-title">iPhone apps built by Nexus Apps.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
+    <p className="section-copy">Explore three of the photography apps we designed, published and maintain.</p></div>
     <ProductGrid slugs={["visuallabx", "photocamai", "retrocamneo"]} />
   </div></section>;
 }
@@ -174,9 +174,9 @@ export default function App() {
       <NavBar />
       <main id="main-content" tabIndex={-1} className="flex flex-col w-full">
         <HeroSection />
-        <ProductsSection />
-        <AboutSection />
         <ServicesSection />
+        <AboutSection />
+        <ProductsSection />
         <StrategySection />
         <CoreSystemsSection />
         <ProjectCTA />

@@ -8,7 +8,7 @@ function page(path, type, name, title, description, extra = {}) {
 export const policyApps = [...products, { slug: 'clearx', name: 'ClearX' }];
 
 export const pages = [
-  page('/', 'home', 'Home', 'Nexus Apps | Independent iOS App Studio in Berlin', 'Explore iPhone apps for photography, wallpapers, speaker testing and App Store keyword research, built by Nexus Apps, an independent studio in Berlin.'),
+  page('/', 'home', 'Home', 'Nexus Apps | Mobile & Web App Development in Berlin', 'Nexus Apps designs, builds and maintains iOS, Android and web applications for businesses and founders. Based in Berlin, working with clients worldwide.'),
   page('/services/', 'services', 'Services', 'Mobile, Web & MVP Development Services | Nexus Apps', 'Explore mobile app, web application and MVP development for companies and founders, from product discovery through launch and ongoing support.'),
   ...services.map(service => page(`/services/${service.slug}/`, 'service', service.name, service.searchTitle, service.summary, { slug: service.slug, parent: '/services/' })),
   page('/de/app-entwicklung-berlin/', 'berlin', 'App-Entwicklung Berlin', 'App-Entwicklung in Berlin | Nexus Apps', 'Nexus Apps entwickelt mobile Apps und digitale Produkte in Berlin. Lernen Sie unser Studio, unsere Arbeitsweise und eigene iOS-Apps kennen.', { language: 'de', parent: '/services/' }),
@@ -16,7 +16,7 @@ export const pages = [
   page('/apps/', 'apps', 'Our apps', 'iPhone Apps for Photos, Wallpapers & Utilities | Nexus Apps', 'Compare six iPhone apps by what you want to do. See screenshots, explore features and find each Nexus app on the App Store.'),
   ...products.map(product => page(`/apps/${product.slug}/`, 'product', product.name, product.searchTitle, product.summary, { slug: product.slug, parent: '/apps/', image: `${origin}/images/apps/${product.slug}/screen-1.jpg` })),
   page('/process/', 'process', 'Our process', 'How We Build Apps | Nexus Apps', 'See how Nexus Apps approaches product discovery, scope, design, development, testing, launch and ongoing maintenance for mobile and web products.'),
-  page('/about/', 'about', 'About us', 'About Nexus Apps | Independent Berlin App Studio', 'Meet the Berlin studio behind Visual LabX, Retro Cam Neo and ASO Rocket, and see how its experience publishing iOS apps informs its work with clients.'),
+  page('/about/', 'about', 'About us', 'About Nexus Apps | Berlin App Development Company', 'Meet the Berlin company that develops iOS, Android and web applications for clients and publishes its own iPhone apps.'),
   page('/contact/', 'contact', 'Contact', 'Contact Nexus Apps | App Support & Project Inquiries', 'Get help with a Nexus iOS app or discuss a mobile or web development project. Contact the studio directly at hello@nexusapps.co.'),
   page('/app-policies/', 'policies', 'App policies', 'App Privacy Policies & Terms | Nexus Apps', 'Privacy policies and terms of use for Nexus Apps products, including Visual LabX, Photo CamAI, ClearX and ASO Rocket.'),
   ...policyApps.flatMap(product => ['privacy-policy', 'terms-of-use'].map(document => {

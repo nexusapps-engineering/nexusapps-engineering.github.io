@@ -51,7 +51,7 @@ export function NavBar({ path = '/' }: { path?: string }) {
 export function Footer({ legalDocument = false }: { legalDocument?: boolean }) {
   return <footer className="nexus-footer">
     <div className="nexus-container footer-top">
-      <div><p className="eyebrow">{legalDocument ? 'Digital product development' : 'Nexus Apps'}</p><p className="footer-statement">{legalDocument ? <>Shipped products.<br />Your next release.</> : <>Independent iOS studio<br />in Berlin.</>}</p><p className="muted">Berlin, Germany · Working globally</p></div>
+      <div><p className="eyebrow">{legalDocument ? 'Digital product development' : 'Nexus Apps'}</p><p className="footer-statement">{legalDocument ? <>Shipped products.<br />Your next release.</> : <>Mobile and web<br />app development.</>}</p><p className="muted">Berlin, Germany · Working globally</p></div>
       <div><h2>Explore Nexus</h2><a href="/services/">Development services</a><a href="/apps/">Our apps</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
       <div><h2>Our apps</h2>{products.map(product => <a key={product.slug} href={`/apps/${product.slug}/`}>{product.name}</a>)}</div>
       <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a>{legalDocument ? <p className="footer-note">Share your idea and where you are starting.</p> : <a href="/contact/">App support and project inquiries</a>}</div>
