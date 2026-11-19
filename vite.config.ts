@@ -1,10 +1,23 @@
 import { defineConfig } from 'vite';
-import fs from 'node:fs';
 import path from 'node:path';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 
-const sourcePath = path.resolve(__dirname, 'index.source.html');
+const pageTemplate = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="/nexus-mark.png" />
+    <!--page-head-->
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+  </body>
+</html>
+`;
 
 export default defineConfig({
   // Generate real static routes; never turn an unknown address into the homepage.
@@ -13,7 +26,7 @@ export default defineConfig({
     {
       name: 'source-html-for-build',
       apply: 'build',
-      transformIndexHtml: { order: 'pre', handler: () => fs.readFileSync(sourcePath, 'utf8') },
+      transformIndexHtml: { order: 'pre', handler: () => pageTemplate },
     },
     {
       name: 'static-pages-in-dev',
@@ -26,7 +39,7 @@ export default defineConfig({
           try {
             const module = await server.ssrLoadModule('/src/entry-server.tsx');
             const { page, html } = await module.render(pathname);
-            const document = module.documentHtml(fs.readFileSync(sourcePath, 'utf8'), page, html, { google: process.env.GOOGLE_SITE_VERIFICATION, bing: process.env.BING_SITE_VERIFICATION });
+            const document = module.documentHtml(pageTemplate, page, html, { google: process.env.GOOGLE_SITE_VERIFICATION, bing: process.env.BING_SITE_VERIFICATION });
             res.statusCode = page.type === 'not-found' ? 404 : 200;
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
             res.end(req.method === 'HEAD' ? '' : await server.transformIndexHtml(pathname, document));

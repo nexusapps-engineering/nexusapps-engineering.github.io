@@ -27,7 +27,7 @@ export function NavBar({ path = '/' }: { path?: string }) {
     <header className="nexus-header">
       <nav className="nexus-nav" aria-label="Main navigation">
         <a className="nexus-logo" href="/" aria-label="Nexus Apps home"><BrandMark /></a>
-        <div className="desktop-nav">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}</div>
+        <div className="desktop-nav">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={path === href ? 'page' : active(href) ? 'location' : undefined}>{label}</a>)}</div>
         <details className="mobile-nav" onBlur={event => {
           // Safari can blur the summary without focusing a clicked link. Keep
           // the panel mounted until that link's native click has navigated.
@@ -41,22 +41,22 @@ export function NavBar({ path = '/' }: { path?: string }) {
           }
         }}>
           <summary aria-label="Navigation menu"><span aria-hidden="true" /><span aria-hidden="true" /></summary>
-          <div className="mobile-nav-panel">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}<EmailLink position="mobile-menu" className="mobile-email">{email}</EmailLink></div>
+          <div className="mobile-nav-panel">{navLinks.map(([href, label]) => <a key={href} href={href} aria-current={path === href ? 'page' : active(href) ? 'location' : undefined}>{label}</a>)}<EmailLink position="mobile-menu" className="mobile-email">{email}</EmailLink></div>
         </details>
       </nav>
     </header>
   </>;
 }
 
-export function Footer() {
+export function Footer({ legalDocument = false }: { legalDocument?: boolean }) {
   return <footer className="nexus-footer">
     <div className="nexus-container footer-top">
-      <div><p className="eyebrow">Digital product development</p><p className="footer-statement">Shipped products.<br />Your next release.</p><p className="muted">Berlin, Germany · Working globally</p></div>
+      <div><p className="eyebrow">{legalDocument ? 'Digital product development' : 'Nexus Apps'}</p><p className="footer-statement">{legalDocument ? <>Shipped products.<br />Your next release.</> : <>Independent iOS studio<br />in Berlin.</>}</p><p className="muted">Berlin, Germany · Working globally</p></div>
       <div><h2>Explore Nexus</h2><a href="/services/">Development services</a><a href="/apps/">Our apps</a><a href="/process/">How we work</a><a href="/about/">About us</a><a href="/contact/">Contact</a></div>
       <div><h2>Our apps</h2>{products.map(product => <a key={product.slug} href={`/apps/${product.slug}/`}>{product.name}</a>)}</div>
-      <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a><p className="footer-note">Share your idea and where you are starting.</p></div>
+      <div><h2>Start a conversation</h2><EmailLink position="footer" className="footer-email">{email}</EmailLink><a href="/app-policies/">App privacy policies & terms</a>{legalDocument ? <p className="footer-note">Share your idea and where you are starting.</p> : <a href="/contact/">App support and project inquiries</a>}</div>
     </div>
-    <div className="nexus-container footer-wordmark"><BrandMark large /><span>Think further.</span></div>
+    <div className="nexus-container footer-wordmark"><BrandMark large />{legalDocument && <span>Think further.</span>}</div>
   </footer>;
 }
 

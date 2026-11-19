@@ -27,6 +27,12 @@ export function structuredData(page) {
     webPage.about = { '@id': `${page.canonical}#service` };
     webPage.mainEntity = service.questions.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } }));
   }
+  if (page.type === 'apps') {
+    webPage['@type'] = 'CollectionPage';
+    webPage.mainEntity = { '@type': 'ItemList', itemListElement: products.map((product, i) => ({
+      '@type': 'ListItem', position: i + 1, name: product.name, url: `${origin}/apps/${product.slug}/`,
+    })) };
+  }
   if (page.type === 'product') {
     const product = products.find(item => item.slug === page.slug);
     const categories = { visuallabx: 'MultimediaApplication', photocamai: 'MultimediaApplication', wallpapers: 'LifestyleApplication', retrocamneo: 'MultimediaApplication', clearwave: 'UtilitiesApplication', asorocket: 'DeveloperApplication' };
@@ -44,7 +50,7 @@ export function renderHead(page, verification = {}) {
     `<title>${escape(page.title)}</title>`, meta('description', page.description), meta('robots', page.index ? 'index, follow' : 'noindex, follow'),
     `<link rel="canonical" href="${escape(page.canonical)}" />`,
     meta('og:type', 'website', true), meta('og:site_name', 'Nexus Apps', true), meta('og:locale', ({ de: 'de_DE', nl: 'nl_NL' })[page.language] || 'en_US', true),
-    meta('og:title', page.title, true), meta('og:description', page.description, true), meta('og:url', page.canonical, true), meta('og:image', page.image, true), meta('og:image:alt', page.type === 'product' ? `${page.name} App Store preview` : 'Nexus Apps — Mobile and web apps, built from idea to launch.', true),
+    meta('og:title', page.title, true), meta('og:description', page.description, true), meta('og:url', page.canonical, true), meta('og:image', page.image, true), meta('og:image:alt', page.type === 'product' ? products.find(product => product.slug === page.slug).screenshotAlt[0] : 'Nexus Apps — Mobile and web apps, built from idea to launch.', true),
     meta('twitter:card', 'summary_large_image'), meta('twitter:title', page.title), meta('twitter:description', page.description), meta('twitter:image', page.image),
     meta('google-site-verification', verification.google || 'iaEQ9PIpWSg9tK2XuBEuFx7hboShbG0lpy7Ez3Km80w'),
     meta('msvalidate.01', verification.bing || '09FDDD15EB5BBF24FECD5923F666DF8E'),

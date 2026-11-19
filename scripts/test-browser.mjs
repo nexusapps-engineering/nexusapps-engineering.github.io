@@ -47,7 +47,7 @@ try {
     }
     await page.goto(base + '/a-page-that-does-not-exist/');
     await page.waitForLoadState('networkidle');
-    assert.equal(await page.locator('h1').innerText(), 'Let’s find your next step.');
+    assert.equal(await page.locator('h1').innerText(), 'Page not found.');
     assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'), 'noindex, follow');
     results.push({ javaScriptEnabled, routesChecked: pages.length, unknownRoute: '404' });
     await context.close();
@@ -55,7 +55,7 @@ try {
 
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, ...(engine === 'chromium' ? { permissions: ['clipboard-read', 'clipboard-write'] } : {}) });
   const page = await context.newPage(); monitor(page);
-  const mobilePaths = ['/', '/services/', '/services/mobile-app-development/', '/services/web-app-development/', '/services/mvp-development/', '/de/app-entwicklung-berlin/', '/nl/app-laten-maken/', '/apps/asorocket/', '/apps/wallpapers/', '/contact/', '/about/', '/process/', '/app-policies/', '/asorocket/privacy-policy'];
+  const mobilePaths = pages.map(route => route.path);
   for (const width of [390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     for (const route of mobilePaths) {
@@ -73,7 +73,7 @@ try {
   if (engine === 'webkit') await page.locator('.home-actions .nexus-button').focus();
   else await page.keyboard.press('Tab');
   assert.equal(await menu.getAttribute('open'), null, 'menu must close when keyboard focus leaves it');
-  assert.equal(await page.locator(':focus').getAttribute('href'), '/contact/');
+  assert.equal(await page.locator(':focus').getAttribute('href'), '/apps/');
   await menu.locator('summary').click();
   await page.keyboard.press('Escape'); assert.equal(await menu.getAttribute('open'), null);
   await menu.locator('summary').click(); await menu.locator('a[href="/services/"]').click(); await page.waitForLoadState('networkidle');

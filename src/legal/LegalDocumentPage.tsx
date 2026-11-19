@@ -74,7 +74,7 @@ export function LegalDocumentPage({
           </article>
         </div>
       </main>
-      <Footer />
+      <Footer legalDocument />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { NavBar, Footer, EmailLink, ProjectCTA } from "../site/Layout";
+import { NavBar, Footer, ProjectCTA } from "../site/Layout";
 import { ProductGrid, ServiceList } from "../site/Sections";
 import { SiteMotion } from "../site/SiteMotion";
 import svgPaths from "../imports/svg-05d7k6z6uy";
@@ -14,9 +14,9 @@ function HeroSection() {
   return (
     <section className="home-hero">
       <div className="home-hero-content" data-motion-group>
-        <h1 className="home-headline"><span data-motion-line>We design, build and maintain </span><span data-motion-line>digital products for companies.</span></h1>
-        <p className="home-intro">Nexus Apps is a Berlin-based development studio building mobile apps, web products and MVPs for companies and founders across Europe and worldwide.</p>
-        <div className="home-actions"><a href="/contact/" className="nexus-button">Discuss your project</a><a href="#products" className="hero-work-link">See our work</a></div>
+        <h1 className="home-headline"><span data-motion-line>Independent iOS apps </span><span data-motion-line>from Berlin.</span></h1>
+        <p className="home-intro">We’re Nexus Apps. We make iPhone apps for taking photos, editing portraits, testing speakers and researching App Store keywords. We also build mobile and web products for clients.</p>
+        <div className="home-actions"><a href="/apps/" className="nexus-button">Explore our iOS apps</a><a href="/contact/" className="hero-work-link">Discuss a project</a></div>
       </div>
       <div className="home-hero-art" aria-hidden="true">
         <img
@@ -74,8 +74,8 @@ function AboutSection() {
 function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
-    <div className="section-heading-row"><h2 className="section-title">Selected work: products we shipped.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">These in-house iOS products show how we design, release and maintain software. They are our own products, not commissioned client projects.</p></div>
+    <div className="section-heading-row"><h2 className="section-title">Three ways to work with photos.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
+    <p className="section-copy">Choose a film look before you shoot, retouch a portrait by hand, or let your iPhone enhance a photo in one tap.</p></div>
     <ProductGrid slugs={["visuallabx", "photocamai", "retrocamneo"]} />
   </div></section>;
 }
@@ -174,13 +174,9 @@ export default function App() {
       <NavBar />
       <main id="main-content" tabIndex={-1} className="flex flex-col w-full">
         <HeroSection />
-        <section className="nexus-container proof-strip" aria-label="Our product experience">
-          <p><strong>6</strong> in-house iOS apps</p>
-          <p><strong>4.8 / 5</strong> · 600+ ratings for Visual LabX on the <a href="https://apps.apple.com/us/app/visual-labx-ai-photo-editor/id6449296377" target="_blank" rel="noopener noreferrer">U.S. App Store</a>, as of November 13, 2026</p>
-        </section>
-        <ServicesSection />
-        <AboutSection />
         <ProductsSection />
+        <AboutSection />
+        <ServicesSection />
         <StrategySection />
         <CoreSystemsSection />
         <ProjectCTA />

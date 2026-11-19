@@ -3,7 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { pages, outputFile, findPage } from '../src/site/registry.mjs';
-import { origin, services } from '../src/site/catalog.mjs';
+import { origin, products, services } from '../src/site/catalog.mjs';
 import { llmsText } from '../src/site/discovery.mjs';
 import { sitemap, sitemapIndex, robots } from '../src/site/seo.mjs';
 
@@ -11,6 +11,17 @@ const project = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
 const root = path.resolve(project, process.argv[2] || '.');
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#x27;', "'");
 const exists = async file => { assert((await fs.stat(file)).isFile(), `Missing file: ${file}`); };
+// An HTML template beside a real page is a second public URL on GitHub Pages.
+const expectedHtml = new Set(pages.map(outputFile));
+async function verifyHtmlInventory(relative = '') {
+  for (const entry of await fs.readdir(path.join(root, relative), { withFileTypes: true })) {
+    if (entry.name.startsWith('.') || ['node_modules', 'dist'].includes(entry.name)) continue;
+    const file = path.join(relative, entry.name);
+    if (entry.isDirectory()) await verifyHtmlInventory(file);
+    else if (file.endsWith('.html')) assert(expectedHtml.has(file), `Unexpected public HTML: ${file}`);
+  }
+}
+await verifyHtmlInventory();
 const documents = new Map();
 const titles = new Set();
 const descriptions = new Set();
@@ -65,8 +76,16 @@ for (const page of pages) {
       }
       for (const slug of service.examples) assert(html.includes(`href="/apps/${slug}/"`), `${page.path}: missing portfolio evidence ${slug}`);
     }
+    if (page.type === 'apps') {
+      const collection = schema['@graph'].find(item => item['@type'] === 'CollectionPage');
+      assert.deepEqual(collection?.mainEntity.itemListElement.map(item => item.url),
+        products.map(product => `${origin}/apps/${product.slug}/`), 'App directory schema must list the portfolio');
+    }
     if (page.type === 'product') {
-      assert(types.includes('SoftwareApplication'));
+      const product = products.find(item => item.slug === page.slug);
+      const app = schema['@graph'].find(item => item['@type'] === 'SoftwareApplication');
+      assert.equal(app?.downloadUrl, product.appStoreUrl, `${page.path}: incorrect structured download URL`);
+      assert(html.includes(`href="${product.appStoreUrl}"`), `${page.path}: missing App Store link`);
       assert(html.includes('href="/services/ios-app-development/"'), `${page.path}: missing iOS service link`);
     }
     const breadcrumb = schema['@graph'].find(item => item['@type'] === 'BreadcrumbList');
