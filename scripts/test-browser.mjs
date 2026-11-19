@@ -73,7 +73,7 @@ try {
   if (engine === 'webkit') await page.locator('.home-actions .nexus-button').focus();
   else await page.keyboard.press('Tab');
   assert.equal(await menu.getAttribute('open'), null, 'menu must close when keyboard focus leaves it');
-  assert.equal(await page.locator(':focus').getAttribute('href'), '/apps/');
+  assert.equal(await page.locator(':focus').getAttribute('href'), '/contact/#development-inquiries');
   await menu.locator('summary').click();
   await page.keyboard.press('Escape'); assert.equal(await menu.getAttribute('open'), null);
   await menu.locator('summary').click(); await menu.locator('a[href="/services/"]').click(); await page.waitForLoadState('networkidle');
