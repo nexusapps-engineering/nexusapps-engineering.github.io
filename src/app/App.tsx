@@ -75,8 +75,8 @@ function ProductsSection() {
   return <section id="products" className="bg-black"><div className="nexus-container section-pad">
     <div data-motion-group><p className="eyebrow">Built and operated by Nexus</p>
     <div className="section-heading-row"><h2 className="section-title">Selected products.</h2><a href="/apps/" className="text-link">Explore all apps <span aria-hidden="true">↗</span></a></div>
-    <p className="section-copy">Preview a film look before taking a photo, check a speaker channel or research keywords for an App Store listing.</p></div>
-    <ProductGrid slugs={["retrocamneo", "clearwave", "asorocket"]} />
+    <p className="section-copy">Edit photos with film filters and portrait retouching in Visual LabX, test your speakers with Clear Wave Pro or research App Store keywords with ASO Rocket.</p></div>
+    <ProductGrid slugs={["visuallabx", "clearwave", "asorocket"]} />
   </div></section>;
 }
 
